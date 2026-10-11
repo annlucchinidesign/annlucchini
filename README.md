@@ -54,3 +54,9 @@ Fonts load from Google Fonts. Main uses Bricolage Grotesque, DM Sans, Bungee, Ba
 Luis still needs to decide these: whether visitors can submit donation pledges (the database write rule); whether donor emails in the contacts collection should be hidden from page readers; how dethrone notices get delivered; what goes in the review quote slots (only real Etsy reviews, never invented ones); whether the shop product photos need replacing; and which album covers he has permission to use (the assistant cannot reproduce album art).
 
 Still needed: the Spotify playlist URL; the B-side tracks' real album art, if he wants it; and a visual check in a browser of the flip, the scratch pops and the dancer. None of these has been verified in a browser yet.
+
+## Dev site (GitHub Pages)
+
+Run `node scripts/build-site.js` to rebuild `site/` from `project/`. It writes `site/index.html` with the sprite path changed to `assets/`, copies the sprites, and adds `CNAME` (dev.annlucchini.com) and `.nojekyll`. Publish the `site/` folder with GitHub Pages. Edit `project/` only, then rebuild.
+
+Known gaps before the site works: `support.js` is still missing, so the page will not render, and the donation form cannot write to a static host.
