@@ -10,6 +10,6 @@ Workflow for any change:
 4. Publish the changed file to the canvas URL in CLAUDE.md, with root set to the folder that contains project/ and file_path set to the changed file. Add a line to docs/CHANGELOG.md with the new version number.
 5. Give Luis a one-sentence summary. Do not verify visually unless he asks.
 
-Anchors that are often edited: the disc colors (this.stopsA and this.stopsB), the track data (name:'Shop Cafe Disco' in renderVals), the scratch pops (spawnPop and popWords, popShapes), the shop flip (flipStyle, shelfDown, shelfMove, shelfUp and the mixRows list), the boom and chromatic aberration (boomStyle), the dancer word timing (WD and beatT0), the hero (Designs that), the nav (ann lucchini), and in B-Grid and C-Story the card and chapter data (all, chs).
+Anchors that are often edited: the disc colors (this.stopsA and this.stopsB), the track data (name:'Shop Cafe Disco' in renderVals), the scratch pops (spawnPop and popWords, popShapes), the shop flip (flipStyle, shelfDown, shelfMove, shelfUp and the mixRows list), the boom and chromatic aberration (boomStyle), the dancer word timing (WD and beatT0), the hero (Designs that), the nav (ann lucchini).
 
 Rules that always apply: do not change the layout without being asked, do not invent reviews or quotes, do not reproduce album art, keep placeholders until Luis supplies real content, and leave the database write rule alone.

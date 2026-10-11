@@ -1,15 +1,13 @@
 # Ann Lucchini portfolio site
 
-This folder holds everything about the portfolio site: the three design-canvas artboards, the sprite asset, and the notes needed to keep working on it. It is meant to be copied into its own GitHub repository as-is.
+This folder holds everything about the portfolio site: the design-canvas artboard, the sprite asset, and the notes needed to keep working on it. It is meant to be copied into its own GitHub repository as-is.
 
 Live canvas (private, owned by Luis): https://claude.ai/artifact/D5a93u9m6z2af2Z6sZae8d
 Canvas title: Ann Lucchini Portfolio Redesign. Last published version at the time of writing: 69.
 
 ## Layout
 
-- project/Main.dc.html is artboard A, "Disco Floor". It is the playful one and the main focus of recent work.
-- project/B-Grid.dc.html is artboard B, "Raw Grid". Brutalist, with a filterable project grid.
-- project/C-Story.dc.html is artboard C, "The Long Way Round". Editorial, with chapters.
+- project/Main.dc.html is artboard A, "Disco Floor". It is the only artboard. Artboards B (Raw Grid) and C (The Long Way Round) were removed and remain in git history.
 - project/canvas.json is the canvas index (artboard names, positions, sizes). Change it only when an artboard is added, removed, moved or resized.
 - assets/bfbe6285486b15a653eb8b8bddebd8ac.webp is the dancer sprite sheet (6 by 6 grid of 180 by 320 frames). Main.dc.html loads it by relative path.
 - assets/928e0860aa4fb9f4a3db796c229ebb3a.webp is an uploaded image that no current artboard references. Check with Luis before deleting it.
@@ -45,17 +43,11 @@ Closing: "You pick the next track." followed by the email address and the Zaanda
 
 The disco ball, with spots and rays, appears when you pull down at the top of the page. Its wheel and cord are in the markup, driven by L and disco in tick().
 
-## B-Grid.dc.html and C-Story.dc.html
-
-B-Grid has a stats row (4,560+, 4.9, 200+, 14), a filter over the all array in renderVals (categories Brand, Product and Non-profit), an about section, and a contact line. Colors: #ec4899, #0891b2, #ffe14d.
-
-C-Story has chapters from the chs array in renderVals (chapter five is the next role), a selected work grid with hardcoded tiles, a talk section (Chapter six), and a phone number. Palette: background #e9efe6, ink #1d2b24, accent #d9531e, dark green band #1d2b24, light accent #f4a77f. Fonts are Young Serif and Work Sans.
-
 ## Shared facts
 
 Email: annlucchinidesign@gmail.com. Phone: +31 6 25464717. Location: Zaandam, Netherlands. Etsy: etsy.com/shop/ShopCafeDisco. Shop site: cafediscostudios.com. The Main palette is coral #ff6b5a, yellow #ffd166, mint #06d6a0, violet #b388ff, and plum #1a0b2e as the background.
 
-Fonts load from Google Fonts. Main uses Bricolage Grotesque, DM Sans, Bungee, Bangers, Rubik Mono One and Press Start 2P. B uses Space Grotesk and Archivo. C uses Young Serif and Work Sans.
+Fonts load from Google Fonts. Main uses Bricolage Grotesque, DM Sans, Bungee, Bangers, Rubik Mono One and Press Start 2P.
 
 ## Open items
 
