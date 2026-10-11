@@ -26,5 +26,6 @@ Version numbers are the canvas versions of Main.dc.html unless noted.
 - dev only: disco darkening removed (all elements back to normal). Title light dots removed. Button and title glow now fades with the disco ball (glow strength follows the ball height).
 - dev only: Pick a track heading and paragraph moved into the left column, above the list. Picture column starts at the top, aligned with the heading, and stays sticky while the list scrolls.
 - dev only: disc opposite-end stop changed from #816a99 to #6029a9 (the darkest plum #1a0b2e lightened 30 points in HSL), on both discs.
+- dev only: button and title glow fades out as the ball rises out of view (over the last 120px of ball height). Glow strength written to 3 decimals to avoid stepping. Track names 22px.
 
 Current state (after v69): the sprite path in the GitHub copy points to assets/, where the canvas copy uses /_blob/.

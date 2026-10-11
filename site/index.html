@@ -118,7 +118,7 @@ button:focus-visible,a:focus-visible{outline:3px solid #ffd166;outline-offset:3p
         <div style="display:flex;flex-direction:column">
         <sc-for list="{{projects}}" as="p" hint-placeholder-count="5">
           <button onMouseEnter="{{p.pick}}" onFocus="{{p.pick}}" onClick="{{p.pick}}" style="{{p.rowStyle}}">
-            <span style="display:flex;align-items:baseline;gap:14px;min-width:0"><span style="font-size:13px;font-weight:500;opacity:0.45;flex:0 0 auto">{{p.no}}</span><span style="font-family:'Bricolage Grotesque';font-weight:800;font-size:28px;letter-spacing:-0.5px;text-align:left">{{p.name}}</span></span>
+            <span style="display:flex;align-items:baseline;gap:14px;min-width:0"><span style="font-size:13px;font-weight:500;opacity:0.45;flex:0 0 auto">{{p.no}}</span><span style="font-family:'Bricolage Grotesque';font-weight:800;font-size:22px;letter-spacing:-0.3px;text-align:left">{{p.name}}</span></span>
             <span style="font-size:15px;font-weight:500;text-align:right">{{p.tag}}</span>
           </button>
         </sc-for>
@@ -375,7 +375,7 @@ class Component extends DCLogic {
     }
     const topNow = (document.scrollingElement || document.documentElement).scrollTop;
     if (topNow !== this.lastTop) { this.lastTop = topNow; this.lastMove = now; }
-    this.glowA = this.disco ? 1 : Math.min(1, this.L / 240);
+    this.glowA = this.disco ? 1 : Math.min(1, this.L / 120);
     if (!this.atBottom()) { this.armed = false; this.playing = false; }
     else if (!this.armed && now - this.lastMove > 350) this.armed = true;
     if (this.playing) {
@@ -512,8 +512,8 @@ class Component extends DCLogic {
       wordStyle = 'position:fixed;inset:0;display:flex;align-items:center;justify-content:center;z-index:35;pointer-events:none;font-family:Bricolage Grotesque,sans-serif;font-weight:800;font-size:min(24vw,280px);letter-spacing:-0.04em;color:' + WD[wi][2] + ';-webkit-text-stroke:3px #1a0b2e;text-shadow:0 8px 0 #1a0b2e,0 0 40px rgba(0,0,0,0.5);transform:scale(' + sc + ');opacity:' + op;
     }
     const ringStyle = 'position:fixed;right:90px;bottom:130px;width:120px;height:120px;border-radius:50%;border:6px solid rgba(255,209,102,0.85);box-sizing:border-box;pointer-events:none;z-index:29;transform:scale(' + (1 + Math.max(age, 0) * 12) + ');opacity:' + (age >= 0 && age < 0.8 ? 0.7 * Math.exp(-age * 5) : 0);
-    const glow = this.glowA > 0 ? 'animation:glow 1.4s ease-in-out infinite;--ga:' + this.glowA.toFixed(2) : '';
-    const glowText = this.glowA > 0 ? 'animation:glowText 1.4s ease-in-out infinite;--ga:' + this.glowA.toFixed(2) : '';
+    const glow = this.glowA > 0 ? 'animation:glow 1.4s ease-in-out infinite;--ga:' + this.glowA.toFixed(3) : '';
+    const glowText = this.glowA > 0 ? 'animation:glowText 1.4s ease-in-out infinite;--ga:' + this.glowA.toFixed(3) : '';
     const pops = this.pops.map(pp => ({ text: pp.text, style: pp.css }));
     const counts = {};
     this.donors.forEach((d) => { counts[d.org] = (counts[d.org] || 0) + 1; });
