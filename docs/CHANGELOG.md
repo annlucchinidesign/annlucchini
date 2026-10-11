@@ -19,5 +19,6 @@ Version numbers are the canvas versions of Main.dc.html unless noted.
 - dev only: 90s scratch-pop shapes replaced with a sparkle star (single) and a 5 by 2 star grid, in yellow.
 - dev only: yellow wave in the strip is 15% taller (amplitude 12px to 13.8px). Bottom dancer fix: it arms after the page has stopped moving, so pushing at the bottom no longer blocks it.
 - dev only: wave amplitude raised to 20px (from 13.8px). The Etsy "shop" highlight now covers the whole word.
+- dev only: track section on a 4/6 grid (list 4, picture 6; stacks on screens 820px and under). Picture is 520px tall, track names 28px so the longest fits on one line.
 
 Current state (after v69): the sprite path in the GitHub copy points to assets/, where the canvas copy uses /_blob/.
