@@ -1,0 +1,567 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Disco Floor</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&family=DM+Sans:wght@400;500;700&family=Bungee&family=Bangers&family=Rubik+Mono+One&family=Press+Start+2P&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#1a0b2e;font-family:'DM Sans',sans-serif}
+a{color:#ffd166}a:hover{color:#06d6a0}
+button{font-family:inherit;cursor:pointer}
+button:focus-visible,a:focus-visible{outline:3px solid #ffd166;outline-offset:3px}
+@media (prefers-reduced-motion: no-preference){.spin{animation:sp 24s linear infinite}@keyframes sp{to{transform:rotate(360deg)}}}
+.strip-track{display:flex;width:max-content;animation:strip 55s linear infinite}.strip-item{white-space:nowrap;padding-right:0.5em}@media (prefers-reduced-motion: reduce){.strip-track{animation:none}}@keyframes strip{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.wv{display:inline-block;white-space:pre;transform-origin:50% 60%;animation:ride 55s linear infinite}@keyframes ride{0.0%{transform:translateY(calc(12.0px * sin(var(--ph) - 0.00000rad) + 3.0px * sin(0.00000rad))) rotate(calc(8deg * cos(var(--ph) - 0.00000rad)))}4.17%{transform:translateY(calc(12.0px * sin(var(--ph) - 0.52360rad) + 3.0px * sin(1.30900rad))) rotate(calc(8deg * cos(var(--ph) - 0.52360rad)))}8.33%{transform:translateY(calc(12.0px * sin(var(--ph) - 1.04720rad) + 3.0px * sin(2.61799rad))) rotate(calc(8deg * cos(var(--ph) - 1.04720rad)))}12.5%{transform:translateY(calc(12.0px * sin(var(--ph) - 1.57080rad) + 3.0px * sin(3.92699rad))) rotate(calc(8deg * cos(var(--ph) - 1.57080rad)))}16.67%{transform:translateY(calc(12.0px * sin(var(--ph) - 2.09440rad) + 3.0px * sin(5.23599rad))) rotate(calc(8deg * cos(var(--ph) - 2.09440rad)))}20.83%{transform:translateY(calc(12.0px * sin(var(--ph) - 2.61799rad) + 3.0px * sin(6.54498rad))) rotate(calc(8deg * cos(var(--ph) - 2.61799rad)))}25.0%{transform:translateY(calc(12.0px * sin(var(--ph) - 3.14159rad) + 3.0px * sin(7.85398rad))) rotate(calc(8deg * cos(var(--ph) - 3.14159rad)))}29.17%{transform:translateY(calc(12.0px * sin(var(--ph) - 3.66519rad) + 3.0px * sin(9.16298rad))) rotate(calc(8deg * cos(var(--ph) - 3.66519rad)))}33.33%{transform:translateY(calc(12.0px * sin(var(--ph) - 4.18879rad) + 3.0px * sin(10.47198rad))) rotate(calc(8deg * cos(var(--ph) - 4.18879rad)))}37.5%{transform:translateY(calc(12.0px * sin(var(--ph) - 4.71239rad) + 3.0px * sin(11.78097rad))) rotate(calc(8deg * cos(var(--ph) - 4.71239rad)))}41.67%{transform:translateY(calc(12.0px * sin(var(--ph) - 5.23599rad) + 3.0px * sin(13.08997rad))) rotate(calc(8deg * cos(var(--ph) - 5.23599rad)))}45.83%{transform:translateY(calc(12.0px * sin(var(--ph) - 5.75959rad) + 3.0px * sin(14.39897rad))) rotate(calc(8deg * cos(var(--ph) - 5.75959rad)))}50.0%{transform:translateY(calc(12.0px * sin(var(--ph) - 6.28319rad) + 3.0px * sin(15.70796rad))) rotate(calc(8deg * cos(var(--ph) - 6.28319rad)))}54.17%{transform:translateY(calc(12.0px * sin(var(--ph) - 6.80678rad) + 3.0px * sin(17.01696rad))) rotate(calc(8deg * cos(var(--ph) - 6.80678rad)))}58.33%{transform:translateY(calc(12.0px * sin(var(--ph) - 7.33038rad) + 3.0px * sin(18.32596rad))) rotate(calc(8deg * cos(var(--ph) - 7.33038rad)))}62.5%{transform:translateY(calc(12.0px * sin(var(--ph) - 7.85398rad) + 3.0px * sin(19.63495rad))) rotate(calc(8deg * cos(var(--ph) - 7.85398rad)))}66.67%{transform:translateY(calc(12.0px * sin(var(--ph) - 8.37758rad) + 3.0px * sin(20.94395rad))) rotate(calc(8deg * cos(var(--ph) - 8.37758rad)))}70.83%{transform:translateY(calc(12.0px * sin(var(--ph) - 8.90118rad) + 3.0px * sin(22.25295rad))) rotate(calc(8deg * cos(var(--ph) - 8.90118rad)))}75.0%{transform:translateY(calc(12.0px * sin(var(--ph) - 9.42478rad) + 3.0px * sin(23.56194rad))) rotate(calc(8deg * cos(var(--ph) - 9.42478rad)))}79.17%{transform:translateY(calc(12.0px * sin(var(--ph) - 9.94838rad) + 3.0px * sin(24.87094rad))) rotate(calc(8deg * cos(var(--ph) - 9.94838rad)))}83.33%{transform:translateY(calc(12.0px * sin(var(--ph) - 10.47198rad) + 3.0px * sin(26.17994rad))) rotate(calc(8deg * cos(var(--ph) - 10.47198rad)))}87.5%{transform:translateY(calc(12.0px * sin(var(--ph) - 10.99557rad) + 3.0px * sin(27.48894rad))) rotate(calc(8deg * cos(var(--ph) - 10.99557rad)))}91.67%{transform:translateY(calc(12.0px * sin(var(--ph) - 11.51917rad) + 3.0px * sin(28.79793rad))) rotate(calc(8deg * cos(var(--ph) - 11.51917rad)))}95.83%{transform:translateY(calc(12.0px * sin(var(--ph) - 12.04277rad) + 3.0px * sin(30.10693rad))) rotate(calc(8deg * cos(var(--ph) - 12.04277rad)))}100.0%{transform:translateY(calc(12.0px * sin(var(--ph) - 12.56637rad) + 3.0px * sin(31.41593rad))) rotate(calc(8deg * cos(var(--ph) - 12.56637rad)))}}@keyframes glowText{0%,100%{text-shadow:0 0 10px #ff4fa3,0 0 22px #ff4fa3}33%{text-shadow:0 0 10px #06d6a0,0 0 22px #06d6a0}66%{text-shadow:0 0 10px #ffd166,0 0 22px #ffd166}}@keyframes glow{0%,100%{text-shadow:0 0 10px #ff4fa3,0 0 22px #ff4fa3;box-shadow:0 0 14px #ff4fa3,0 0 28px #ff4fa3}33%{text-shadow:0 0 10px #06d6a0,0 0 22px #06d6a0;box-shadow:0 0 14px #06d6a0,0 0 28px #06d6a0}66%{text-shadow:0 0 10px #ffd166,0 0 22px #ffd166;box-shadow:0 0 14px #ffd166,0 0 28px #ffd166}}@keyframes wpop{0%{opacity:0;transform:translate(-50%,-50%) rotate(var(--r)) scale(0.2)}12%{opacity:1;transform:translate(-50%,-50%) rotate(var(--r)) scale(1.25)}24%{transform:translate(-50%,-50%) rotate(var(--r)) scale(1)}78%{opacity:1;transform:translate(-50%,-50%) rotate(var(--r)) scale(1)}100%{opacity:0;transform:translate(-50%,-62%) rotate(var(--r)) scale(0.85)}}@keyframes wpopB{0%{opacity:0;transform:translate(-50%,-50%) rotate(var(--r)) scale(0.2)}12%{opacity:1;transform:translate(-50%,-50%) rotate(var(--r)) scale(1.25)}24%{transform:translate(-50%,-50%) rotate(var(--r)) scale(1)}78%{opacity:1;transform:translate(-50%,-50%) rotate(var(--r)) scale(1)}100%{opacity:0;transform:translate(-50%,-62%) rotate(var(--r)) scale(0.85)}}@keyframes medalpulse{0%,100%{transform:scale(1);filter:drop-shadow(0 0 0 #ffd166)}50%{transform:scale(1.07);filter:drop-shadow(0 0 14px #ffd166)}}@keyframes lcdscroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}@media (prefers-reduced-motion: reduce){.lcd-run{animation:none !important}}.wv.sp{width:0.3em}.wv.st{margin:0 0.7em}@media (prefers-reduced-motion: reduce){.wv{animation:none}}
+</style>
+</helmet>
+<div style="width:100%;max-width:1440px;margin:0 auto;{{bgCss}};color:#fff4e6;overflow:hidden;position:relative">
+  <!-- easter egg: disco ball on a cord -->
+  <div style="{{ballWrapStyle}}"><div style="width:2px;height:120px;background:#fff4e6"></div><div style="{{ballStyle}}"><sc-for list="{{ballSpots}}" as="bs" hint-placeholder-count="0"><div style="{{bs.style}}"></div></sc-for></div></div>
+  <div style="{{discoStyle}}" aria-hidden="true">
+    <div style="{{raysStyle}}"></div>
+    <div style="position:absolute;inset:0;mix-blend-mode:screen">
+      <sc-for list="{{spots}}" as="sp" hint-placeholder-count="0"><div style="{{sp.style}}"></div></sc-for>
+    </div>
+  </div>
+  <!-- easter egg: bottom-of-page dancer, scrubbed by scroll -->
+  <div style="{{danceStyle}}" aria-hidden="true"></div>
+  <div style="{{wordStyle}}" aria-hidden="true">{{word}}</div>
+  <sc-for list="{{pops}}" as="pp" hint-placeholder-count="0"><div style="{{pp.style}}">{{pp.text}}</div></sc-for>
+  <div style="{{donateStyle}}" role="dialog" aria-modal="true" aria-label="Donate to GCF">
+    <div style="background:#2a1647;border:2px solid #4a2c6e;border-radius:28px;padding:32px;max-width:560px;width:100%;max-height:90vh;overflow:auto;box-sizing:border-box;color:#fff4e6;font-family:'DM Sans',sans-serif">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+        <div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:30px">Donate to GCF</div>
+        <button onClick="{{closeDonate}}" aria-label="Close" style="background:none;border:none;color:#fff4e6;font-size:28px;cursor:pointer;min-width:44px;min-height:44px">&times;</button>
+      </div>
+      <p style="font-size:15px;line-height:1.5;color:#e8d9f5;margin:0 0 20px">Generosity Children's Foundation, a children's home in Uganda. Pledges recorded here count as donations once GCF confirms receipt.</p>
+      <input aria-label="Your name" placeholder="Your name" value="{{form.name}}" onInput="{{setName}}" style="display:block;width:100%;box-sizing:border-box;height:42px;padding:0 14px;border-radius:12px;border:2px solid #4a2c6e;background:#1a0b2e;color:#fff4e6;font-size:15px;font-family:inherit;margin-bottom:12px">
+      <input aria-label="Email" type="email" placeholder="Email" value="{{form.email}}" onInput="{{setEmail}}" style="display:block;width:100%;box-sizing:border-box;height:42px;padding:0 14px;border-radius:12px;border:2px solid #4a2c6e;background:#1a0b2e;color:#fff4e6;font-size:15px;font-family:inherit;margin-bottom:12px">
+      <input aria-label="Organization" placeholder="Organization" value="{{form.org}}" onInput="{{setOrg}}" style="display:block;width:100%;box-sizing:border-box;height:42px;padding:0 14px;border-radius:12px;border:2px solid #4a2c6e;background:#1a0b2e;color:#fff4e6;font-size:15px;font-family:inherit;font-size:13px;margin-bottom:12px">
+      <input aria-label="Amount in euros" type="number" min="1" placeholder="Amount (EUR)" value="{{form.amount}}" onInput="{{setAmount}}" style="display:block;width:50%;box-sizing:border-box;height:42px;padding:0 14px;border-radius:12px;border:2px solid #4a2c6e;background:#1a0b2e;color:#fff4e6;font-size:15px;font-family:inherit;margin-bottom:12px">
+      <label style="display:flex;align-items:center;gap:10px;margin:8px 0 16px;cursor:pointer;min-height:44px"><input type="checkbox" {{notifyAttr}} onChange="{{toggleNotify}}">Notify me if I get dethroned</label>
+      <button onClick="{{submitDonate}}" style="background:#06d6a0;color:#1a0b2e;border:none;padding:14px 28px;border-radius:999px;font-weight:700;font-size:17px;cursor:pointer;font-family:inherit;min-height:44px">Add my donation</button>
+      <div aria-live="polite" style="margin-top:14px;min-height:22px;color:#ffd166;font-weight:700">{{donateMsg}}</div>
+      <div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:22px;margin:24px 0 10px">Leaderboard</div>
+      <div style="{{medalStyle}}">
+        <div style="flex:1 1 auto"><div style="font-weight:700;color:#ffd166">First donor medal</div><div style="font-size:14px;color:#e8d9f5">No donations yet. Be the first to earn it.</div></div>
+        <svg aria-hidden="true" width="72" height="72" viewBox="0 0 64 64" style="flex:0 0 72px;animation:medalpulse 2.4s ease-in-out infinite"><path d="M20 4 L30 24 L24 24 L14 4Z" fill="#ff4fa3"/><path d="M44 4 L34 24 L40 24 L50 4Z" fill="#06d6a0"/><circle cx="32" cy="40" r="20" fill="#ffd166" stroke="#1a0b2e" stroke-width="3"/><text x="32" y="46" text-anchor="middle" font-size="16" font-family="Bricolage Grotesque" font-weight="800" fill="#1a0b2e">1</text></svg>
+      </div>
+      <sc-for list="{{board}}" as="row" hint-placeholder-count="0"><div style="{{row.style}}"><span style="font-weight:800;width:30px">{{row.rank}}</span><span style="flex:1 1 auto">{{row.name}} <span style="font-size:12px;color:#e8d9f5">{{row.org}}</span></span><span style="font-weight:800">EUR {{row.amount}}</span><span style="{{row.pillStyle}}">{{row.badges}}</span></div></sc-for>
+      <div style="margin-top:20px;padding-top:16px;border-top:2px solid #4a2c6e;font-size:14px;color:#e8d9f5"><span style="opacity:0.7">Donation page link coming soon</span></div>
+    </div>
+  </div>
+  <div style="{{boomStyle}}">
+  <!-- nav -->
+  <div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center;padding:28px 64px">
+    <div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:24px;letter-spacing:-0.5px;{{glowText}}">ann lucchini<span style="color:#06d6a0">.</span></div>
+    <div style="display:flex;flex-wrap:wrap;gap:28px;font-weight:500;font-size:16px;align-items:center">
+      <a href="#work" style="text-decoration:none;color:#fff4e6">Work</a>
+      <a href="#heart" style="text-decoration:none;color:#fff4e6">Giving back</a>
+      <a href="#hello" style="text-decoration:none;color:#1a0b2e;background:#ffd166;padding:10px 22px;border-radius:999px;font-weight:700;{{glow}}">Say hello</a>
+    </div>
+  </div>
+  <!-- hero -->
+  <div style="position:relative;padding:72px 64px 120px;display:flex;flex-wrap:wrap;gap:48px;align-items:center">
+    <div style="flex:1 1 560px;min-width:0;position:relative;z-index:2">
+      <div style="display:inline-block;border:2px solid #ffd166;color:#ffd166;border-radius:999px;padding:6px 16px;font-weight:700;font-size:14px;letter-spacing:1px;text-transform:uppercase">Brand &amp; visual identity designer</div>
+      <h1 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:112px;line-height:0.92;letter-spacing:-4px;margin:28px 0 24px">Designs that<br>sell, shine<br><span style="color:#06d6a0">&amp; stick.</span></h1>
+      <p style="font-size:21px;line-height:1.5;max-width:560px;margin:0 0 36px;color:#e8d9f5">Fourteen years of brand work for Under Armour and Asurion, plus a product brand of my own with 4,560+ sales. I design the thing, then I sell the thing.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:16px">
+        <a href="#work" style="text-decoration:none;background:#06d6a0;color:#1a0b2e;font-weight:700;padding:16px 32px;border-radius:999px;font-size:18px;{{glow}}">See the work</a>
+      </div>
+    </div>
+    <div style="flex:1 1 380px;min-width:0;display:flex;flex-direction:column;align-items:center;gap:16px;position:relative;z-index:1">
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:20px;padding:24px;border-radius:28px;background:#2a1647;border:2px solid #4a2c6e">
+        <div style="position:relative;width:280px;max-width:100%">
+        <svg width="280" height="280" viewBox="0 0 280 280" aria-hidden="true" style="position:absolute;left:0;top:0;overflow:visible;pointer-events:none;z-index:3">
+          <line x1="0" y1="0" x2="{{tipA.x}}" y2="{{tipA.y}}" stroke="#fff4e6" stroke-width="5" stroke-linecap="round"></line>
+          <circle cx="0" cy="0" r="14" fill="#fff4e6" stroke="#1a0b2e" stroke-width="3"></circle>
+          <circle cx="{{tipA.x}}" cy="{{tipA.y}}" r="8" fill="{{tipA.color}}" stroke="#fff" stroke-width="3"></circle>
+        </svg>
+        <div onMouseDown="{{grab0}}" onTouchStart="{{grab0}}" style="{{disc0Style}}">
+          <div style="width:34%;height:34%;border-radius:50%;background:#1a0b2e;display:flex;align-items:center;justify-content:center;text-align:center;font-family:'Bricolage Grotesque';font-weight:800;font-size:13px;line-height:1.1;color:#ffd166;pointer-events:none">[ IMAGE<br>A-SIDE ]</div>
+        </div>
+        </div>
+        <div style="position:relative;width:280px;max-width:100%">
+        <svg width="280" height="280" viewBox="0 0 280 280" aria-hidden="true" style="position:absolute;left:0;top:0;overflow:visible;pointer-events:none;z-index:3">
+          <line x1="280" y1="0" x2="{{tipB.x}}" y2="{{tipB.y}}" stroke="#fff4e6" stroke-width="5" stroke-linecap="round"></line>
+          <circle cx="280" cy="0" r="14" fill="#fff4e6" stroke="#1a0b2e" stroke-width="3"></circle>
+          <circle cx="{{tipB.x}}" cy="{{tipB.y}}" r="8" fill="{{tipB.color}}" stroke="#fff" stroke-width="3"></circle>
+        </svg>
+        <div onMouseDown="{{grab1}}" onTouchStart="{{grab1}}" style="{{disc1Style}}">
+          <div style="width:34%;height:34%;border-radius:50%;background:#1a0b2e;display:flex;align-items:center;justify-content:center;text-align:center;font-family:'Bricolage Grotesque';font-weight:800;font-size:13px;line-height:1.1;color:#06d6a0;pointer-events:none">[ IMAGE<br>B-SIDE ]</div>
+        </div>
+        </div>
+      </div>
+      <div style="font-size:14px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#ffd166">Grab a record. Scratch it.</div>
+    </div>
+  </div>
+  <!-- marquee strip -->
+  <div style="background:transparent;color:#ffd166;padding:18px 0;overflow:hidden;font-family:'Bricolage Grotesque';font-weight:800;font-size:38px;line-height:1.3">
+    <div class="strip-track"><div style="display:flex;white-space:nowrap"><span class="wv" style="--ph:0.00000rad">4</span><span class="wv" style="--ph:0.14612rad">,</span><span class="wv" style="--ph:0.29224rad">5</span><span class="wv" style="--ph:0.43836rad">6</span><span class="wv" style="--ph:0.58448rad">0</span><span class="wv" style="--ph:0.73060rad">+</span><span class="wv sp" style="--ph:0.87672rad"></span><span class="wv" style="--ph:1.02284rad">s</span><span class="wv" style="--ph:1.16896rad">a</span><span class="wv" style="--ph:1.31509rad">l</span><span class="wv" style="--ph:1.46121rad">e</span><span class="wv" style="--ph:1.60733rad">s</span><span class="wv sp" style="--ph:1.75345rad"></span><span class="wv st" style="--ph:1.89957rad">✳︎</span><span class="wv sp" style="--ph:2.19181rad"></span><span class="wv" style="--ph:2.33793rad">4</span><span class="wv" style="--ph:2.48405rad">.</span><span class="wv" style="--ph:2.63017rad">9</span><span class="wv sp" style="--ph:2.77629rad"></span><span class="wv" style="--ph:2.92241rad">f</span><span class="wv" style="--ph:3.06853rad">r</span><span class="wv" style="--ph:3.21465rad">o</span><span class="wv" style="--ph:3.36077rad">m</span><span class="wv sp" style="--ph:3.50689rad"></span><span class="wv" style="--ph:3.65301rad">8</span><span class="wv" style="--ph:3.79914rad">7</span><span class="wv" style="--ph:3.94526rad">6</span><span class="wv sp" style="--ph:4.09138rad"></span><span class="wv" style="--ph:4.23750rad">r</span><span class="wv" style="--ph:4.38362rad">e</span><span class="wv" style="--ph:4.52974rad">v</span><span class="wv" style="--ph:4.67586rad">i</span><span class="wv" style="--ph:4.82198rad">e</span><span class="wv" style="--ph:4.96810rad">w</span><span class="wv" style="--ph:5.11422rad">s</span><span class="wv sp" style="--ph:5.26034rad"></span><span class="wv st" style="--ph:5.40646rad">✳︎</span><span class="wv sp" style="--ph:5.69870rad"></span><span class="wv" style="--ph:5.84482rad">E</span><span class="wv" style="--ph:5.99094rad">t</span><span class="wv" style="--ph:6.13706rad">s</span><span class="wv" style="--ph:6.28319rad">y</span><span class="wv sp" style="--ph:6.42931rad"></span><span class="wv" style="--ph:6.57543rad">S</span><span class="wv" style="--ph:6.72155rad">t</span><span class="wv" style="--ph:6.86767rad">a</span><span class="wv" style="--ph:7.01379rad">r</span><span class="wv sp" style="--ph:7.15991rad"></span><span class="wv" style="--ph:7.30603rad">S</span><span class="wv" style="--ph:7.45215rad">e</span><span class="wv" style="--ph:7.59827rad">l</span><span class="wv" style="--ph:7.74439rad">l</span><span class="wv" style="--ph:7.89051rad">e</span><span class="wv" style="--ph:8.03663rad">r</span><span class="wv sp" style="--ph:8.18275rad"></span><span class="wv st" style="--ph:8.32887rad">✳︎</span><span class="wv sp" style="--ph:8.62111rad"></span><span class="wv" style="--ph:8.76724rad">2</span><span class="wv" style="--ph:8.91336rad">0</span><span class="wv" style="--ph:9.05948rad">0</span><span class="wv" style="--ph:9.20560rad">+</span><span class="wv sp" style="--ph:9.35172rad"></span><span class="wv" style="--ph:9.49784rad">o</span><span class="wv" style="--ph:9.64396rad">r</span><span class="wv" style="--ph:9.79008rad">i</span><span class="wv" style="--ph:9.93620rad">g</span><span class="wv" style="--ph:10.08232rad">i</span><span class="wv" style="--ph:10.22844rad">n</span><span class="wv" style="--ph:10.37456rad">a</span><span class="wv" style="--ph:10.52068rad">l</span><span class="wv sp" style="--ph:10.66680rad"></span><span class="wv" style="--ph:10.81292rad">p</span><span class="wv" style="--ph:10.95904rad">r</span><span class="wv" style="--ph:11.10516rad">o</span><span class="wv" style="--ph:11.25129rad">d</span><span class="wv" style="--ph:11.39741rad">u</span><span class="wv" style="--ph:11.54353rad">c</span><span class="wv" style="--ph:11.68965rad">t</span><span class="wv" style="--ph:11.83577rad">s</span><span class="wv sp" style="--ph:11.98189rad"></span><span class="wv st" style="--ph:12.12801rad">✳︎</span><span class="wv sp" style="--ph:12.42025rad"></span></div><div style="display:flex;white-space:nowrap" aria-hidden="true"><span class="wv" style="--ph:0.00000rad">4</span><span class="wv" style="--ph:0.14612rad">,</span><span class="wv" style="--ph:0.29224rad">5</span><span class="wv" style="--ph:0.43836rad">6</span><span class="wv" style="--ph:0.58448rad">0</span><span class="wv" style="--ph:0.73060rad">+</span><span class="wv sp" style="--ph:0.87672rad"></span><span class="wv" style="--ph:1.02284rad">s</span><span class="wv" style="--ph:1.16896rad">a</span><span class="wv" style="--ph:1.31509rad">l</span><span class="wv" style="--ph:1.46121rad">e</span><span class="wv" style="--ph:1.60733rad">s</span><span class="wv sp" style="--ph:1.75345rad"></span><span class="wv st" style="--ph:1.89957rad">✳︎</span><span class="wv sp" style="--ph:2.19181rad"></span><span class="wv" style="--ph:2.33793rad">4</span><span class="wv" style="--ph:2.48405rad">.</span><span class="wv" style="--ph:2.63017rad">9</span><span class="wv sp" style="--ph:2.77629rad"></span><span class="wv" style="--ph:2.92241rad">f</span><span class="wv" style="--ph:3.06853rad">r</span><span class="wv" style="--ph:3.21465rad">o</span><span class="wv" style="--ph:3.36077rad">m</span><span class="wv sp" style="--ph:3.50689rad"></span><span class="wv" style="--ph:3.65301rad">8</span><span class="wv" style="--ph:3.79914rad">7</span><span class="wv" style="--ph:3.94526rad">6</span><span class="wv sp" style="--ph:4.09138rad"></span><span class="wv" style="--ph:4.23750rad">r</span><span class="wv" style="--ph:4.38362rad">e</span><span class="wv" style="--ph:4.52974rad">v</span><span class="wv" style="--ph:4.67586rad">i</span><span class="wv" style="--ph:4.82198rad">e</span><span class="wv" style="--ph:4.96810rad">w</span><span class="wv" style="--ph:5.11422rad">s</span><span class="wv sp" style="--ph:5.26034rad"></span><span class="wv st" style="--ph:5.40646rad">✳︎</span><span class="wv sp" style="--ph:5.69870rad"></span><span class="wv" style="--ph:5.84482rad">E</span><span class="wv" style="--ph:5.99094rad">t</span><span class="wv" style="--ph:6.13706rad">s</span><span class="wv" style="--ph:6.28319rad">y</span><span class="wv sp" style="--ph:6.42931rad"></span><span class="wv" style="--ph:6.57543rad">S</span><span class="wv" style="--ph:6.72155rad">t</span><span class="wv" style="--ph:6.86767rad">a</span><span class="wv" style="--ph:7.01379rad">r</span><span class="wv sp" style="--ph:7.15991rad"></span><span class="wv" style="--ph:7.30603rad">S</span><span class="wv" style="--ph:7.45215rad">e</span><span class="wv" style="--ph:7.59827rad">l</span><span class="wv" style="--ph:7.74439rad">l</span><span class="wv" style="--ph:7.89051rad">e</span><span class="wv" style="--ph:8.03663rad">r</span><span class="wv sp" style="--ph:8.18275rad"></span><span class="wv st" style="--ph:8.32887rad">✳︎</span><span class="wv sp" style="--ph:8.62111rad"></span><span class="wv" style="--ph:8.76724rad">2</span><span class="wv" style="--ph:8.91336rad">0</span><span class="wv" style="--ph:9.05948rad">0</span><span class="wv" style="--ph:9.20560rad">+</span><span class="wv sp" style="--ph:9.35172rad"></span><span class="wv" style="--ph:9.49784rad">o</span><span class="wv" style="--ph:9.64396rad">r</span><span class="wv" style="--ph:9.79008rad">i</span><span class="wv" style="--ph:9.93620rad">g</span><span class="wv" style="--ph:10.08232rad">i</span><span class="wv" style="--ph:10.22844rad">n</span><span class="wv" style="--ph:10.37456rad">a</span><span class="wv" style="--ph:10.52068rad">l</span><span class="wv sp" style="--ph:10.66680rad"></span><span class="wv" style="--ph:10.81292rad">p</span><span class="wv" style="--ph:10.95904rad">r</span><span class="wv" style="--ph:11.10516rad">o</span><span class="wv" style="--ph:11.25129rad">d</span><span class="wv" style="--ph:11.39741rad">u</span><span class="wv" style="--ph:11.54353rad">c</span><span class="wv" style="--ph:11.68965rad">t</span><span class="wv" style="--ph:11.83577rad">s</span><span class="wv sp" style="--ph:11.98189rad"></span><span class="wv st" style="--ph:12.12801rad">✳︎</span><span class="wv sp" style="--ph:12.42025rad"></span></div></div>
+  </div>
+  <!-- work: hover list -->
+  <div id="work" style="padding:112px 64px 40px">
+    <h2 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:64px;letter-spacing:-2px;margin:0 0 12px">Pick a track.</h2>
+    <p style="font-size:18px;color:#e8d9f5;margin:0 0 48px">Hover or tab through the list. The preview changes with you.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:48px">
+      <div style="flex:1 1 480px;min-width:0;display:flex;flex-direction:column">
+        <sc-for list="{{projects}}" as="p" hint-placeholder-count="5">
+          <button onMouseEnter="{{p.pick}}" onFocus="{{p.pick}}" onClick="{{p.pick}}" style="{{p.rowStyle}}">
+            <span style="display:flex;align-items:baseline;gap:14px;min-width:0"><span style="font-size:13px;font-weight:500;opacity:0.45;flex:0 0 auto">{{p.no}}</span><span style="font-family:'Bricolage Grotesque';font-weight:800;font-size:40px;letter-spacing:-1px;text-align:left">{{p.name}}</span></span>
+            <span style="font-size:15px;font-weight:500;text-align:right">{{p.tag}}</span>
+          </button>
+        </sc-for>
+      </div>
+      <div style="flex:1 1 440px;min-width:0">
+        <div style="{{previewStyle}}">
+          <div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:30px;line-height:1.1;padding:32px;text-align:center">[ {{current.name}} IMAGE ]</div>
+        </div>
+        <p style="font-size:18px;line-height:1.55;margin:20px 0 0;color:#e8d9f5">{{current.blurb}}</p>
+      </div>
+    </div>
+  </div>
+  <!-- shop -->
+  <div id="shop" style="perspective:1800px;margin:96px 64px 0">
+  <div style="{{flipStyle}}">
+    <div style="background:#06d6a0;color:#1a0b2e;border-radius:40px;padding:64px;display:flex;flex-wrap:wrap;gap:48px;align-items:center;backface-visibility:hidden;-webkit-backface-visibility:hidden">
+      <div style="flex:1 1 440px;min-width:0">
+        <div style="font-weight:700;letter-spacing:1px;text-transform:uppercase;font-size:14px">The shop behind the portfolio</div>
+        <h2 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:60px;line-height:1;letter-spacing:-2px;margin:14px 0 20px">I built a brand, started with a baby on my hip.</h2>
+        <p style="font-size:19px;line-height:1.55;margin:0 0 28px">Three times I stepped away from corporate work as a mom. Each time I moved into building my own thing. Shop Cafe Disco sells pop-culture gifts and custom milestone plaques for creators, and I run all of it: design, production, storefront, customer service.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;margin:0 0 16px">
+          <span style="background:#1a0b2e;color:#fff4e6;border-radius:999px;padding:8px 16px;font-weight:700;font-size:15px">4.9/5 average</span>
+          <span style="background:#1a0b2e;color:#fff4e6;border-radius:999px;padding:8px 16px;font-weight:700;font-size:15px">876 reviews</span>
+          <span style="background:#1a0b2e;color:#fff4e6;border-radius:999px;padding:8px 16px;font-weight:700;font-size:15px">4,560+ sales</span>
+        </div>
+      </div>
+      <div id="shelf" role="region" aria-roledescription="carousel" aria-label="Product photos" onPointerDown="{{shelfDown}}" style="flex:1 1 360px;min-width:0;max-width:100%;position:relative;height:340px;border-radius:28px;overflow:hidden;background:#1a0b2e;color:#ffd166;box-sizing:border-box;touch-action:pan-y;user-select:none;cursor:grab">
+        <div style="{{prodStyle}}"><div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:26px;text-align:center;padding:24px;box-sizing:border-box">{{prodLabel}}</div></div>
+        <div style="position:absolute;left:0;right:0;bottom:12px;display:flex;justify-content:center;gap:10px;align-items:center">
+          <sc-for list="{{dots}}" as="dt" hint-placeholder-count="0"><button onClick="{{dt.pick}}" aria-label="{{dt.label}}" style="{{dt.style}}"></button></sc-for>
+        </div>
+      </div>
+    </div>
+    <div onPointerDown="{{shelfDown}}" style="position:absolute;inset:0;background:#1a0b2e;color:#fff4e6;border-radius:40px;padding:56px 64px;user-select:none;touch-action:pan-y;box-sizing:border-box;overflow:auto;transform:rotateY(180deg);backface-visibility:hidden;-webkit-backface-visibility:hidden">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap">
+        <div style="font-weight:700;letter-spacing:2px;text-transform:uppercase;font-size:13px;color:#ffd166">B-side</div>
+      </div>
+      <h2 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:56px;line-height:1;letter-spacing:-2px;margin:14px 0 10px">My mixtape to you</h2>
+      <p style="font-size:17px;line-height:1.5;color:#e8d9f5;margin:0 0 22px">Eight comebacks, for anyone heading back into the workforce.</p>
+      <sc-for list="{{mixRows}}" as="mr" hint-placeholder-count="0"><button onClick="{{mr.pick}}" style="{{mr.style}}"><span style="width:30px;flex:0 0 auto;font-size:13px;opacity:0.5">{{mr.no}}</span><span style="flex:1 1 auto;font-family:'Bricolage Grotesque';font-weight:800;font-size:22px">{{mr.t}}</span><span style="font-size:14px;color:#e8d9f5">{{mr.a}}</span></button></sc-for>
+      <a href="#" style="display:inline-block;margin-top:22px;background:#06d6a0;color:#1a0b2e;text-decoration:none;padding:14px 28px;border-radius:999px;font-weight:700">Listen on my Spotify playlist</a>
+    </div>
+  </div>
+  </div>
+  <!-- heart -->
+  <div id="heart" style="padding:112px 64px 40px;display:flex;flex-wrap:wrap;gap:48px;align-items:center">
+    <div style="flex:1 1 360px;min-width:0;height:300px;border-radius:50%/40%;background:#06d6a0;color:#1a0b2e;display:flex;align-items:center;justify-content:center;text-align:center;font-family:'Bricolage Grotesque';font-weight:800;font-size:24px;padding:24px;box-sizing:border-box">[ GCF FUNDRAISER GRAPHIC ]</div>
+    <div style="flex:1 1 440px;min-width:0">
+      <div style="display:inline-block;background:#06d6a0;color:#1a0b2e;border-radius:999px;padding:6px 16px;font-weight:700;font-size:14px;letter-spacing:1px;text-transform:uppercase;margin-bottom:16px">Bonus track</div>
+      <h2 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:52px;line-height:1;letter-spacing:-1.5px;margin:0 0 20px">Design that feeds kids.</h2>
+      <p style="font-size:19px;line-height:1.55;margin:0;color:#e8d9f5">I sit on the committee of Generosity Children's Foundation, a small children's home in Uganda. I designed the logo, built the site, set up donations, and make the graphics for our online fundraisers on Facebook and Instagram.</p>
+      <button onClick="{{openDonate}}" style="margin-top:24px;background:#ffd166;color:#1a0b2e;border:none;padding:16px 32px;border-radius:999px;font-weight:700;font-size:18px;cursor:pointer;font-family:inherit">Donate to GCF</button>
+    </div>
+  </div>
+  <!-- contact -->
+  <div id="hello" style="padding:96px 64px 80px;text-align:center">
+    <h2 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:96px;letter-spacing:-3px;line-height:0.95;margin:0 0 28px">You pick<br>the next <span style="color:#ffd166">track.</span></h2>
+    <a href="mailto:annlucchinidesign@gmail.com" style="font-size:26px;font-weight:700">annlucchinidesign@gmail.com</a>
+    <div style="margin-top:12px;color:#e8d9f5;font-size:16px">Zaandam, Netherlands &middot; open to hybrid roles in the Amsterdam area</div>
+  </div>
+</div>
+  </div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1560}}'>
+class Component extends DCLogic {
+  constructor(props){
+    super(props);
+    this.state = { active: 0, a0: 0, a1: 0, drag: -1, L: 0, op: 0, t: 0 };
+    this.Q = 0; this.lastPush = 0; this.fullAt = 0; this.armed = false; this.lastAny = 0; this.playing = false; this.playStart = 0; this.boomedP = [false, false]; this.boomStart = -1e9; this.boomAmp = 1; this.pass = 0; this.exit = 0; this.beatT0 = 0;
+    this.L = 0; this.op = 0; this.disco = false; this.discoStart = 0; this.lastWheel = 0; this.ty = null;
+    this.stopsA = [['#1a0b2e',0],['#816a99',50],['#1a0b2e',100]];
+    this.stopsB = [['#1a0b2e',0],['#816a99',50],['#1a0b2e',100]];
+    this.fromA = 0; this.fromB = 90;
+    this.reduced = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+    this.ang = [0, 180]; this.vel = [0.6, -0.6]; this.base = [0.6, -0.6];
+    this.dragIdx = -1; this.last = 0; this.center = null;
+    this.pops = Array.from({ length: 10 }, () => ({ text: '', born: 0, css: 'display:none' })); this.popSlot = 0; this.lastPop = 0; this.popIdx = 0; this.popFlip = false;
+    this.sc = [0, 0]; this.labelX = [0, 0];
+    this.db = null; this.unsubDb = null; this.donors = []; this.donateOpen = false; this.donateMsg = ''; this.form = { name: '', org: '', email: '', amount: '', notify: false };
+    this.shelfIdx = 3; this.shelfDrag = false; this.shelfX0 = 0;
+    this.flipped = false; this.mixIdx = 0; this.mixOn = false;
+    this.mp3Tracks = [{ t: 'I WANT YOU BACK', a: 'JACKSON 5' }, { t: "I'M BACK", a: 'EMINEM' }, { t: 'BACK IN THE SADDLE', a: 'AEROSMITH' }];
+    this.popWords = ['wikky','wikkie','wah','waaah','whack','fresh','skrrr','woomp','woop','screech'];
+    this.popFonts = ["'Bungee'","'Bangers'","'Rubik Mono One'","'Press Start 2P'"];
+    this.popColors = ['#ff4fa3','#06d6a0','#ffd166','#3ec1ff','#b8ff3d','#fff4e6'];
+    this.popShapes = [
+      "width:130px;height:44px;background:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 130 44%22%3E%3Cpolyline points=%225,36 25,10 45,36 65,10 85,36 105,10 125,36%22 fill=%22none%22 stroke=%22%2306d6a0%22 stroke-width=%227%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22/%3E%3C/svg%3E') no-repeat center/contain;",
+      "width:150px;height:60px;background:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 150 60%22%3E%3Cpath d=%22M5 30 q18 -30 36 0 t36 0 t36 0 t36 0%22 fill=%22none%22 stroke=%22%23ff6b5a%22 stroke-width=%228%22 stroke-linecap=%22round%22/%3E%3C/svg%3E') no-repeat center/contain;",
+      "width:120px;height:62px;background:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 120 62%22%3E%3Cpath d=%22M6 56 A54 54 0 0 1 114 56 M18 56 A42 42 0 0 1 102 56 M30 56 A30 30 0 0 1 90 56%22 fill=%22none%22 stroke=%22%23ffd166%22 stroke-width=%228%22/%3E%3C/svg%3E') no-repeat center/contain;",
+      "width:0;height:0;border-left:34px solid transparent;border-right:34px solid transparent;border-bottom:60px solid #b388ff;",
+      "width:96px;height:96px;border-radius:50%;background:radial-gradient(circle,#ffd166 2px,transparent 2.6px) 0 0/14px 14px;",
+      "width:96px;height:96px;background:repeating-linear-gradient(45deg,#fff4e6 0 9px,#1a0b2e 9px 18px);",
+      "width:84px;height:84px;border-radius:50%;border:12px solid #06d6a0;",
+      "width:120px;height:60px;border-radius:120px 120px 0 0;background:radial-gradient(circle,#ff4fa3 2px,transparent 2.4px) 0 0/10px 10px;"
+    ];
+  }
+  connectDb = async () => {
+    try {
+      const cl = window.claude;
+      const db = cl && cl.use ? await cl.use('db') : null;
+      if (!db) return;
+      this.db = db;
+      this.unsubDb = db.collection('donations').orderBy('amount', 'desc').limit(50).onSnapshot(
+        (snap) => {
+          this.donors = snap.docs.filter((d) => d.exists).map((d) => ({ id: d.id, ...d.data() })).filter((x) => x && x.name);
+          this.setState({ ui: Date.now() });
+        },
+        () => { this.donateMsg = 'Leaderboard unavailable right now.'; this.setState({ ui: Date.now() }); }
+      );
+    } catch (e) { this.donateMsg = 'Leaderboard unavailable right now.'; }
+  };
+  submitDonate = async () => {
+    const name = (this.form.name || '').trim(), org = (this.form.org || '').trim(), email = (this.form.email || '').trim(), amt = Math.round(parseFloat(this.form.amount));
+    if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { this.donateMsg = 'That email does not look right.'; return this.setState({ ui: Date.now() }); }
+    if (!name || !org || !(amt >= 1)) { this.donateMsg = 'Please add your name, organization and an amount of at least EUR 1.'; return this.setState({ ui: Date.now() }); }
+    if (!this.db) { this.donateMsg = 'Saving is unavailable in this view, so nothing was recorded.'; return this.setState({ ui: Date.now() }); }
+    const prevTop = this.donors[0];
+    try {
+      await this.db.collection('donations').add({ name, org, amount: amt, notifyOnDethrone: !!this.form.notify, status: 'pledged', createdAt: new Date().toISOString() });
+      if (email) await this.db.collection('contacts').add({ name, org, email, notifyOnDethrone: !!this.form.notify, createdAt: new Date().toISOString() });
+      if (prevTop && amt > prevTop.amount && prevTop.notifyOnDethrone) {
+        await this.db.collection('dethrone-notices').add({ donationId: prevTop.id, newAmount: amt, createdAt: new Date().toISOString() });
+      }
+      this.form = { name: '', org: '', email: '', amount: '', notify: false };
+      this.donateMsg = 'Thanks! Your pledge is on the board. It counts as a donation once GCF confirms it.';
+    } catch (e) {
+      this.donateMsg = e && e.code === 'quota_exceeded' ? 'The board is full, so this could not be added.' : 'Could not save your pledge. Please try again.';
+    }
+    this.setState({ ui: Date.now() });
+  };
+  rgb(h){ return [1,3,5].map(i => parseInt(h.slice(i,i+2),16)); }
+  colorAt(stops, pct){
+    for (let i = 0; i < stops.length - 1; i++) {
+      const [c1,p1] = stops[i], [c2,p2] = stops[i+1];
+      if (pct >= p1 && pct <= p2) {
+        const f = (pct - p1) / (p2 - p1), a = this.rgb(c1), b = this.rgb(c2);
+        return a.map((v,k) => Math.round(v + (b[k]-v)*f));
+      }
+    }
+    return this.rgb(stops[0][0]);
+  }
+  tip(stops, from, rot, theta, pivotSide){
+    const pct = ((((theta - rot - from) % 360) + 360) % 360) / 360 * 100;
+    const c = this.colorAt(stops, pct), r = 100, th = theta * Math.PI / 180;
+    return { rgb: c, x: 140 + r*Math.sin(th), y: 140 - r*Math.cos(th), color: 'rgb(' + c.join(',') + ')' };
+  }
+  stopsCss(stops){ return stops.map(s => s[0] + ' ' + s[1] + '%').join(','); }
+  atBottom(){
+    const se = document.scrollingElement || document.documentElement;
+    return se.scrollHeight - window.innerHeight - se.scrollTop <= 2;
+  }
+  pushDance(amount){
+    if (this.exit > 0) { this.exit = 0; this.Q = 0; }
+    this.Q = Math.min(1, this.Q + amount);
+    this.lastPush = performance.now();
+    if (!this.playing && this.Q >= 0.15) { this.playing = true; this.fullAt = 0; this.playStart = performance.now(); this.beatT0 = this.playStart / 1000 + 1.7; }
+  }
+  shelfDown = (e) => { this.shelfDrag = true; this.shelfX0 = e.clientX; this.flipAng = null; };
+  shelfMove = (e) => {
+    if (!this.shelfDrag) return;
+    const dx = e.clientX - this.shelfX0;
+    const next = (!this.flipped && this.shelfIdx === 3 && dx > 0) ? Math.min(180, dx * 0.45)
+      : (this.flipped && dx < 0) ? Math.max(0, 180 + dx * 0.45) : null;
+    if (next !== this.flipAng) { this.flipAng = next; this.setState({ ui: Date.now() }); }
+  };
+  shelfUp = (e) => {
+    if (!this.shelfDrag) return;
+    this.shelfDrag = false;
+    const dx = e.clientX - this.shelfX0;
+    if (this.flipAng != null) { this.flipped = this.flipAng > 90; this.flipAng = null; }
+    else if (dx < -40 && !this.flipped) this.shelfIdx = Math.min(5, this.shelfIdx + 1);
+    else if (dx > 40 && !this.flipped) this.shelfIdx = Math.max(3, this.shelfIdx - 1);
+    this.setState({ ui: Date.now() });
+  };
+  onWheel = (e) => {
+    if (e.deltaY > 0 && this.armed && this.atBottom()) this.pushDance(e.deltaY / 400);
+    this.lastAny = performance.now();
+    const top = (document.scrollingElement || document.documentElement).scrollTop;
+    if (e.deltaY < 0 && top <= 0 && !this.disco) {
+      this.L = Math.min(240, this.L + Math.abs(e.deltaY) * 0.6);
+      this.lastWheel = performance.now();
+      if (this.L >= 240) { this.disco = true; this.discoStart = performance.now(); }
+    }
+  };
+  onTS = (e) => { this.ty = e.touches[0].clientY; };
+  onTM = (e) => {
+    const y = e.touches[0].clientY;
+    if (this.ty !== null && y < this.ty && this.armed && this.atBottom()) this.pushDance((this.ty - y) / 250);
+    this.lastAny = performance.now();
+    const top = (document.scrollingElement || document.documentElement).scrollTop;
+    if (this.ty !== null && this.dragIdx < 0 && top <= 0 && y > this.ty && !this.disco) {
+      this.L = Math.min(240, this.L + (y - this.ty) * 1.2);
+      this.lastWheel = performance.now();
+      if (this.L >= 240) { this.disco = true; this.discoStart = performance.now(); }
+    }
+    this.ty = y;
+  };
+  point(e){ const t = (e.touches && e.touches[0]) || e; return { x: t.clientX, y: t.clientY }; }
+  grabber(i){
+    return (e) => {
+      const r = e.currentTarget.getBoundingClientRect();
+      this.center = { x: r.left + r.width/2, y: r.top + r.height/2 };
+      const p = this.point(e);
+      this.last = Math.atan2(p.y - this.center.y, p.x - this.center.x);
+      this.dragIdx = i; this.vel[i] = 0;
+      this.setState({ drag: i });
+    };
+  }
+  move = (e) => {
+    if (this.dragIdx < 0) return;
+    const p = this.point(e);
+    const a = Math.atan2(p.y - this.center.y, p.x - this.center.x);
+    let d = (a - this.last) * 180 / Math.PI;
+    if (d > 180) d -= 360; if (d < -180) d += 360;
+    this.last = a; this.ang[this.dragIdx] += d; this.vel[this.dragIdx] = d;
+    this.lastPt = p; this.lastMoveAt = performance.now();
+  };
+  spawnPop(x, y){
+    const R = Math.random;
+    const isShape = R() < 0.4;
+    const font = this.popFonts[Math.floor(R() * this.popFonts.length)];
+    const color = this.popColors[Math.floor(R() * this.popColors.length)];
+    const size = 22 + Math.floor(R() * 20);
+    const far = R() < 0.5;
+    const px = far ? R() * (innerWidth - 160) + 80 : Math.min(innerWidth - 80, Math.max(80, x + (R() * 2 - 1) * 380));
+    const py = far ? R() * (innerHeight - 160) + 80 : Math.min(innerHeight - 80, Math.max(80, y + (R() * 2 - 1) * 300));
+    const rot = R() * 36 - 18;
+    const dur = 2.4 + R() * 0.6;
+    const text = isShape ? '' : this.popWords[this.popIdx % this.popWords.length];
+    if (!isShape) this.popIdx++;
+    const deco = isShape
+      ? this.popShapes[Math.floor(R() * this.popShapes.length)]
+      : 'font-family:' + font + ';font-size:' + size + 'px;color:' + color + ';text-shadow:3px 3px 0 #1a0b2e,-2px -2px 0 #1a0b2e,2px -2px 0 #1a0b2e,-2px 2px 0 #1a0b2e;letter-spacing:1px;';
+    this.pops[this.popSlot] = ({ text, born: performance.now(), css: 'position:fixed;left:' + px.toFixed(0) + 'px;top:' + py.toFixed(0) + 'px;--r:' + rot.toFixed(1) + 'deg;transform:translate(-50%,-50%) rotate(' + rot.toFixed(1) + 'deg);' + deco + 'line-height:1;white-space:nowrap;z-index:60;pointer-events:none;opacity:0;animation:' + (this.popFlip ? 'wpop' : 'wpopB') + ' ' + dur.toFixed(2) + 's ease-out forwards' });
+    this.popFlip = !this.popFlip;
+    this.popSlot = (this.popSlot + 1) % this.pops.length;
+  }
+  release = () => { if (this.dragIdx >= 0) { this.dragIdx = -1; this.setState({ drag: -1 }); } };
+  tick = () => {
+    for (let i = 0; i < 2; i++) {
+      if (i !== this.dragIdx) {
+        this.vel[i] += (this.base[i] - this.vel[i]) * 0.04;
+        this.ang[i] += this.vel[i];
+      }
+    }
+    { const sp = Math.abs(this.vel[0]); this.sc[0] += sp * 0.08; this.labelX[0] += (Math.sin(this.sc[0]) * Math.min(18, sp * 2.5) - this.labelX[0]) * 0.2; }
+    const now = performance.now();
+    if (this.dragIdx >= 0 && this.lastPt && now - this.lastMoveAt < 300 && now - this.lastPop > 240) { this.lastPop = now; try { this.spawnPop(this.lastPt.x, this.lastPt.y); } catch (err) { console.error('pop', err); } }
+    if (this.disco) {
+      const d = (now - this.discoStart) / 1000;
+      if (d >= 3) { this.disco = false; this.op = 0; this.L = 0; }
+      else {
+        this.op = d < 0.3 ? d / 0.3 : (d > 2.3 ? (3 - d) / 0.7 : 1);
+        this.L = d > 2.3 ? 240 * this.op : 240;
+      }
+    } else {
+      if (now - this.lastWheel > 450) this.L *= 0.93;
+      if (this.L < 0.5) this.L = 0;
+    }
+    if (!this.atBottom()) { this.armed = false; this.playing = false; }
+    else if (!this.armed && now - this.lastAny > 350) this.armed = true;
+    if (this.playing) {
+      this.exit = 0;
+      const T = now - this.playStart;
+      if (T < 4800) { this.pass = T < 2400 ? 0 : 1; this.Q = (T % 2400) / 2400; }
+      else {
+        if (!this.fullAt) this.fullAt = now;
+        const h = now - this.fullAt;
+        if (h < 2000) {
+          // ping-pong the last second of frames (q 0.583 to 1): 1s forward, 1s back, so the speed matches the main pass (about 14 frames a second)
+          const ph = (h % 2000) / 2000, tri = ph < 0.5 ? ph * 2 : (1 - ph) * 2;
+          this.Q = 0.583 + 0.417 * tri;
+        } else this.Q = 1;
+        if (h >= 2500) this.playing = false;
+      }
+    } else if (this.Q > 0) {
+      this.pass = 0;
+      this.exit = Math.min(1, this.exit + 0.03);
+      if (this.exit >= 1) { this.Q = 0; this.exit = 0; this.fullAt = 0; }
+    }
+    if (this.playing && this.Q >= 0.5 && !this.boomedP[this.pass]) { this.boomedP[this.pass] = true; this.boomStart = now / 1000; this.boomAmp = this.pass === 1 ? 1.4 : 1; }
+    if (!this.playing && this.Q === 0) this.boomedP = [false, false];
+    const q = this.Q;
+    this.pops = this.pops.map(pp => (now - pp.born < 3200 ? pp : { text: '', born: 0, css: 'display:none' }));
+    this.setState({ lab0: this.labelX[0], a0: this.ang[0], a1: this.ang[1], L: this.L, op: this.op, t: now / 1000, q, pass: this.pass, exit: this.exit, oy: (document.scrollingElement || document.documentElement).scrollTop + window.innerHeight / 2 });
+    this.raf = requestAnimationFrame(this.tick);
+  };
+  componentDidMount(){
+    this.connectDb();
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) { this.base = [0, 0]; this.vel = [0, 0]; }
+    window.addEventListener('mousemove', this.move);
+    window.addEventListener('mouseup', this.release);
+    window.addEventListener('touchmove', this.move);
+    window.addEventListener('touchend', this.release);
+    window.addEventListener('wheel', this.onWheel, { passive: true });
+    window.addEventListener('pointerup', this.shelfUp);
+    window.addEventListener('pointermove', this.shelfMove);
+    window.addEventListener('touchstart', this.onTS, { passive: true });
+    window.addEventListener('touchmove', this.onTM, { passive: true });
+    this.raf = requestAnimationFrame(this.tick);
+  }
+  componentWillUnmount(){
+    cancelAnimationFrame(this.raf);
+    window.removeEventListener('mousemove', this.move);
+    window.removeEventListener('mouseup', this.release);
+    window.removeEventListener('touchmove', this.move);
+    window.removeEventListener('touchend', this.release);
+    window.removeEventListener('wheel', this.onWheel);
+    window.removeEventListener('pointerup', this.shelfUp);
+    window.removeEventListener('pointermove', this.shelfMove);
+    if (this.unsubDb) this.unsubDb();
+    window.removeEventListener('touchstart', this.onTS);
+    window.removeEventListener('touchmove', this.onTM);
+  }
+  renderVals() {
+    const grooves = 'repeating-radial-gradient(circle at center, rgba(0,0,0,0.0) 0, rgba(0,0,0,0.0) 5px, rgba(0,0,0,0.18) 6px, rgba(0,0,0,0.0) 7px),';
+    const cur = this.state.drag >= 0 ? 'grabbing' : 'grab';
+    const disc = (a, g) => 'width:280px;height:280px;max-width:100%;border-radius:50%;display:flex;align-items:center;justify-content:center;user-select:none;touch-action:none;cursor:' + cur + ';transform:rotate(' + a + 'deg);background:' + grooves + g + ';box-shadow:0 12px 32px rgba(0,0,0,0.5)';
+    const data = [
+      { name:'Shop Cafe Disco', tag:'Founder, 2020 to now', color:'#06d6a0', blurb:'My own product brand: 200+ designs, plaques for creators, storefront, social video. Design, production and sales in one pair of hands.' },
+      { name:'Under Armour', tag:'Youth & Women\'s branding', color:'#4cc9f0', blurb:'Style guides for international partners, campaign key art, e-commerce assets and seating boxes for key athletes and influencers.' },
+      { name:'Asurion', tag:'Motion & campaign', color:'#b388ff', blurb:'Campaign ideas, motion graphics and banners for 24+ corporate partners, including a two-week Verizon campaign with seven stakeholders.' },
+      { name:'Bean Tree Cafe', tag:'Full identity', color:'#ffd166', blurb:'Logo, menus, brochure, outdoor ads, website and social for a local cafe, built over several years.' },
+      { name:'Generosity Children\'s Foundation', tag:'Non-profit', color:'#06d6a0', blurb:'Logo, site, donation setup and online fundraiser graphics for a children\'s home in Uganda.' }
+    ];
+    const a = this.state.active;
+    const projects = data.map((d,i)=>({
+      ...d,
+      no: String(i + 1).padStart(2, '0'),
+      pick: () => this.setState({active:i}),
+      rowStyle: 'display:flex;justify-content:space-between;align-items:center;gap:16px;width:100%;box-sizing:border-box;min-height:64px;padding:18px 20px;background:' + (i===a ? d.color : 'transparent') + ';color:' + (i===a ? '#1a0b2e' : '#fff4e6') + ';border:0;border-bottom:2px solid #4a2c6e;border-radius:' + (i===a ? '20px' : '0') + ';'
+    }));
+    const c = data[a];
+    const tipA = this.tip(this.stopsA, this.fromA, this.state.a0, 315);
+    const tipB = this.tip(this.stopsB, this.fromB, this.state.a1, 45);
+    const plum = [26, 11, 46], w = 0.55;
+    const mixc = (c) => 'rgb(' + c.map((v,k) => Math.round(v*w + plum[k]*(1-w))).join(',') + ')';
+    const bgCss = 'background:linear-gradient(to top right,' + mixc(tipA.rgb) + ',' + mixc(tipB.rgb) + ');background-attachment:fixed';
+    const L = this.state.L, op = this.state.op, t = this.reduced ? 0 : this.state.t;
+    const cols = ['#06d6a0','#ffd166','#06d6a0','#4cc9f0','#b388ff','#ff4fa3'];
+    const spots = [];
+    const rnd = (i, k) => { const v = Math.sin(i * 12.9898 + k * 78.233) * 43758.5453; return v - Math.floor(v); };
+    if (op > 0) {
+      for (let i = 0; i < 36; i++) {
+        const c = cols[i % cols.length], size = 60 + rnd(i, 3) * 110;
+        const dir = rnd(i, 6) < 0.5 ? -1 : 1, speed = 3 + rnd(i, 7) * 5;
+        const xRaw = rnd(i, 1) * 100 + dir * speed * t;
+        const x = (((xRaw % 100) + 100) % 100);
+        const y = 4 + rnd(i, 2) * 92 + Math.sin(t * 0.4 + i) * 1.5;
+        const wave = Math.max(0, Math.sin(t * (0.8 + rnd(i, 4) * 1.6) + rnd(i, 5) * 6.283));
+        const vis = wave * wave * wave;
+        if (vis < 0.02) continue;
+        spots.push({ style: 'position:absolute;left:' + x + '%;top:' + y + '%;width:' + size + 'px;height:' + size + 'px;margin:-' + (size/2) + 'px 0 0 -' + (size/2) + 'px;border-radius:50%;background:radial-gradient(circle,' + c + ' 0,' + c + '99 35%,transparent 70%);opacity:' + vis.toFixed(3) });
+      }
+    }
+    const ballSpots = [];
+    for (let i = 0; i < 14; i++) {
+      const rate = 4 + rnd(i, 8) * 5;
+      const f = Math.max(0, Math.sin(t * rate + rnd(i, 9) * 6.283));
+      const vis = Math.pow(f, 6);
+      if (vis < 0.03) continue;
+      const sz = 8 + rnd(i, 10) * 10;
+      ballSpots.push({ style: 'position:absolute;left:' + (10 + rnd(i, 11) * 80) + '%;top:' + (10 + rnd(i, 12) * 80) + '%;width:' + sz + 'px;height:' + sz + 'px;margin:-' + (sz/2) + 'px 0 0 -' + (sz/2) + 'px;border-radius:50%;background:#fff;box-shadow:0 0 ' + (sz*0.8) + 'px ' + (sz*0.3) + 'px #fff;opacity:' + vis.toFixed(3) });
+    }
+    const ballY = L - 38;
+    const q = this.state.q || 0, fi = Math.min(33, Math.floor(q * 34));
+    const dw = 180, dh = 320, slide = this.state.exit > 0 ? this.state.exit * 110 : ((q < 0.12 && this.state.pass !== 1) ? (1 - q / 0.12) * 110 : 0);
+    const danceStyle = 'position:fixed;right:32px;bottom:0;width:' + dw + 'px;height:' + dh + 'px;z-index:30;pointer-events:none;background:url(../assets/bfbe6285486b15a653eb8b8bddebd8ac.webp) no-repeat;background-size:' + (dw*6) + 'px ' + (dh*6) + 'px;background-position:-' + ((fi % 6) * dw) + 'px -' + (Math.floor(fi / 6) * dh) + 'px;transform:translateY(' + slide + '%);opacity:' + (q > 0 ? 1 : 0);
+    const beat = 60 / 114;
+    const bt = this.state.t - this.beatT0;
+    let p = 0, sg = 1, age = -1;
+    if (!this.reduced && this.playing && bt >= 0) {
+      // hits from the MIDI bass line (lower notes), one 4-beat bar at 114 BPM, starting on the drop
+      const HITS = [0, 1.5, 2.5, 3.25], CYC = 4;
+      const bb = bt / beat, c = Math.floor(bb / CYC), w = bb - c * CYC;
+      let idx = 0;
+      for (let j = 0; j < HITS.length; j++) if (HITS[j] <= w) idx = j;
+      const ph = (w - HITS[idx]) * beat;
+      p = (ph < 0.03 ? ph / 0.03 : 1) * Math.exp(-Math.max(0, ph - 0.03) * 6) * 1.2;
+      sg = (c * HITS.length + idx) % 2 ? -1 : 1;
+      age = ph;
+    }
+    const pa = p;
+    const boomStyle = 'transform-origin:50% ' + (this.state.oy || 0) + 'px;transform:scale(' + (1 + 0.12 * pa) + ',' + (1 + 0.08 * pa) + ') skew(' + (2.2 * pa * sg) + 'deg,' + (-0.8 * pa * sg) + 'deg);filter:blur(' + (2.2 * pa) + 'px) drop-shadow(' + (8 * pa) + 'px 0 0 rgba(255,0,60,0.8)) drop-shadow(' + (-8 * pa) + 'px 0 0 rgba(0,220,255,0.8))' +(this.disco ? ';position:relative;z-index:45' : '');
+    const wt = this.state.t - this.playStart / 1000;
+    const WD = [['EVERY', 0.15, '#ffd166'], ['BODY', 0.40, '#06d6a0'], ['DANCE', 0.65, '#06d6a0'], ['NOW', 0.90, '#4cc9f0']];
+    let wi = -1; WD.forEach((w, i) => { if (wt >= w[1]) wi = i; });
+    let word = '', wordStyle = 'display:none';
+    if (this.playing && wi >= 0 && wt < 1.7) {
+      const ag = wt - WD[wi][1], sc = this.reduced ? 1 : 1.3 - 0.3 * Math.min(1, ag / 0.1), op = wt > 1.45 ? (1.7 - wt) / 0.25 : 1;
+      word = WD[wi][0];
+      wordStyle = 'position:fixed;inset:0;display:flex;align-items:center;justify-content:center;z-index:35;pointer-events:none;font-family:Bricolage Grotesque,sans-serif;font-weight:800;font-size:min(24vw,280px);letter-spacing:-0.04em;color:' + WD[wi][2] + ';-webkit-text-stroke:3px #1a0b2e;text-shadow:0 8px 0 #1a0b2e,0 0 40px rgba(0,0,0,0.5);transform:scale(' + sc + ');opacity:' + op;
+    }
+    const ringStyle = 'position:fixed;right:90px;bottom:130px;width:120px;height:120px;border-radius:50%;border:6px solid rgba(255,209,102,0.85);box-sizing:border-box;pointer-events:none;z-index:29;transform:scale(' + (1 + Math.max(age, 0) * 12) + ');opacity:' + (age >= 0 && age < 0.8 ? 0.7 * Math.exp(-age * 5) : 0);
+    const glow = this.disco ? 'animation:glow 1.4s ease-in-out infinite' : '';
+    const glowText = this.disco ? 'animation:glowText 1.4s ease-in-out infinite' : '';
+    const pops = this.pops.map(pp => ({ text: pp.text, style: pp.css }));
+    const counts = {};
+    this.donors.forEach((d) => { counts[d.org] = (counts[d.org] || 0) + 1; });
+    const board = this.donors.slice(0, 10).map((d, i) => {
+      const badges = [i === 0 ? 'Top donor' : '', counts[d.org] === 1 ? 'First donor' : ''].filter(Boolean).join(' / ');
+      return { rank: i + 1, name: d.name, org: d.org, amount: d.amount, badges,
+        style: 'display:flex;align-items:center;gap:12px;padding:12px 14px;margin-bottom:8px;border-radius:14px;background:' + (i === 0 ? '#3d2466' : '#1a0b2e') + ';font-family:\'DM Sans\',sans-serif;font-size:16px',
+        pillStyle: badges ? 'font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:999px;background:#ffd166;color:#1a0b2e' : 'display:none' };
+    });
+    const donateStyle = 'position:fixed;inset:0;z-index:70;display:' + (this.donateOpen ? 'flex' : 'none') + ';align-items:center;justify-content:center;background:rgba(10,0,30,0.7);padding:16px;box-sizing:border-box';
+    const emptyStyle = this.donors.length ? 'display:none' : 'margin-bottom:12px;color:#ffd166;font-weight:700';
+    const openDonate = () => { this.donateOpen = true; this.setState({ ui: Date.now() }); };
+    const closeDonate = () => { this.donateOpen = false; this.setState({ ui: Date.now() }); };
+    const setName = (e) => { this.form.name = e.target.value; };
+    const setOrg = (e) => { this.form.org = e.target.value; };
+    const setAmount = (e) => { this.form.amount = e.target.value; };
+    const toggleNotify = () => { this.form.notify = !this.form.notify; this.setState({ ui: Date.now() }); };
+    const submitDonate = () => this.submitDonate();
+    const notifyAttr = this.form.notify ? 'checked' : '';
+    const lab0 = (this.state.lab0 || 0).toFixed(1);
+    const setEmail = (e) => { this.form.email = e.target.value; };
+    const medalStyle = this.donors.length ? 'display:none' : 'display:flex;align-items:center;gap:16px;margin-bottom:14px;padding:14px;border-radius:16px;background:#1a0b2e';
+    const shelfCount = 6;
+    const songs = [
+      { t: 'I WANT YOU BACK', a: 'Jackson 5', art: 'linear-gradient(135deg,#ff4fa3,#ffd166)', ini: 'J' },
+      { t: "I'M BACK", a: 'Eminem', art: 'linear-gradient(135deg,#06d6a0,#3ec1ff)', ini: 'E' },
+      { t: 'BACK IN THE SADDLE', a: 'Aerosmith', art: 'linear-gradient(135deg,#ffd166,#b8ff3d)', ini: 'A' } ];
+    const onSong = this.shelfIdx < 3;
+    const song = songs[this.shelfIdx] || songs[0];
+    const prodNames = ['PRODUCT SHELF PHOTO', 'PRODUCT 2 PHOTO', 'PRODUCT 3 PHOTO'];
+    const prodLabel = '[ ' + (prodNames[this.shelfIdx - 3] || prodNames[0]) + ' ]';
+    const prodStyle = 'position:absolute;inset:0;display:' + (onSong ? 'none' : 'flex') + ';align-items:center;justify-content:center';
+    const playerStyle = 'position:absolute;inset:0;display:' + (onSong ? 'flex' : 'none') + ';align-items:center;gap:20px;padding:24px 24px 56px;box-sizing:border-box';
+    const shelfPrev = () => { this.shelfIdx = Math.max(0, this.shelfIdx - 1); this.setState({ ui: Date.now() }); };
+    const shelfNext = () => { this.shelfIdx = Math.min(shelfCount - 1, this.shelfIdx + 1); this.setState({ ui: Date.now() }); };
+    const songNo = 'TRACK ' + (this.shelfIdx + 1) + ' OF 3';
+    const dots = [0, 1, 2].map(i => ({ label: 'Show product ' + (i + 1), style: 'width:12px;height:12px;border-radius:50%;padding:0;cursor:pointer;border:2px solid #fff4e6;background:' + (this.shelfIdx === 3 + i ? '#fff4e6' : 'transparent'), pick: () => { this.shelfIdx = 3 + i; this.setState({ ui: Date.now() }); } }));
+    const flipAngle = this.flipAng != null ? this.flipAng : (this.flipped ? 180 : 0);
+    const flipStyle = 'position:relative;transform-style:preserve-3d;transition:' + (this.flipAng != null ? 'none' : 'transform 0.9s cubic-bezier(.2,.7,.2,1)') + ';transform:rotateY(' + flipAngle.toFixed(1) + 'deg)';
+    const mixSongs = [['I WANT YOU BACK', 'Jackson 5'], ["I'M BACK", 'Eminem'], ['BACK IN THE SADDLE', 'Aerosmith'], ['BACK IN BLACK', 'AC/DC'], ['WELCOME BACK', 'John Sebastian'], ['BACK FOR GOOD', 'Take That'], ['BACK TO LIFE', 'Soul II Soul'], ['BACK ON THE CHAIN GANG', 'The Pretenders']];
+    const mixRows = mixSongs.map((m, i) => ({ no: String(i + 1).padStart(2, '0'), t: m[0], a: m[1], style: 'display:flex;align-items:center;gap:14px;width:100%;box-sizing:border-box;padding:12px 0;background:transparent;border:0;border-bottom:2px solid #4a2c6e;color:' + (i === this.mixIdx ? '#ffd166' : '#fff4e6') + ';cursor:pointer;text-align:left;font-family:inherit;font-size:inherit', pick: () => { this.mixIdx = i; this.mixOn = true; this.setState({ ui: Date.now() }); } }));
+    return { flipStyle, mixRows, dots, setEmail, medalStyle, shelfDown: this.shelfDown, prodStyle, playerStyle, prodLabel, songArt: song.art, songInitial: song.ini, songNo, songTitle: song.t, songArtist: song.a, shelfPrev, shelfNext, donateStyle, emptyStyle, board, form: this.form, notifyAttr, donateMsg: this.donateMsg, openDonate, closeDonate, setName, setOrg, setAmount, toggleNotify, submitDonate, lab0, pops, glow, glowText, bgCss, tipA, tipB, spots, ballSpots, danceStyle, boomStyle, word, wordStyle,
+      ballWrapStyle: 'position:fixed;top:' + (L - 438) + 'px;left:50%;margin-left:-128px;width:256px;display:flex;flex-direction:column;align-items:center;z-index:50;pointer-events:none',
+      ballStyle: 'position:relative;overflow:hidden;width:256px;height:256px;border-radius:50%;box-shadow:0 0 ' + (40*op) + 'px ' + (10*op) + 'px #fff;background:repeating-linear-gradient(0deg,rgba(255,255,255,0.45) 0 2px,transparent 2px 8px),repeating-linear-gradient(90deg,rgba(255,255,255,0.45) 0 2px,transparent 2px 8px),radial-gradient(circle at 35% 30%,#fff,#b9b9d0 40%,#5a5a78);background-position:' + ((t * 20) % 8) + 'px 0,0 0,0 0',
+      discoStyle: 'position:fixed;inset:0;z-index:40;pointer-events:none;overflow:hidden;background:rgba(10,0,30,0.65);opacity:' + op,
+      raysStyle: 'display:none',
+      grab0: this.grabber(0), grab1: this.grabber(1),
+      disc0Style: disc(this.state.a0, 'conic-gradient(from ' + this.fromA + 'deg in oklch,' + this.stopsCss(this.stopsA) + ')'),
+      disc1Style: disc(this.state.a1, 'conic-gradient(from ' + this.fromB + 'deg in oklch,' + this.stopsCss(this.stopsB) + ')'),
+      projects, current: c, previewStyle: 'height:380px;border-radius:32px;display:flex;align-items:center;justify-content:center;color:#1a0b2e;background:' + c.color };
+  }
+}
+</script>
+</body>
+</html>
