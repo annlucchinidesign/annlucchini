@@ -19,6 +19,7 @@ for (const f of fs.readdirSync(path.join(root, 'assets'))) {
   fs.copyFileSync(path.join(root, 'assets', f), path.join(site, 'assets', f));
 }
 
+fs.copyFileSync(path.join(root, 'project', 'support.js'), path.join(site, 'support.js'));
 fs.writeFileSync(path.join(site, 'CNAME'), 'dev.annlucchini.com\n');
 fs.writeFileSync(path.join(site, '.nojekyll'), '');
 console.log('site/ built');
