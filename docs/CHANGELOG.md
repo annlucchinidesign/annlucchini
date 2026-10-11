@@ -24,5 +24,6 @@ Version numbers are the canvas versions of Main.dc.html unless noted.
 - dev only: disco mode darkens and blurs the page (dark layer inside the content wrapper, which was above the old overlay). Kept bright: the hero headline, the annlucchini. logo, Say hello and See the work. The hero headline always has disco light dots.
 - dev only: disco darkening now comes from filters on the background and the content (same level, so the margins and the centre match). Kept elements brighten back. Glow fades out after disco (--ga). Disco ball decays instead of snapping. Title lights are scattered, not a grid.
 - dev only: disco darkening removed (all elements back to normal). Title light dots removed. Button and title glow now fades with the disco ball (glow strength follows the ball height).
+- dev only: Pick a track heading and paragraph moved into the left column, above the list. Picture column starts at the top, aligned with the heading, and stays sticky while the list scrolls.
 
 Current state (after v69): the sprite path in the GitHub copy points to assets/, where the canvas copy uses /_blob/.
