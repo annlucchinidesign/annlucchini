@@ -22,5 +22,6 @@ Version numbers are the canvas versions of Main.dc.html unless noted.
 - dev only: track section on a 4/6 grid (list 4, picture 6; stacks on screens 820px and under). Picture is 520px tall, track names 28px so the longest fits on one line.
 - dev only: page title is "annlucchini." and the favicon is a disco ball (inline SVG).
 - dev only: disco mode darkens and blurs the page (dark layer inside the content wrapper, which was above the old overlay). Kept bright: the hero headline, the annlucchini. logo, Say hello and See the work. The hero headline always has disco light dots.
+- dev only: disco darkening now comes from filters on the background and the content (same level, so the margins and the centre match). Kept elements brighten back. Glow fades out after disco (--ga). Disco ball decays instead of snapping. Title lights are scattered, not a grid.
 
 Current state (after v69): the sprite path in the GitHub copy points to assets/, where the canvas copy uses /_blob/.
