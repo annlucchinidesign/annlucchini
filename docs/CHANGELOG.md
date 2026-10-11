@@ -14,6 +14,6 @@ Version numbers are the canvas versions of Main.dc.html unless noted.
 - v67: scratch pops moved to a 10-slot pool to remove a glitch above about 10 visible words. Full flip distance doubled. Play button removed. Three more songs added (eight in total).
 - v68: "Flip back" button removed.
 - v69: the A-side center label stays on the true center. The sideways wobble was removed.
-- Next version (not yet published): artboards B-Grid and C-Story removed, so Main is the only artboard. Canvas title note changed to "Direction for annlucchini.com".
+- v70: artboards B-Grid and C-Story removed, so Main is the only artboard. Canvas note changed to "Direction for annlucchini.com".
 
 Current state (after v69): the sprite path in the GitHub copy points to assets/, where the canvas copy uses /_blob/.
