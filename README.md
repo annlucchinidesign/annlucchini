@@ -35,7 +35,7 @@ The shop section (id "shop") is a flip card. Its front has the headline "I built
 
 The three review quote cards were removed on request. Luis will decide what goes there later. The stat pills stay.
 
-The Giving back section ("Design that feeds kids.") has the GCF fundraiser graphic placeholder and a Donate to GCF button. The donation popup flows name, email, organization and amount, with all inputs at 42px height. Amount is half width. Submitting writes to the db capability: donations, contacts and dethrone-notices collections. The leaderboard is empty until the first donation, and a medal pulses until then. Visitors cannot write to the database under the inherited rule (write: admin). That needs a decision.
+The Giving back section ("Design that feeds kids.") has the GCF fundraiser graphic placeholder and a Donate to GCF button. The button links to the DonorBox page (https://donorbox.org/creativity-that-nourishes-gcf) in a new tab. The page has no donation form, no leaderboard and no db calls; the donations, contacts and dethrone-notices collections are no longer written from this page (changelog v73).
 
 The easter egg dancer sits bottom-right and scrolls in when you reach the bottom of the page and scroll or swipe up. It plays 0 to 4.8 seconds of frames, holds the last second with a 2-second ping-pong, and exits. The words "EVERY BODY DANCE NOW" start with the dancer, and the beat distortion starts 1.7 seconds later. The distortion is driven by boomStyle in renderVals. It uses blur, skew, scale and red and cyan drop-shadows at 8px for chromatic aberration.
 
@@ -51,7 +51,7 @@ Fonts load from Google Fonts. Main uses Bricolage Grotesque, DM Sans, Bungee, Ba
 
 ## Open items
 
-Luis still needs to decide these: whether visitors can submit donation pledges (the database write rule); whether donor emails in the contacts collection should be hidden from page readers; how dethrone notices get delivered; what goes in the review quote slots (only real Etsy reviews, never invented ones); whether the shop product photos need replacing; and which album covers he has permission to use (the assistant cannot reproduce album art).
+Luis still needs to decide these: whether the donations, contacts and dethrone-notices collections should be deleted now that the page no longer writes to them, and whether donor emails already in the contacts collection should be hidden from page readers; how dethrone notices get delivered; what goes in the review quote slots (only real Etsy reviews, never invented ones); whether the shop product photos need replacing; and which album covers he has permission to use (the assistant cannot reproduce album art).
 
 Still needed: the Spotify playlist URL; the B-side tracks' real album art, if he wants it; and a visual check in a browser of the flip, the scratch pops and the dancer. None of these has been verified in a browser yet.
 
@@ -59,4 +59,4 @@ Still needed: the Spotify playlist URL; the B-side tracks' real album art, if he
 
 Run `node scripts/build-site.js` to rebuild `site/` from `project/`. It writes `site/index.html` with the sprite path changed to `assets/`, copies the sprites, and adds `CNAME` (dev.annlucchini.com) and `.nojekyll`. Publish the `site/` folder with GitHub Pages. Edit `project/` only, then rebuild.
 
-Known gaps before the site works: `support.js` is still missing, so the page will not render, and the donation form cannot write to a static host.
+Known gaps before the site works: `support.js` is still missing, so the page will not render.

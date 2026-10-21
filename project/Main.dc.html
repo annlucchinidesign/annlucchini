@@ -36,29 +36,8 @@ button:focus-visible,a:focus-visible{outline:3px solid #ffd166;outline-offset:3p
   <div style="{{danceStyle}}" aria-hidden="true"></div>
   <div style="{{wordStyle}}" aria-hidden="true">{{word}}</div>
   <sc-for list="{{pops}}" as="pp" hint-placeholder-count="0"><div style="{{pp.style}}">{{pp.text}}</div></sc-for>
-  <div style="{{donateStyle}}" role="dialog" aria-modal="true" aria-label="Donate to GCF">
-    <div style="background:#2a1647;border:2px solid #4a2c6e;border-radius:28px;padding:32px;max-width:560px;width:100%;max-height:90vh;overflow:auto;box-sizing:border-box;color:#fff4e6;font-family:'DM Sans',sans-serif">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
-        <div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:30px">Donate to GCF</div>
-        <button onClick="{{closeDonate}}" aria-label="Close" style="background:none;border:none;color:#fff4e6;font-size:28px;cursor:pointer;min-width:44px;min-height:44px">&times;</button>
-      </div>
-      <p style="font-size:15px;line-height:1.5;color:#e8d9f5;margin:0 0 20px">Generosity Children's Foundation, a children's home in Uganda. Pledges recorded here count as donations once GCF confirms receipt.</p>
-      <input aria-label="Your name" placeholder="Your name" value="{{form.name}}" onInput="{{setName}}" style="display:block;width:100%;box-sizing:border-box;height:42px;padding:0 14px;border-radius:12px;border:2px solid #4a2c6e;background:#1a0b2e;color:#fff4e6;font-size:15px;font-family:inherit;margin-bottom:12px">
-      <input aria-label="Email" type="email" placeholder="Email" value="{{form.email}}" onInput="{{setEmail}}" style="display:block;width:100%;box-sizing:border-box;height:42px;padding:0 14px;border-radius:12px;border:2px solid #4a2c6e;background:#1a0b2e;color:#fff4e6;font-size:15px;font-family:inherit;margin-bottom:12px">
-      <input aria-label="Organization" placeholder="Organization" value="{{form.org}}" onInput="{{setOrg}}" style="display:block;width:100%;box-sizing:border-box;height:42px;padding:0 14px;border-radius:12px;border:2px solid #4a2c6e;background:#1a0b2e;color:#fff4e6;font-size:15px;font-family:inherit;font-size:13px;margin-bottom:12px">
-      <input aria-label="Amount in euros" type="number" min="1" placeholder="Amount (EUR)" value="{{form.amount}}" onInput="{{setAmount}}" style="display:block;width:50%;box-sizing:border-box;height:42px;padding:0 14px;border-radius:12px;border:2px solid #4a2c6e;background:#1a0b2e;color:#fff4e6;font-size:15px;font-family:inherit;margin-bottom:12px">
-      <label style="display:flex;align-items:center;gap:10px;margin:8px 0 16px;cursor:pointer;min-height:44px"><input type="checkbox" {{notifyAttr}} onChange="{{toggleNotify}}">Notify me if I get dethroned</label>
-      <button onClick="{{submitDonate}}" style="background:#06d6a0;color:#1a0b2e;border:none;padding:14px 28px;border-radius:999px;font-weight:700;font-size:17px;cursor:pointer;font-family:inherit;min-height:44px">Add my donation</button>
-      <div aria-live="polite" style="margin-top:14px;min-height:22px;color:#ffd166;font-weight:700">{{donateMsg}}</div>
-      <div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:22px;margin:24px 0 10px">Leaderboard</div>
-      <div style="{{medalStyle}}">
-        <div style="flex:1 1 auto"><div style="font-weight:700;color:#ffd166">First donor medal</div><div style="font-size:14px;color:#e8d9f5">No donations yet. Be the first to earn it.</div></div>
-        <svg aria-hidden="true" width="72" height="72" viewBox="0 0 64 64" style="flex:0 0 72px;animation:medalpulse 2.4s ease-in-out infinite"><path d="M20 4 L30 24 L24 24 L14 4Z" fill="#ff4fa3"/><path d="M44 4 L34 24 L40 24 L50 4Z" fill="#06d6a0"/><circle cx="32" cy="40" r="20" fill="#ffd166" stroke="#1a0b2e" stroke-width="3"/><text x="32" y="46" text-anchor="middle" font-size="16" font-family="Bricolage Grotesque" font-weight="800" fill="#1a0b2e">1</text></svg>
-      </div>
-      <sc-for list="{{board}}" as="row" hint-placeholder-count="0"><div style="{{row.style}}"><span style="font-weight:800;width:30px">{{row.rank}}</span><span style="flex:1 1 auto">{{row.name}} <span style="font-size:12px;color:#e8d9f5">{{row.org}}</span></span><span style="font-weight:800">EUR {{row.amount}}</span><span style="{{row.pillStyle}}">{{row.badges}}</span></div></sc-for>
-      <div style="margin-top:20px;padding-top:16px;border-top:2px solid #4a2c6e;font-size:14px;color:#e8d9f5"><span style="opacity:0.7">Donation page link coming soon</span></div>
-    </div>
-  </div>
+  <!-- easter egg tracker -->
+  <div style="{{eggStyle}}" aria-live="polite"><span>{{eggText}}</span><span style="{{eggRewardStyle}}">{{eggReward}}</span></div>
   <div style="{{boomStyle}}">
   <!-- nav -->
   <div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center;padding:28px 64px">
@@ -135,7 +114,7 @@ button:focus-visible,a:focus-visible{outline:3px solid #ffd166;outline-offset:3p
   <!-- shop -->
   <div id="shop" style="perspective:1800px;margin:96px 64px 0">
   <div style="{{flipStyle}}">
-    <div style="background:#06d6a0;color:#1a0b2e;border-radius:40px;padding:64px;display:flex;flex-wrap:wrap;gap:48px;align-items:center;backface-visibility:hidden;-webkit-backface-visibility:hidden">
+    <div {{frontFace}} style="background:#06d6a0;color:#1a0b2e;border-radius:40px;padding:64px;display:flex;flex-wrap:wrap;gap:48px;align-items:center;backface-visibility:hidden;-webkit-backface-visibility:hidden">
       <div style="flex:1 1 440px;min-width:0">
         <div style="font-weight:700;letter-spacing:1px;text-transform:uppercase;font-size:14px">The <a href="https://www.etsy.com/shop/ShopCafeDisco" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;cursor:pointer;background:#ffd166;padding:0 3px">shop</a> behind the portfolio</div>
         <h2 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:60px;line-height:1;letter-spacing:-2px;margin:14px 0 20px">I built a brand, started with a baby on my hip.</h2>
@@ -153,7 +132,7 @@ button:focus-visible,a:focus-visible{outline:3px solid #ffd166;outline-offset:3p
         </div>
       </div>
     </div>
-    <div onPointerDown="{{shelfDown}}" style="position:absolute;inset:0;background:#1a0b2e;color:#fff4e6;border-radius:40px;padding:56px 64px;user-select:none;touch-action:pan-y;box-sizing:border-box;overflow:auto;transform:rotateY(180deg);backface-visibility:hidden;-webkit-backface-visibility:hidden">
+    <div {{backFace}} onPointerDown="{{shelfDown}}" style="position:absolute;inset:0;background:#1a0b2e;color:#fff4e6;border-radius:40px;padding:56px 64px;user-select:none;touch-action:pan-y;box-sizing:border-box;overflow:auto;transform:rotateY(180deg);backface-visibility:hidden;-webkit-backface-visibility:hidden">
       <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap">
         <div style="font-weight:700;letter-spacing:2px;text-transform:uppercase;font-size:13px;color:#ffd166">B-side</div>
       </div>
@@ -171,7 +150,7 @@ button:focus-visible,a:focus-visible{outline:3px solid #ffd166;outline-offset:3p
       <div style="display:inline-block;background:#06d6a0;color:#1a0b2e;border-radius:999px;padding:6px 16px;font-weight:700;font-size:14px;letter-spacing:1px;text-transform:uppercase;margin-bottom:16px">Bonus track</div>
       <h2 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:52px;line-height:1;letter-spacing:-1.5px;margin:0 0 20px">Design that feeds kids.</h2>
       <p style="font-size:19px;line-height:1.55;margin:0;color:#e8d9f5">I sit on the committee of Generosity Children's Foundation, a small children's home in Uganda. I designed the logo, built the site, set up donations, and make the graphics for our online fundraisers on Facebook and Instagram.</p>
-      <button onClick="{{openDonate}}" style="margin-top:24px;background:#ffd166;color:#1a0b2e;border:none;padding:16px 32px;border-radius:999px;font-weight:700;font-size:18px;cursor:pointer;font-family:inherit">Donate to GCF</button>
+      <a href="https://donorbox.org/creativity-that-nourishes-gcf" target="_blank" rel="noopener" style="display:inline-block;box-sizing:border-box;margin-top:24px;background:#ffd166;color:#1a0b2e;border:none;padding:16px 32px;border-radius:999px;font-weight:700;font-size:18px;text-decoration:none;cursor:pointer;font-family:inherit">Donate to GCF</a>
     </div>
   </div>
   <!-- contact -->
@@ -196,12 +175,15 @@ class Component extends DCLogic {
     this.reduced = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
     this.ang = [0, 180]; this.vel = [0.6, -0.6]; this.base = [0.6, -0.6];
     this.dragIdx = -1; this.last = 0; this.center = null;
-    this.pops = Array.from({ length: 10 }, () => ({ text: '', born: 0, css: 'display:none' })); this.popSlot = 0; this.lastPop = 0; this.popIdx = 0; this.popFlip = false;
+    this.pops = Array.from({ length: 10 }, () => ({ text: '', born: 0, css: 'display:none' })); this.popSlot = 0; this.lastPop = 0; this.popIdx = 0; this.popFlips = this.pops.map(() => false);
     this.sc = [0, 0]; this.labelX = [0, 0];
-    this.db = null; this.unsubDb = null; this.donors = []; this.donateOpen = false; this.donateMsg = ''; this.form = { name: '', org: '', email: '', amount: '', notify: false };
     this.shelfIdx = 3; this.shelfDrag = false; this.shelfX0 = 0;
     this.flipped = false; this.mixIdx = 0; this.mixOn = false;
     this.mp3Tracks = [{ t: 'I WANT YOU BACK', a: 'JACKSON 5' }, { t: "I'M BACK", a: 'EMINEM' }, { t: 'BACK IN THE SADDLE', a: 'AEROSMITH' }];
+    this.eggTotal = 4; this.eggs = {}; this.eggKey = 'al-eggs-found';
+    this.eggCopy = { label: 'eggs found', of: 'of', reward: 'Secret unlocked. You found every hidden track on this page.' };
+    this.eggColors = { bg: '#1a0b2e', text: '#fff4e6', line: '#4a2c6e', reward: '#ffd166' };
+    try { const sv = JSON.parse(window.localStorage.getItem(this.eggKey) || '{}'); if (sv && typeof sv === 'object') ['disco', 'dancer', 'playlist', 'scratch'].forEach((k) => { if (sv[k] === true) this.eggs[k] = true; }); } catch (e) {}
     this.popWords = ['wikky','wikkie','wah','waaah','whack','fresh','skrrr','woomp','woop','screech'];
     this.popFonts = ["'Bungee'","'Bangers'","'Rubik Mono One'","'Press Start 2P'"];
     this.popColors = ['#ff4fa3','#06d6a0','#ffd166','#3ec1ff','#b8ff3d','#fff4e6'];
@@ -210,40 +192,6 @@ class Component extends DCLogic {
       "width:200px;height:80px;background:url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20200%2080%22%3E%3Cpath%20transform%3D%22translate(20%2020)%20scale(16)%22%20d%3D%22M0%20-1%20Q0.12%20-0.12%201%200%20Q0.12%200.12%200%201%20Q-0.12%200.12%20-1%200%20Q-0.12%20-0.12%200%20-1Z%22%20fill%3D%22%23ffd166%22%2F%3E%3Cpath%20transform%3D%22translate(60%2020)%20scale(16)%22%20d%3D%22M0%20-1%20Q0.12%20-0.12%201%200%20Q0.12%200.12%200%201%20Q-0.12%200.12%20-1%200%20Q-0.12%20-0.12%200%20-1Z%22%20fill%3D%22%23ffd166%22%2F%3E%3Cpath%20transform%3D%22translate(100%2020)%20scale(16)%22%20d%3D%22M0%20-1%20Q0.12%20-0.12%201%200%20Q0.12%200.12%200%201%20Q-0.12%200.12%20-1%200%20Q-0.12%20-0.12%200%20-1Z%22%20fill%3D%22%23ffd166%22%2F%3E%3Cpath%20transform%3D%22translate(140%2020)%20scale(16)%22%20d%3D%22M0%20-1%20Q0.12%20-0.12%201%200%20Q0.12%200.12%200%201%20Q-0.12%200.12%20-1%200%20Q-0.12%20-0.12%200%20-1Z%22%20fill%3D%22%23ffd166%22%2F%3E%3Cpath%20transform%3D%22translate(180%2020)%20scale(16)%22%20d%3D%22M0%20-1%20Q0.12%20-0.12%201%200%20Q0.12%200.12%200%201%20Q-0.12%200.12%20-1%200%20Q-0.12%20-0.12%200%20-1Z%22%20fill%3D%22%23ffd166%22%2F%3E%3Cpath%20transform%3D%22translate(20%2060)%20scale(16)%22%20d%3D%22M0%20-1%20Q0.12%20-0.12%201%200%20Q0.12%200.12%200%201%20Q-0.12%200.12%20-1%200%20Q-0.12%20-0.12%200%20-1Z%22%20fill%3D%22%23ffd166%22%2F%3E%3Cpath%20transform%3D%22translate(60%2060)%20scale(16)%22%20d%3D%22M0%20-1%20Q0.12%20-0.12%201%200%20Q0.12%200.12%200%201%20Q-0.12%200.12%20-1%200%20Q-0.12%20-0.12%200%20-1Z%22%20fill%3D%22%23ffd166%22%2F%3E%3Cpath%20transform%3D%22translate(100%2060)%20scale(16)%22%20d%3D%22M0%20-1%20Q0.12%20-0.12%201%200%20Q0.12%200.12%200%201%20Q-0.12%200.12%20-1%200%20Q-0.12%20-0.12%200%20-1Z%22%20fill%3D%22%23ffd166%22%2F%3E%3Cpath%20transform%3D%22translate(140%2060)%20scale(16)%22%20d%3D%22M0%20-1%20Q0.12%20-0.12%201%200%20Q0.12%200.12%200%201%20Q-0.12%200.12%20-1%200%20Q-0.12%20-0.12%200%20-1Z%22%20fill%3D%22%23ffd166%22%2F%3E%3Cpath%20transform%3D%22translate(180%2060)%20scale(16)%22%20d%3D%22M0%20-1%20Q0.12%20-0.12%201%200%20Q0.12%200.12%200%201%20Q-0.12%200.12%20-1%200%20Q-0.12%20-0.12%200%20-1Z%22%20fill%3D%22%23ffd166%22%2F%3E%3C%2Fsvg%3E') no-repeat center/contain;",
     ];
   }
-  connectDb = async () => {
-    try {
-      const cl = window.claude;
-      const db = cl && cl.use ? await cl.use('db') : null;
-      if (!db) return;
-      this.db = db;
-      this.unsubDb = db.collection('donations').orderBy('amount', 'desc').limit(50).onSnapshot(
-        (snap) => {
-          this.donors = snap.docs.filter((d) => d.exists).map((d) => ({ id: d.id, ...d.data() })).filter((x) => x && x.name);
-          this.setState({ ui: Date.now() });
-        },
-        () => { this.donateMsg = 'Leaderboard unavailable right now.'; this.setState({ ui: Date.now() }); }
-      );
-    } catch (e) { this.donateMsg = 'Leaderboard unavailable right now.'; }
-  };
-  submitDonate = async () => {
-    const name = (this.form.name || '').trim(), org = (this.form.org || '').trim(), email = (this.form.email || '').trim(), amt = Math.round(parseFloat(this.form.amount));
-    if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { this.donateMsg = 'That email does not look right.'; return this.setState({ ui: Date.now() }); }
-    if (!name || !org || !(amt >= 1)) { this.donateMsg = 'Please add your name, organization and an amount of at least EUR 1.'; return this.setState({ ui: Date.now() }); }
-    if (!this.db) { this.donateMsg = 'Saving is unavailable in this view, so nothing was recorded.'; return this.setState({ ui: Date.now() }); }
-    const prevTop = this.donors[0];
-    try {
-      await this.db.collection('donations').add({ name, org, amount: amt, notifyOnDethrone: !!this.form.notify, status: 'pledged', createdAt: new Date().toISOString() });
-      if (email) await this.db.collection('contacts').add({ name, org, email, notifyOnDethrone: !!this.form.notify, createdAt: new Date().toISOString() });
-      if (prevTop && amt > prevTop.amount && prevTop.notifyOnDethrone) {
-        await this.db.collection('dethrone-notices').add({ donationId: prevTop.id, newAmount: amt, createdAt: new Date().toISOString() });
-      }
-      this.form = { name: '', org: '', email: '', amount: '', notify: false };
-      this.donateMsg = 'Thanks! Your pledge is on the board. It counts as a donation once GCF confirms it.';
-    } catch (e) {
-      this.donateMsg = e && e.code === 'quota_exceeded' ? 'The board is full, so this could not be added.' : 'Could not save your pledge. Please try again.';
-    }
-    this.setState({ ui: Date.now() });
-  };
   rgb(h){ return [1,3,5].map(i => parseInt(h.slice(i,i+2),16)); }
   colorAt(stops, pct){
     for (let i = 0; i < stops.length - 1; i++) {
@@ -269,21 +217,33 @@ class Component extends DCLogic {
     if (this.exit > 0) { this.exit = 0; this.Q = 0; }
     this.Q = Math.min(1, this.Q + amount);
     this.lastPush = performance.now();
-    if (!this.playing && this.Q >= 0.15) { this.playing = true; this.fullAt = 0; this.playStart = performance.now(); this.beatT0 = this.playStart / 1000 + 1.7; }
+    if (!this.playing && this.Q >= 0.15) { this.playing = true; this.fullAt = 0; this.playStart = performance.now(); this.beatT0 = this.playStart / 1000 + 1.7; this.markEgg('dancer'); }
   }
-  shelfDown = (e) => { this.shelfDrag = true; this.shelfX0 = e.clientX; this.flipAng = null; };
+  markEgg(k){
+    if (this.eggs[k]) return;
+    this.eggs[k] = true;
+    try { window.localStorage.setItem(this.eggKey, JSON.stringify(this.eggs)); } catch (e) {}
+    this.setState({ ui: Date.now() });
+  }
+  shelfDown = (e) => { this.shelfDrag = true; this.shelfPid = e.pointerId; this.shelfX0 = e.clientX; this.flipAng = null; };
   shelfMove = (e) => {
-    if (!this.shelfDrag) return;
+    if (!this.shelfDrag || e.pointerId !== this.shelfPid) return;
+    if (e.pointerType === 'mouse' && e.buttons === 0) return this.shelfUp(e);
     const dx = e.clientX - this.shelfX0;
     const next = (!this.flipped && this.shelfIdx === 3 && dx > 0) ? Math.min(180, dx * 0.45)
       : (this.flipped && dx < 0) ? Math.max(0, 180 + dx * 0.45) : null;
     if (next !== this.flipAng) { this.flipAng = next; this.setState({ ui: Date.now() }); }
   };
+  shelfCancel = () => {
+    if (!this.shelfDrag) return;
+    this.shelfDrag = false; this.flipAng = null;
+    this.setState({ ui: Date.now() });
+  };
   shelfUp = (e) => {
     if (!this.shelfDrag) return;
     this.shelfDrag = false;
     const dx = e.clientX - this.shelfX0;
-    if (this.flipAng != null) { this.flipped = this.flipAng > 90; this.flipAng = null; }
+    if (this.flipAng != null) { this.flipped = this.flipAng > 90; this.flipAng = null; if (this.flipped) this.markEgg('playlist'); }
     else if (dx < -40 && !this.flipped) this.shelfIdx = Math.min(5, this.shelfIdx + 1);
     else if (dx > 40 && !this.flipped) this.shelfIdx = Math.max(3, this.shelfIdx - 1);
     this.setState({ ui: Date.now() });
@@ -295,7 +255,7 @@ class Component extends DCLogic {
     if (e.deltaY < 0 && top <= 0 && !this.disco) {
       this.L = Math.min(240, this.L + Math.abs(e.deltaY) * 0.6);
       this.lastWheel = performance.now();
-      if (this.L >= 240) { this.disco = true; this.discoStart = performance.now(); }
+      if (this.L >= 240) { this.disco = true; this.discoStart = performance.now(); this.markEgg('disco'); }
     }
   };
   onTS = (e) => { this.ty = e.touches[0].clientY; };
@@ -307,7 +267,7 @@ class Component extends DCLogic {
     if (this.ty !== null && this.dragIdx < 0 && top <= 0 && y > this.ty && !this.disco) {
       this.L = Math.min(240, this.L + (y - this.ty) * 1.2);
       this.lastWheel = performance.now();
-      if (this.L >= 240) { this.disco = true; this.discoStart = performance.now(); }
+      if (this.L >= 240) { this.disco = true; this.discoStart = performance.now(); this.markEgg('disco'); }
     }
     this.ty = y;
   };
@@ -347,21 +307,22 @@ class Component extends DCLogic {
     const deco = isShape
       ? this.popShapes[Math.floor(R() * this.popShapes.length)]
       : 'font-family:' + font + ';font-size:' + size + 'px;color:' + color + ';text-shadow:3px 3px 0 #1a0b2e,-2px -2px 0 #1a0b2e,2px -2px 0 #1a0b2e,-2px 2px 0 #1a0b2e;letter-spacing:1px;';
-    this.pops[this.popSlot] = ({ text, born: performance.now(), css: 'position:fixed;left:' + px.toFixed(0) + 'px;top:' + py.toFixed(0) + 'px;--r:' + rot.toFixed(1) + 'deg;transform:translate(-50%,-50%) rotate(' + rot.toFixed(1) + 'deg);' + deco + 'line-height:1;white-space:nowrap;z-index:60;pointer-events:none;opacity:0;animation:' + (this.popFlip ? 'wpop' : 'wpopB') + ' ' + dur.toFixed(2) + 's ease-out forwards' });
-    this.popFlip = !this.popFlip;
+    const flip = this.popFlips[this.popSlot]; this.popFlips[this.popSlot] = !flip;
+    this.pops[this.popSlot] = ({ text, born: performance.now(), css: 'position:fixed;left:' + px.toFixed(0) + 'px;top:' + py.toFixed(0) + 'px;--r:' + rot.toFixed(1) + 'deg;transform:translate(-50%,-50%) rotate(' + rot.toFixed(1) + 'deg);' + deco + 'line-height:1;white-space:nowrap;z-index:60;pointer-events:none;opacity:0;animation:' + (flip ? 'wpop' : 'wpopB') + ' ' + dur.toFixed(2) + 's ease-out forwards' });
     this.popSlot = (this.popSlot + 1) % this.pops.length;
   }
   release = () => { if (this.dragIdx >= 0) { this.dragIdx = -1; this.setState({ drag: -1 }); } };
   tick = () => {
+    const now = performance.now(), dt = Math.min(3, (now - (this.lastTick || now)) / 16.667);
+    this.lastTick = now;
     for (let i = 0; i < 2; i++) {
       if (i !== this.dragIdx) {
-        this.vel[i] += (this.base[i] - this.vel[i]) * 0.04;
-        this.ang[i] += this.vel[i];
+        this.vel[i] += (this.base[i] - this.vel[i]) * (1 - Math.pow(0.96, dt));
+        this.ang[i] += this.vel[i] * dt;
       }
     }
     { const sp = Math.abs(this.vel[0]); this.sc[0] += sp * 0.08; this.labelX[0] += (Math.sin(this.sc[0]) * Math.min(18, sp * 2.5) - this.labelX[0]) * 0.2; }
-    const now = performance.now();
-    if (this.dragIdx >= 0 && this.lastPt && now - this.lastMoveAt < 300 && now - this.lastPop > 240) { this.lastPop = now; try { this.spawnPop(this.lastPt.x, this.lastPt.y); } catch (err) { console.error('pop', err); } }
+    if (this.dragIdx >= 0 && this.lastPt && now - this.lastMoveAt < 300 && now - this.lastPop > 240) { this.lastPop = now; try { this.spawnPop(this.lastPt.x, this.lastPt.y); this.markEgg('scratch'); } catch (err) { console.error('pop', err); } }
     if (this.disco) {
       const d = (now - this.discoStart) / 1000;
       if (d >= 3) { this.disco = false; this.op = 0; }
@@ -370,7 +331,7 @@ class Component extends DCLogic {
         this.L = d > 2.3 ? 240 * this.op : 240;
       }
     } else {
-      if (now - this.lastWheel > 450) this.L *= 0.93;
+      if (now - this.lastWheel > 450) this.L *= Math.pow(0.93, dt);
       if (this.L < 0.5) this.L = 0;
     }
     const topNow = (document.scrollingElement || document.documentElement).scrollTop;
@@ -394,7 +355,7 @@ class Component extends DCLogic {
       }
     } else if (this.Q > 0) {
       this.pass = 0;
-      this.exit = Math.min(1, this.exit + 0.03);
+      this.exit = Math.min(1, this.exit + 0.03 * dt);
       if (this.exit >= 1) { this.Q = 0; this.exit = 0; this.fullAt = 0; }
     }
     if (this.playing && this.Q >= 0.5 && !this.boomedP[this.pass]) { this.boomedP[this.pass] = true; this.boomStart = now / 1000; this.boomAmp = this.pass === 1 ? 1.4 : 1; }
@@ -405,7 +366,6 @@ class Component extends DCLogic {
     this.raf = requestAnimationFrame(this.tick);
   };
   componentDidMount(){
-    this.connectDb();
     if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) { this.base = [0, 0]; this.vel = [0, 0]; }
     window.addEventListener('mousemove', this.move);
     window.addEventListener('mouseup', this.release);
@@ -414,6 +374,7 @@ class Component extends DCLogic {
     window.addEventListener('wheel', this.onWheel, { passive: true });
     window.addEventListener('pointerup', this.shelfUp);
     window.addEventListener('pointermove', this.shelfMove);
+    window.addEventListener('pointercancel', this.shelfCancel);
     window.addEventListener('touchstart', this.onTS, { passive: true });
     window.addEventListener('touchmove', this.onTM, { passive: true });
     this.raf = requestAnimationFrame(this.tick);
@@ -427,7 +388,7 @@ class Component extends DCLogic {
     window.removeEventListener('wheel', this.onWheel);
     window.removeEventListener('pointerup', this.shelfUp);
     window.removeEventListener('pointermove', this.shelfMove);
-    if (this.unsubDb) this.unsubDb();
+    window.removeEventListener('pointercancel', this.shelfCancel);
     window.removeEventListener('touchstart', this.onTS);
     window.removeEventListener('touchmove', this.onTM);
   }
@@ -474,7 +435,7 @@ class Component extends DCLogic {
       }
     }
     const ballSpots = [];
-    for (let i = 0; i < 14; i++) {
+    for (let i = 0; i < (L === 0 && !this.disco ? 0 : 14); i++) {
       const rate = 4 + rnd(i, 8) * 5;
       const f = Math.max(0, Math.sin(t * rate + rnd(i, 9) * 6.283));
       const vis = Math.pow(f, 6);
@@ -501,7 +462,8 @@ class Component extends DCLogic {
       age = ph;
     }
     const pa = p;
-    const boomStyle = 'transform-origin:50% ' + (this.state.oy || 0) + 'px;transform:scale(' + (1 + 0.12 * pa) + ',' + (1 + 0.08 * pa) + ') skew(' + (2.2 * pa * sg) + 'deg,' + (-0.8 * pa * sg) + 'deg);filter:blur(' + (2.2 * pa) + 'px) drop-shadow(' + (8 * pa) + 'px 0 0 rgba(255,0,60,0.8)) drop-shadow(' + (-8 * pa) + 'px 0 0 rgba(0,220,255,0.8))' +(this.disco ? ';position:relative;z-index:45' : '');
+    const boomFx = pa < 0.001 ? 'transform:none;filter:none' : 'transform:scale(' + (1 + 0.12 * pa) + ',' + (1 + 0.08 * pa) + ') skew(' + (2.2 * pa * sg) + 'deg,' + (-0.8 * pa * sg) + 'deg);filter:blur(' + (2.2 * pa) + 'px) drop-shadow(' + (8 * pa) + 'px 0 0 rgba(255,0,60,0.8)) drop-shadow(' + (-8 * pa) + 'px 0 0 rgba(0,220,255,0.8))';
+    const boomStyle = 'transform-origin:50% ' + (this.state.oy || 0) + 'px;' + boomFx + (this.disco ? ';position:relative;z-index:45' : '');
     const wt = this.state.t - this.playStart / 1000;
     const WD = [['EVERY', 0.15, '#ffd166'], ['BODY', 0.40, '#06d6a0'], ['DANCE', 0.65, '#06d6a0'], ['NOW', 0.90, '#4cc9f0']];
     let wi = -1; WD.forEach((w, i) => { if (wt >= w[1]) wi = i; });
@@ -514,28 +476,13 @@ class Component extends DCLogic {
     const ringStyle = 'position:fixed;right:90px;bottom:130px;width:120px;height:120px;border-radius:50%;border:6px solid rgba(255,209,102,0.85);box-sizing:border-box;pointer-events:none;z-index:29;transform:scale(' + (1 + Math.max(age, 0) * 12) + ');opacity:' + (age >= 0 && age < 0.8 ? 0.7 * Math.exp(-age * 5) : 0);
     const glow = this.glowA > 0 ? 'animation:glow 1.4s ease-in-out infinite;--ga:' + this.glowA.toFixed(3) : '';
     const glowText = this.glowA > 0 ? 'animation:glowText 1.4s ease-in-out infinite;--ga:' + this.glowA.toFixed(3) : '';
+    const eggN = Object.keys(this.eggs).length, eggAll = eggN >= this.eggTotal, ec = this.eggColors;
+    const eggText = this.eggCopy.label + ' ' + eggN + ' ' + this.eggCopy.of + ' ' + this.eggTotal;
+    const eggReward = eggAll ? this.eggCopy.reward : '';
+    const eggRewardStyle = eggAll ? 'display:block;margin-top:4px;color:' + ec.reward : 'display:none';
+    const eggStyle = 'position:fixed;left:16px;bottom:16px;z-index:25;pointer-events:none;max-width:240px;padding:6px 12px;border-radius:14px;background:' + ec.bg + ';color:' + ec.text + ';border:2px solid ' + (eggAll ? ec.reward : ec.line) + ';font-family:DM Sans,sans-serif;font-size:12px;font-weight:700;line-height:1.3;opacity:0.9';
     const pops = this.pops.map(pp => ({ text: pp.text, style: pp.css }));
-    const counts = {};
-    this.donors.forEach((d) => { counts[d.org] = (counts[d.org] || 0) + 1; });
-    const board = this.donors.slice(0, 10).map((d, i) => {
-      const badges = [i === 0 ? 'Top donor' : '', counts[d.org] === 1 ? 'First donor' : ''].filter(Boolean).join(' / ');
-      return { rank: i + 1, name: d.name, org: d.org, amount: d.amount, badges,
-        style: 'display:flex;align-items:center;gap:12px;padding:12px 14px;margin-bottom:8px;border-radius:14px;background:' + (i === 0 ? '#3d2466' : '#1a0b2e') + ';font-family:\'DM Sans\',sans-serif;font-size:16px',
-        pillStyle: badges ? 'font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:999px;background:#ffd166;color:#1a0b2e' : 'display:none' };
-    });
-    const donateStyle = 'position:fixed;inset:0;z-index:70;display:' + (this.donateOpen ? 'flex' : 'none') + ';align-items:center;justify-content:center;background:rgba(10,0,30,0.7);padding:16px;box-sizing:border-box';
-    const emptyStyle = this.donors.length ? 'display:none' : 'margin-bottom:12px;color:#ffd166;font-weight:700';
-    const openDonate = () => { this.donateOpen = true; this.setState({ ui: Date.now() }); };
-    const closeDonate = () => { this.donateOpen = false; this.setState({ ui: Date.now() }); };
-    const setName = (e) => { this.form.name = e.target.value; };
-    const setOrg = (e) => { this.form.org = e.target.value; };
-    const setAmount = (e) => { this.form.amount = e.target.value; };
-    const toggleNotify = () => { this.form.notify = !this.form.notify; this.setState({ ui: Date.now() }); };
-    const submitDonate = () => this.submitDonate();
-    const notifyAttr = this.form.notify ? 'checked' : '';
     const lab0 = (this.state.lab0 || 0).toFixed(1);
-    const setEmail = (e) => { this.form.email = e.target.value; };
-    const medalStyle = this.donors.length ? 'display:none' : 'display:flex;align-items:center;gap:16px;margin-bottom:14px;padding:14px;border-radius:16px;background:#1a0b2e';
     const shelfCount = 6;
     const songs = [
       { t: 'I WANT YOU BACK', a: 'Jackson 5', art: 'linear-gradient(135deg,#ff4fa3,#ffd166)', ini: 'J' },
@@ -555,9 +502,9 @@ class Component extends DCLogic {
     const flipStyle = 'position:relative;transform-style:preserve-3d;transition:' + (this.flipAng != null ? 'none' : 'transform 0.9s cubic-bezier(.2,.7,.2,1)') + ';transform:rotateY(' + flipAngle.toFixed(1) + 'deg)';
     const mixSongs = [['I WANT YOU BACK', 'Jackson 5'], ["I'M BACK", 'Eminem'], ['BACK IN THE SADDLE', 'Aerosmith'], ['BACK IN BLACK', 'AC/DC'], ['WELCOME BACK', 'John Sebastian'], ['BACK FOR GOOD', 'Take That'], ['BACK TO LIFE', 'Soul II Soul'], ['BACK ON THE CHAIN GANG', 'The Pretenders']];
     const mixRows = mixSongs.map((m, i) => ({ no: String(i + 1).padStart(2, '0'), t: m[0], a: m[1], style: 'display:flex;align-items:center;gap:14px;width:100%;box-sizing:border-box;padding:12px 0;background:transparent;border:0;border-bottom:2px solid #4a2c6e;color:' + (i === this.mixIdx ? '#ffd166' : '#fff4e6') + ';cursor:pointer;text-align:left;font-family:inherit;font-size:inherit', pick: () => { this.mixIdx = i; this.mixOn = true; this.setState({ ui: Date.now() }); } }));
-    return { flipStyle, mixRows, dots, setEmail, medalStyle, shelfDown: this.shelfDown, prodStyle, playerStyle, prodLabel, songArt: song.art, songInitial: song.ini, songNo, songTitle: song.t, songArtist: song.a, shelfPrev, shelfNext, donateStyle, emptyStyle, board, form: this.form, notifyAttr, donateMsg: this.donateMsg, openDonate, closeDonate, setName, setOrg, setAmount, toggleNotify, submitDonate, lab0, pops, glow, glowText, bgCss, tipA, tipB, spots, ballSpots, danceStyle, boomStyle, word, wordStyle,
+    return { flipStyle, mixRows, dots, frontFace: this.flipped ? 'inert aria-hidden=true' : '', backFace: this.flipped ? '' : 'inert aria-hidden=true', shelfDown: this.shelfDown, prodStyle, playerStyle, prodLabel, songArt: song.art, songInitial: song.ini, songNo, songTitle: song.t, songArtist: song.a, shelfPrev, shelfNext, lab0, pops, glow, glowText, bgCss, tipA, tipB, spots, ballSpots, danceStyle, boomStyle, word, wordStyle, eggStyle, eggText, eggReward, eggRewardStyle,
       ballWrapStyle: 'position:fixed;top:' + (L - 438) + 'px;left:50%;margin-left:-128px;width:256px;display:flex;flex-direction:column;align-items:center;z-index:50;pointer-events:none',
-      ballStyle: 'position:relative;overflow:hidden;width:256px;height:256px;border-radius:50%;box-shadow:0 0 ' + (40*op) + 'px ' + (10*op) + 'px #fff;background:repeating-linear-gradient(0deg,rgba(255,255,255,0.45) 0 2px,transparent 2px 8px),repeating-linear-gradient(90deg,rgba(255,255,255,0.45) 0 2px,transparent 2px 8px),radial-gradient(circle at 35% 30%,#fff,#b9b9d0 40%,#5a5a78);background-position:' + ((t * 20) % 8) + 'px 0,0 0,0 0',
+      ballStyle: 'position:relative;overflow:hidden;width:256px;height:256px;border-radius:50%;box-shadow:0 0 ' + (40*op) + 'px ' + (10*op) + 'px #fff;background:repeating-linear-gradient(0deg,rgba(255,255,255,0.45) 0 2px,transparent 2px 8px),repeating-linear-gradient(90deg,rgba(255,255,255,0.45) 0 2px,transparent 2px 8px),radial-gradient(circle at 35% 30%,#fff,#b9b9d0 40%,#5a5a78);background-position:' + (((L === 0 && !this.disco ? 0 : t) * 20) % 8) + 'px 0,0 0,0 0',
       discoStyle: 'position:fixed;inset:0;z-index:40;pointer-events:none;overflow:hidden;opacity:' + op,
       raysStyle: 'display:none',
       grab0: this.grabber(0), grab1: this.grabber(1),

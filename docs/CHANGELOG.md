@@ -15,6 +15,7 @@ Version numbers are the canvas versions of Main.dc.html unless noted.
 - v68: "Flip back" button removed.
 - v69: the A-side center label stays on the true center. The sideways wobble was removed.
 - v70: artboards B-Grid and C-Story removed, so Main is the only artboard. Canvas note changed to "Direction for annlucchini.com".
+- v73: "Donate to GCF" links to the DonorBox page (https://donorbox.org/creativity-that-nourishes-gcf), opening in a new tab. The donation form and the leaderboard are removed, so the page no longer reads from or writes to the db capability. Applied to the canvas copy as it stood before this publish, which did not include the dev-only work below.
 - dev only: background fills the whole window (fixed layer behind the content). Track blurbs share one grid cell, so the section keeps the height of its tallest blurb. "shop" in the shop headline links to the Etsy shop, highlighted yellow.
 - dev only: 90s scratch-pop shapes replaced with a sparkle star (single) and a 5 by 2 star grid, in yellow.
 - dev only: yellow wave in the strip is 15% taller (amplitude 12px to 13.8px). Bottom dancer fix: it arms after the page has stopped moving, so pushing at the bottom no longer blocks it.
@@ -27,5 +28,8 @@ Version numbers are the canvas versions of Main.dc.html unless noted.
 - dev only: Pick a track heading and paragraph moved into the left column, above the list. Picture column starts at the top, aligned with the heading, and stays sticky while the list scrolls.
 - dev only: disc opposite-end stop changed from #816a99 to #6029a9 (the darkest plum #1a0b2e lightened 30 points in HSL), on both discs.
 - dev only: button and title glow fades out as the ball rises out of view (over the last 120px of ball height). Glow strength written to 3 decimals to avoid stepping. Track names 22px.
+- dev only: hero headline replaced with a mixtape cassette label. Cream "side A" strip (Press Start 2P label, 12px minimum) holding "Designs that sell.", a yellow asterisk divider, and "shine & stick." in Rubik Mono One with "& stick." in mint. The card is sized in container units, so it shrinks as one unit on phones.
 
 Current state (after v69): the sprite path in the GitHub copy points to assets/, where the canvas copy uses /_blob/.
+- dev only: easter egg tracker. A small fixed pill at bottom left shows "eggs found N of 4" (disco ball, dancer with its words and beat distortion, playlist card flip, scratching). Each egg is saved in localStorage (try/catch) the first time it triggers. Finding all 4 shows a placeholder reward line, copy in this.eggCopy, colors in this.eggColors.
+- dev only: working copy reset to the last commit (33e1e3e), keeping the egg tracker and the Donate to GCF link, and dropping the cassette hero (the simple "Designs that sell, shine & stick." headline is back). Architect's first batch applied: each scratch pop slot keeps its own keyframe parity, so a reused slot restarts its pop-in; disc spin, ball retract and dancer exit scale with frame time (capped at 3 frames); the flip drag tracks its own pointer, releases on mouse-up outside the window, and cancels on pointercancel; the face turned away is inert and aria-hidden; the page wrapper has no transform or filter while the beat is idle; a parked ball (off screen, not disco) keeps a constant style string. Not published to the canvas.
