@@ -27,9 +27,9 @@ Syntax check before publishing: pull out the text between the data-dc-script tag
 
 The top of the page has the nav, with links to Work, Giving back and Say hello. The hero has no decoration. Its headline is "Designs that sell, shine and stick."
 
-The A-Side section ("Pick a track") is a hover list. Each row has a zero-padded track number, a title and a tag. The preview on the right changes with the selection. The disc colors come from this.stopsA and this.stopsB, set in the constructor. The center label is static. The outer label moves with scratch speed, and tick() low-passes it with a 0.2 lerp.
+The A-Side section ("Pick a track") is a hover list. Each row has a zero-padded track number, a title and a tag. The preview on the right changes with the selection. The disc colors come from this.stopsA and this.stopsB, set in the constructor. The center label is static. The outer label is not rendered: tick() still computes labelX and renderVals() passes lab0, but no markup reads them.
 
-Scratch pops are the words and 90s shapes that appear while you drag a disc. spawnPop() writes into a fixed pool of 10 slots (this.pops, with this.popSlot as the cursor). Slots are overwritten in place, never removed, because re-indexing caused the glitch. About 40 percent of pops are shapes, taken from this.popShapes, and the rest are words from this.popWords. Pops last about 2.4 to 3.0 seconds and spawn at least 240 ms apart. Half of them land anywhere on the page and half land around the cursor.
+Scratch pops are the words and 90s shapes that appear while you drag a disc. spawnPop() writes into a fixed pool of 10 slots (this.pops, with this.popSlot as the cursor). Slots are overwritten in place, never removed, because re-indexing caused the glitch. About 40 percent of pops are shapes, taken from this.popShapes, and the rest are words from this.popWords. Pops last about 2.4 to 3.0 seconds and spawn at least 240 ms apart. Half of them land anywhere in the viewport and half land around the cursor. Pops are position:fixed, so they never land outside the viewport.
 
 The shop section (id "shop") is a flip card. Its front has the headline "I built a brand, started with a baby on my hip.", the paragraph, three stat pills (4.9/5 average, 876 reviews, 4,560+ sales) and the product carousel. The carousel has three product slides (indexes 3 to 5) with product photo placeholders and three dots at the bottom. The dots mark the product slides only. Dragging right on the first product slide turns the card, and the turn follows the pointer. A full turn takes about 400px of drag. Releasing past 90 degrees completes the flip. Dragging left on the B-side turns it back. The B-side is the mixtape: a heading, "My mixtape to you", a line about eight comebacks, and eight tracks with numbers. The tracks are I Want You Back (Jackson 5), I'm Back (Eminem), Back in the Saddle (Aerosmith), Back in Black (AC/DC), Welcome Back (John Sebastian), Back for Good (Take That), Back to Life (Soul II Soul) and Back on the Chain Gang (The Pretenders). Clicking a track selects it. Below them is a "Listen on my Spotify playlist" button, which currently links to # and needs Luis's playlist URL. There is no audio.
 
@@ -37,15 +37,15 @@ The three review quote cards were removed on request. Luis will decide what goes
 
 The Giving back section ("Design that feeds kids.") has the GCF fundraiser graphic placeholder and a Donate to GCF button. The button links to the DonorBox page (https://donorbox.org/creativity-that-nourishes-gcf) in a new tab. The page has no donation form, no leaderboard and no db calls; the donations, contacts and dethrone-notices collections are no longer written from this page (changelog v73).
 
-The easter egg dancer sits bottom-right and scrolls in when you reach the bottom of the page and scroll or swipe up. It plays 0 to 4.8 seconds of frames, holds the last second with a 2-second ping-pong, and exits. The words "EVERY BODY DANCE NOW" start with the dancer, and the beat distortion starts 1.7 seconds later. The distortion is driven by boomStyle in renderVals. It uses blur, skew, scale and red and cyan drop-shadows at 8px for chromatic aberration.
+The easter egg dancer sits bottom-right and scrolls in when you reach the bottom of the page and keep scrolling down (on touch, swipe up). It plays 0 to 4.8 seconds of frames, holds the last second with a 2-second ping-pong, holds 0.5 seconds more, and exits. The words "EVERY BODY DANCE NOW" start with the dancer, and the beat distortion starts 1.7 seconds later. The distortion is driven by boomStyle in renderVals. It uses blur, skew, scale and red and cyan drop-shadows for chromatic aberration, peaking at 9.6px (8px times the 1.2 beat peak).
 
 Closing: "You pick the next track." followed by the email address and the Zaandam line.
 
-The disco ball, with spots and rays, appears when you pull down at the top of the page. Its wheel and cord are in the markup, driven by L and disco in tick().
+The disco ball, with spots (the rays are not rendered), appears when you pull down at the top of the page. Its wheel and cord are in the markup, driven by L and disco in tick().
 
 ## Shared facts
 
-Email: annlucchinidesign@gmail.com. Phone: +31 6 25464717. Location: Zaandam, Netherlands. Etsy: etsy.com/shop/ShopCafeDisco. Shop site: cafediscostudios.com. The Main palette is coral #ff6b5a, yellow #ffd166, mint #06d6a0, violet #b388ff, and plum #1a0b2e as the background.
+Email: annlucchinidesign@gmail.com. Phone: +31 6 25464717. Location: Zaandam, Netherlands. Etsy: etsy.com/shop/ShopCafeDisco. Shop site: cafediscostudios.com. The Main palette is coral #ff6b5a (not used in Main.dc.html), yellow #ffd166, mint #06d6a0, violet #b388ff, and plum #1a0b2e as the background.
 
 Fonts load from Google Fonts. Main uses Bricolage Grotesque, DM Sans, Bungee, Bangers, Rubik Mono One and Press Start 2P.
 
