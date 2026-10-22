@@ -41,7 +41,7 @@ The easter egg dancer sits bottom-right and scrolls in when you reach the bottom
 
 Closing: "You pick the next track." followed by the email address and the Zaandam line.
 
-The disco ball, with spots (the rays are not rendered), appears when you pull down at the top of the page. Its wheel and cord are in the markup, driven by L and disco in tick().
+The disco ball, with spots (the rays are hidden with display:none), appears when you pull down at the top of the page. Its wheel and cord are in the markup, driven by L and disco in tick().
 
 ## Shared facts
 
