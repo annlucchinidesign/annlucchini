@@ -44,3 +44,4 @@ Current state (after v69): the sprite path in the GitHub copy points to assets/,
 - dev only: backlight spots are placed behind the placeholder area and sized 50 to 90 percent of its width and height. A layer three times the panel size, masked so the glow fades across the gutter, stops the hard edge at the page right side (the root clip).
 - dev only: hero disc sizing reverted to the previous fixed 280px discs. Four toggle buttons (CUE, SYNC, LOOP, FX) light up when pressed, and three vertical sliders (LO, MID, HI) move up and down. They have no effect on anything else.
 - dev only: the hero controls are a slim mixer strip inside the disc table, below the two discs. Two knobs turn 45 degrees per click, four lit buttons (CUE, SYNC, LOOP, FX) and three horizontal sliders (LO, MID, HI). The strip adds about 30px to the table height. No effect on anything else.
+- dev only: mixer button and slider labels raised from 10px to 11px, the minimum for functional text.
