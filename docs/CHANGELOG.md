@@ -52,3 +52,4 @@ Current state (after v69): the sprite path in the GitHub copy points to assets/,
 - dev only: the mixer button grid has a third column, so there are six square lit buttons in three columns by two rows. The two new lamps are cyan and lime, from the palette already in the file. The middle block gets wider to fit.
 - dev only: the bottom disc tonearm tip sits at the same angle as the top disc, so the two arms match.
 - dev only: the backlight spotlights are half their previous size (width and height), so they read as less prominent. Positions and drift are unchanged.
+- dev only: the backlight spotlights drift further, about twice as far as before. Each one travels side to side, then up and down, then back along a diagonal, and the slow loop is unchanged.
