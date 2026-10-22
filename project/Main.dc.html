@@ -22,13 +22,17 @@ html.is-dragging,html.is-dragging *{cursor:grabbing !important}
 :root{--gx:64px}@media (max-width:600px){:root{--gx:16px}}
 @media (hover:hover) and (pointer:fine){a:hover,button:hover{filter:brightness(1.08)}}
 a,button{transition:filter 150ms ease-out,transform 150ms cubic-bezier(.23,1,.32,1)}a:active,button:active{transform:scale(.97)}
+.stick{position:sticky;top:24px}.work-left{min-height:860px}
+@media (max-width:820px){.stick{position:static}.work-left{min-height:0}}
+.backlight{animation:backlight 7s ease-in-out infinite alternate}@keyframes backlight{from{transform:translate(-14px,-10px) scale(1)}to{transform:translate(14px,10px) scale(1.06)}}
+@media (prefers-reduced-motion: reduce){.backlight{animation:none}}
 button:focus-visible,a:focus-visible{outline:3px solid #ffd166;outline-offset:3px}
 .strip-track{display:flex;width:max-content;animation:strip 55s linear infinite}@media (prefers-reduced-motion: reduce){.strip-track{animation:none}}@keyframes strip{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .wv{display:inline-block;white-space:pre;transform-origin:50% 60%;animation:ride 55s linear infinite}@keyframes ride{0.0%{transform:translateY(calc(20px * sin(var(--ph) - 0.00000rad) + 3.0px * sin(0.00000rad))) rotate(calc(8deg * cos(var(--ph) - 0.00000rad)))}4.17%{transform:translateY(calc(20px * sin(var(--ph) - 0.52360rad) + 3.0px * sin(1.30900rad))) rotate(calc(8deg * cos(var(--ph) - 0.52360rad)))}8.33%{transform:translateY(calc(20px * sin(var(--ph) - 1.04720rad) + 3.0px * sin(2.61799rad))) rotate(calc(8deg * cos(var(--ph) - 1.04720rad)))}12.5%{transform:translateY(calc(20px * sin(var(--ph) - 1.57080rad) + 3.0px * sin(3.92699rad))) rotate(calc(8deg * cos(var(--ph) - 1.57080rad)))}16.67%{transform:translateY(calc(20px * sin(var(--ph) - 2.09440rad) + 3.0px * sin(5.23599rad))) rotate(calc(8deg * cos(var(--ph) - 2.09440rad)))}20.83%{transform:translateY(calc(20px * sin(var(--ph) - 2.61799rad) + 3.0px * sin(6.54498rad))) rotate(calc(8deg * cos(var(--ph) - 2.61799rad)))}25.0%{transform:translateY(calc(20px * sin(var(--ph) - 3.14159rad) + 3.0px * sin(7.85398rad))) rotate(calc(8deg * cos(var(--ph) - 3.14159rad)))}29.17%{transform:translateY(calc(20px * sin(var(--ph) - 3.66519rad) + 3.0px * sin(9.16298rad))) rotate(calc(8deg * cos(var(--ph) - 3.66519rad)))}33.33%{transform:translateY(calc(20px * sin(var(--ph) - 4.18879rad) + 3.0px * sin(10.47198rad))) rotate(calc(8deg * cos(var(--ph) - 4.18879rad)))}37.5%{transform:translateY(calc(20px * sin(var(--ph) - 4.71239rad) + 3.0px * sin(11.78097rad))) rotate(calc(8deg * cos(var(--ph) - 4.71239rad)))}41.67%{transform:translateY(calc(20px * sin(var(--ph) - 5.23599rad) + 3.0px * sin(13.08997rad))) rotate(calc(8deg * cos(var(--ph) - 5.23599rad)))}45.83%{transform:translateY(calc(20px * sin(var(--ph) - 5.75959rad) + 3.0px * sin(14.39897rad))) rotate(calc(8deg * cos(var(--ph) - 5.75959rad)))}50.0%{transform:translateY(calc(20px * sin(var(--ph) - 6.28319rad) + 3.0px * sin(15.70796rad))) rotate(calc(8deg * cos(var(--ph) - 6.28319rad)))}54.17%{transform:translateY(calc(20px * sin(var(--ph) - 6.80678rad) + 3.0px * sin(17.01696rad))) rotate(calc(8deg * cos(var(--ph) - 6.80678rad)))}58.33%{transform:translateY(calc(20px * sin(var(--ph) - 7.33038rad) + 3.0px * sin(18.32596rad))) rotate(calc(8deg * cos(var(--ph) - 7.33038rad)))}62.5%{transform:translateY(calc(20px * sin(var(--ph) - 7.85398rad) + 3.0px * sin(19.63495rad))) rotate(calc(8deg * cos(var(--ph) - 7.85398rad)))}66.67%{transform:translateY(calc(20px * sin(var(--ph) - 8.37758rad) + 3.0px * sin(20.94395rad))) rotate(calc(8deg * cos(var(--ph) - 8.37758rad)))}70.83%{transform:translateY(calc(20px * sin(var(--ph) - 8.90118rad) + 3.0px * sin(22.25295rad))) rotate(calc(8deg * cos(var(--ph) - 8.90118rad)))}75.0%{transform:translateY(calc(20px * sin(var(--ph) - 9.42478rad) + 3.0px * sin(23.56194rad))) rotate(calc(8deg * cos(var(--ph) - 9.42478rad)))}79.17%{transform:translateY(calc(20px * sin(var(--ph) - 9.94838rad) + 3.0px * sin(24.87094rad))) rotate(calc(8deg * cos(var(--ph) - 9.94838rad)))}83.33%{transform:translateY(calc(20px * sin(var(--ph) - 10.47198rad) + 3.0px * sin(26.17994rad))) rotate(calc(8deg * cos(var(--ph) - 10.47198rad)))}87.5%{transform:translateY(calc(20px * sin(var(--ph) - 10.99557rad) + 3.0px * sin(27.48894rad))) rotate(calc(8deg * cos(var(--ph) - 10.99557rad)))}91.67%{transform:translateY(calc(20px * sin(var(--ph) - 11.51917rad) + 3.0px * sin(28.79793rad))) rotate(calc(8deg * cos(var(--ph) - 11.51917rad)))}95.83%{transform:translateY(calc(20px * sin(var(--ph) - 12.04277rad) + 3.0px * sin(30.10693rad))) rotate(calc(8deg * cos(var(--ph) - 12.04277rad)))}100.0%{transform:translateY(calc(20px * sin(var(--ph) - 12.56637rad) + 3.0px * sin(31.41593rad))) rotate(calc(8deg * cos(var(--ph) - 12.56637rad)))}}@keyframes glowText{0%,100%{text-shadow:0 0 10px color-mix(in srgb,#ff4fa3 calc(var(--ga,1) * 100%),transparent),0 0 22px color-mix(in srgb,#ff4fa3 calc(var(--ga,1) * 100%),transparent)}33%{text-shadow:0 0 10px color-mix(in srgb,#06d6a0 calc(var(--ga,1) * 100%),transparent),0 0 22px color-mix(in srgb,#06d6a0 calc(var(--ga,1) * 100%),transparent)}66%{text-shadow:0 0 10px color-mix(in srgb,#ffd166 calc(var(--ga,1) * 100%),transparent),0 0 22px color-mix(in srgb,#ffd166 calc(var(--ga,1) * 100%),transparent)}}@keyframes glow{0%,100%{text-shadow:0 0 10px color-mix(in srgb,#ff4fa3 calc(var(--ga,1) * 100%),transparent),0 0 22px color-mix(in srgb,#ff4fa3 calc(var(--ga,1) * 100%),transparent);box-shadow:0 0 14px color-mix(in srgb,#ff4fa3 calc(var(--ga,1) * 100%),transparent),0 0 28px color-mix(in srgb,#ff4fa3 calc(var(--ga,1) * 100%),transparent)}33%{text-shadow:0 0 10px color-mix(in srgb,#06d6a0 calc(var(--ga,1) * 100%),transparent),0 0 22px color-mix(in srgb,#06d6a0 calc(var(--ga,1) * 100%),transparent);box-shadow:0 0 14px color-mix(in srgb,#06d6a0 calc(var(--ga,1) * 100%),transparent),0 0 28px color-mix(in srgb,#06d6a0 calc(var(--ga,1) * 100%),transparent)}66%{text-shadow:0 0 10px color-mix(in srgb,#ffd166 calc(var(--ga,1) * 100%),transparent),0 0 22px color-mix(in srgb,#ffd166 calc(var(--ga,1) * 100%),transparent);box-shadow:0 0 14px color-mix(in srgb,#ffd166 calc(var(--ga,1) * 100%),transparent),0 0 28px color-mix(in srgb,#ffd166 calc(var(--ga,1) * 100%),transparent)}}@keyframes wpop{0%{opacity:0;transform:translate(-50%,-50%) rotate(var(--r)) scale(0.2)}12%{opacity:1;transform:translate(-50%,-50%) rotate(var(--r)) scale(1.25)}24%{transform:translate(-50%,-50%) rotate(var(--r)) scale(1)}78%{opacity:1;transform:translate(-50%,-50%) rotate(var(--r)) scale(1)}100%{opacity:0;transform:translate(-50%,-62%) rotate(var(--r)) scale(0.85)}}@keyframes wpopB{0%{opacity:0;transform:translate(-50%,-50%) rotate(var(--r)) scale(0.2)}12%{opacity:1;transform:translate(-50%,-50%) rotate(var(--r)) scale(1.25)}24%{transform:translate(-50%,-50%) rotate(var(--r)) scale(1)}78%{opacity:1;transform:translate(-50%,-50%) rotate(var(--r)) scale(1)}100%{opacity:0;transform:translate(-50%,-62%) rotate(var(--r)) scale(0.85)}}.wv.sp{width:0.3em}.wv.st{margin:0 0.7em}@media (prefers-reduced-motion: reduce){.wv{animation:none}}
 </style>
 </helmet>
 <div aria-hidden="true" style="position:fixed;inset:0;z-index:-1;{{bgCss}}"></div>
-<div style="width:100%;max-width:1440px;margin:0 auto;color:#fff4e6;overflow:hidden;position:relative">
+<div style="width:100%;max-width:1440px;margin:0 auto;color:#fff4e6;overflow:hidden;overflow:clip;position:relative">
   <!-- easter egg: disco ball on a cord -->
   <div style="{{ballWrapStyle}}"><div style="width:2px;height:120px;background:#fff4e6"></div><div style="{{ballStyle}}"><sc-for list="{{ballSpots}}" as="bs" hint-placeholder-count="0"><div style="{{bs.style}}"></div></sc-for></div></div>
   <div style="{{discoStyle}}" aria-hidden="true">
@@ -64,8 +68,8 @@ button:focus-visible,a:focus-visible{outline:3px solid #ffd166;outline-offset:3p
     </div>
     <div style="flex:1 1 380px;min-width:0;display:flex;flex-direction:column;align-items:center;gap:16px;position:relative;z-index:1">
       <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:20px;padding:24px;border-radius:28px;background:#2a1647;border:2px solid #4a2c6e">
-        <div style="position:relative;width:280px;max-width:100%">
-        <svg width="280" height="280" viewBox="0 0 280 280" aria-hidden="true" style="position:absolute;left:0;top:0;overflow:visible;pointer-events:none;z-index:3">
+        <div style="position:relative;width:min(280px,100%);aspect-ratio:1/1">
+        <svg width="100%" height="100%" viewBox="0 0 280 280" aria-hidden="true" style="position:absolute;left:0;top:0;overflow:visible;pointer-events:none;z-index:3">
           <line x1="0" y1="0" x2="{{tipA.x}}" y2="{{tipA.y}}" stroke="#fff4e6" stroke-width="5" stroke-linecap="round"></line>
           <circle cx="0" cy="0" r="14" fill="#fff4e6" stroke="#1a0b2e" stroke-width="3"></circle>
           <circle cx="{{tipA.x}}" cy="{{tipA.y}}" r="8" fill="{{tipA.color}}" stroke="#fff" stroke-width="3"></circle>
@@ -74,8 +78,8 @@ button:focus-visible,a:focus-visible{outline:3px solid #ffd166;outline-offset:3p
           <div style="width:34%;height:34%;border-radius:50%;background:#1a0b2e;display:flex;align-items:center;justify-content:center;text-align:center;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:13px;line-height:1.1;color:#ffd166;pointer-events:none">[ IMAGE<br>A-SIDE ]</div>
         </div>
         </div>
-        <div style="position:relative;width:280px;max-width:100%">
-        <svg width="280" height="280" viewBox="0 0 280 280" aria-hidden="true" style="position:absolute;left:0;top:0;overflow:visible;pointer-events:none;z-index:3">
+        <div style="position:relative;width:min(280px,100%);aspect-ratio:1/1">
+        <svg width="100%" height="100%" viewBox="0 0 280 280" aria-hidden="true" style="position:absolute;left:0;top:0;overflow:visible;pointer-events:none;z-index:3">
           <line x1="280" y1="0" x2="{{tipB.x}}" y2="{{tipB.y}}" stroke="#fff4e6" stroke-width="5" stroke-linecap="round"></line>
           <circle cx="280" cy="0" r="14" fill="#fff4e6" stroke="#1a0b2e" stroke-width="3"></circle>
           <circle cx="{{tipB.x}}" cy="{{tipB.y}}" r="8" fill="{{tipB.color}}" stroke="#fff" stroke-width="3"></circle>
@@ -95,7 +99,7 @@ button:focus-visible,a:focus-visible{outline:3px solid #ffd166;outline-offset:3p
   <!-- work: hover list -->
   <div id="work" style="padding:112px var(--gx) 40px">
     <div class="work-grid">
-      <div style="min-width:0">
+      <div class="work-left" style="min-width:0">
         <h2 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(40px,9vw,64px);letter-spacing:-2px;margin:0 0 12px">Pick a track.</h2>
         <p style="font-size:18px;color:#e8d9f5;margin:0 0 48px">Hover or tab through the list. The preview changes with you.</p>
         <div style="display:flex;flex-direction:column">
@@ -107,7 +111,8 @@ button:focus-visible,a:focus-visible{outline:3px solid #ffd166;outline-offset:3p
         </sc-for>
         </div>
       </div>
-      <div style="min-width:0;position:sticky;top:24px">
+      <div class="stick" style="min-width:0;isolation:isolate">
+        <div class="backlight" aria-hidden="true" style="{{glowStyle}}"></div>
         <div style="{{previewStyle}}">
           <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:30px;line-height:1.1;padding:32px;text-align:center">[ {{current.name}} IMAGE ]</div>
         </div>
@@ -401,7 +406,7 @@ class Component extends DCLogic {
   renderVals() {
     const grooves = 'repeating-radial-gradient(circle at center, rgba(0,0,0,0.0) 0, rgba(0,0,0,0.0) 5px, rgba(0,0,0,0.18) 6px, rgba(0,0,0,0.0) 7px),';
     const cur = this.state.drag >= 0 ? 'grabbing' : 'grab';
-    const disc = (a, g) => 'width:280px;height:280px;max-width:100%;border-radius:50%;display:flex;align-items:center;justify-content:center;user-select:none;touch-action:none;cursor:' + cur + ';transform:rotate(' + a + 'deg);background:' + grooves + g + ';box-shadow:0 12px 32px rgba(0,0,0,0.5)';
+    const disc = (a, g) => 'width:100%;height:100%;border-radius:50%;display:flex;align-items:center;justify-content:center;user-select:none;touch-action:none;cursor:' + cur + ';transform:rotate(' + a + 'deg);background:' + grooves + g + ';box-shadow:0 12px 32px rgba(0,0,0,0.5)';
     const data = [
       { name:'Shop Cafe Disco', tag:'Founder, 2020 to now', color:'#06d6a0', blurb:'My own product brand: 200+ designs, plaques for creators, storefront, social video. Design, production and sales in one pair of hands.' },
       { name:'Under Armour', tag:'Youth & Women\'s branding', color:'#4cc9f0', blurb:'Style guides for international partners, campaign key art, e-commerce assets and seating boxes for key athletes and influencers.' },
@@ -513,7 +518,7 @@ class Component extends DCLogic {
       grab0: this.grabber(0), grab1: this.grabber(1),
       disc0Style: disc(this.state.a0, 'conic-gradient(from ' + this.fromA + 'deg in oklch,' + this.stopsCss(this.stopsA) + ')'),
       disc1Style: disc(this.state.a1, 'conic-gradient(from ' + this.fromB + 'deg in oklch,' + this.stopsCss(this.stopsB) + ')'),
-      projects, current: c, previewStyle: 'height:520px;border-radius:32px;display:flex;align-items:center;justify-content:center;color:#1a0b2e;background:' + c.color + ';transition:background-color 180ms ease-out' };
+      projects, current: c, previewStyle: 'height:520px;border-radius:32px;display:flex;align-items:center;justify-content:center;color:#1a0b2e;background:' + c.color + ';transition:background-color 400ms ease-out', glowStyle: 'position:absolute;inset:-40px;z-index:-1;pointer-events:none;border-radius:40px;filter:blur(40px);opacity:0.6;background:' + c.color + ';transition:background-color 400ms ease-out' };
   }
 }
 </script>
