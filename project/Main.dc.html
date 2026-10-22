@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>annlucchini.</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%231a0b2e%22%2F%3E%3Ccircle%20cx%3D%2232%22%20cy%3D%2232%22%20r%3D%2222%22%20fill%3D%22%23f4f4fb%22%2F%3E%3Cg%20stroke%3D%22%236b6b8f%22%20stroke-width%3D%223%22%3E%3Cline%20x1%3D%2232%22%20y1%3D%2210%22%20x2%3D%2232%22%20y2%3D%2254%22%2F%3E%3Cline%20x1%3D%2210%22%20y1%3D%2232%22%20x2%3D%2254%22%20y2%3D%2232%22%2F%3E%3Cline%20x1%3D%2217%22%20y1%3D%2217%22%20x2%3D%2247%22%20y2%3D%2247%22%2F%3E%3Cline%20x1%3D%2247%22%20y1%3D%2217%22%20x2%3D%2217%22%20y2%3D%2247%22%2F%3E%3C%2Fg%3E%3Ccircle%20cx%3D%2224%22%20cy%3D%2224%22%20r%3D%224%22%20fill%3D%22%23ffffff%22%2F%3E%3C%2Fsvg%3E">
 <script src="./support.js"></script>
@@ -18,6 +19,9 @@ a{color:#ffd166}a:hover{color:#06d6a0}
 button{font-family:inherit;cursor:pointer}
 html.is-dragging,html.is-dragging *{cursor:grabbing !important}
 .hit{position:relative}.hit::after{content:"";position:absolute;inset:-12px -6px}
+:root{--gx:64px}@media (max-width:600px){:root{--gx:16px}}
+@media (hover:hover) and (pointer:fine){a:hover,button:hover{filter:brightness(1.08)}}
+a,button{transition:filter 150ms ease-out,transform 150ms cubic-bezier(.23,1,.32,1)}a:active,button:active{transform:scale(.97)}
 button:focus-visible,a:focus-visible{outline:3px solid #ffd166;outline-offset:3px}
 .strip-track{display:flex;width:max-content;animation:strip 55s linear infinite}@media (prefers-reduced-motion: reduce){.strip-track{animation:none}}@keyframes strip{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .wv{display:inline-block;white-space:pre;transform-origin:50% 60%;animation:ride 55s linear infinite}@keyframes ride{0.0%{transform:translateY(calc(20px * sin(var(--ph) - 0.00000rad) + 3.0px * sin(0.00000rad))) rotate(calc(8deg * cos(var(--ph) - 0.00000rad)))}4.17%{transform:translateY(calc(20px * sin(var(--ph) - 0.52360rad) + 3.0px * sin(1.30900rad))) rotate(calc(8deg * cos(var(--ph) - 0.52360rad)))}8.33%{transform:translateY(calc(20px * sin(var(--ph) - 1.04720rad) + 3.0px * sin(2.61799rad))) rotate(calc(8deg * cos(var(--ph) - 1.04720rad)))}12.5%{transform:translateY(calc(20px * sin(var(--ph) - 1.57080rad) + 3.0px * sin(3.92699rad))) rotate(calc(8deg * cos(var(--ph) - 1.57080rad)))}16.67%{transform:translateY(calc(20px * sin(var(--ph) - 2.09440rad) + 3.0px * sin(5.23599rad))) rotate(calc(8deg * cos(var(--ph) - 2.09440rad)))}20.83%{transform:translateY(calc(20px * sin(var(--ph) - 2.61799rad) + 3.0px * sin(6.54498rad))) rotate(calc(8deg * cos(var(--ph) - 2.61799rad)))}25.0%{transform:translateY(calc(20px * sin(var(--ph) - 3.14159rad) + 3.0px * sin(7.85398rad))) rotate(calc(8deg * cos(var(--ph) - 3.14159rad)))}29.17%{transform:translateY(calc(20px * sin(var(--ph) - 3.66519rad) + 3.0px * sin(9.16298rad))) rotate(calc(8deg * cos(var(--ph) - 3.66519rad)))}33.33%{transform:translateY(calc(20px * sin(var(--ph) - 4.18879rad) + 3.0px * sin(10.47198rad))) rotate(calc(8deg * cos(var(--ph) - 4.18879rad)))}37.5%{transform:translateY(calc(20px * sin(var(--ph) - 4.71239rad) + 3.0px * sin(11.78097rad))) rotate(calc(8deg * cos(var(--ph) - 4.71239rad)))}41.67%{transform:translateY(calc(20px * sin(var(--ph) - 5.23599rad) + 3.0px * sin(13.08997rad))) rotate(calc(8deg * cos(var(--ph) - 5.23599rad)))}45.83%{transform:translateY(calc(20px * sin(var(--ph) - 5.75959rad) + 3.0px * sin(14.39897rad))) rotate(calc(8deg * cos(var(--ph) - 5.75959rad)))}50.0%{transform:translateY(calc(20px * sin(var(--ph) - 6.28319rad) + 3.0px * sin(15.70796rad))) rotate(calc(8deg * cos(var(--ph) - 6.28319rad)))}54.17%{transform:translateY(calc(20px * sin(var(--ph) - 6.80678rad) + 3.0px * sin(17.01696rad))) rotate(calc(8deg * cos(var(--ph) - 6.80678rad)))}58.33%{transform:translateY(calc(20px * sin(var(--ph) - 7.33038rad) + 3.0px * sin(18.32596rad))) rotate(calc(8deg * cos(var(--ph) - 7.33038rad)))}62.5%{transform:translateY(calc(20px * sin(var(--ph) - 7.85398rad) + 3.0px * sin(19.63495rad))) rotate(calc(8deg * cos(var(--ph) - 7.85398rad)))}66.67%{transform:translateY(calc(20px * sin(var(--ph) - 8.37758rad) + 3.0px * sin(20.94395rad))) rotate(calc(8deg * cos(var(--ph) - 8.37758rad)))}70.83%{transform:translateY(calc(20px * sin(var(--ph) - 8.90118rad) + 3.0px * sin(22.25295rad))) rotate(calc(8deg * cos(var(--ph) - 8.90118rad)))}75.0%{transform:translateY(calc(20px * sin(var(--ph) - 9.42478rad) + 3.0px * sin(23.56194rad))) rotate(calc(8deg * cos(var(--ph) - 9.42478rad)))}79.17%{transform:translateY(calc(20px * sin(var(--ph) - 9.94838rad) + 3.0px * sin(24.87094rad))) rotate(calc(8deg * cos(var(--ph) - 9.94838rad)))}83.33%{transform:translateY(calc(20px * sin(var(--ph) - 10.47198rad) + 3.0px * sin(26.17994rad))) rotate(calc(8deg * cos(var(--ph) - 10.47198rad)))}87.5%{transform:translateY(calc(20px * sin(var(--ph) - 10.99557rad) + 3.0px * sin(27.48894rad))) rotate(calc(8deg * cos(var(--ph) - 10.99557rad)))}91.67%{transform:translateY(calc(20px * sin(var(--ph) - 11.51917rad) + 3.0px * sin(28.79793rad))) rotate(calc(8deg * cos(var(--ph) - 11.51917rad)))}95.83%{transform:translateY(calc(20px * sin(var(--ph) - 12.04277rad) + 3.0px * sin(30.10693rad))) rotate(calc(8deg * cos(var(--ph) - 12.04277rad)))}100.0%{transform:translateY(calc(20px * sin(var(--ph) - 12.56637rad) + 3.0px * sin(31.41593rad))) rotate(calc(8deg * cos(var(--ph) - 12.56637rad)))}}@keyframes glowText{0%,100%{text-shadow:0 0 10px color-mix(in srgb,#ff4fa3 calc(var(--ga,1) * 100%),transparent),0 0 22px color-mix(in srgb,#ff4fa3 calc(var(--ga,1) * 100%),transparent)}33%{text-shadow:0 0 10px color-mix(in srgb,#06d6a0 calc(var(--ga,1) * 100%),transparent),0 0 22px color-mix(in srgb,#06d6a0 calc(var(--ga,1) * 100%),transparent)}66%{text-shadow:0 0 10px color-mix(in srgb,#ffd166 calc(var(--ga,1) * 100%),transparent),0 0 22px color-mix(in srgb,#ffd166 calc(var(--ga,1) * 100%),transparent)}}@keyframes glow{0%,100%{text-shadow:0 0 10px color-mix(in srgb,#ff4fa3 calc(var(--ga,1) * 100%),transparent),0 0 22px color-mix(in srgb,#ff4fa3 calc(var(--ga,1) * 100%),transparent);box-shadow:0 0 14px color-mix(in srgb,#ff4fa3 calc(var(--ga,1) * 100%),transparent),0 0 28px color-mix(in srgb,#ff4fa3 calc(var(--ga,1) * 100%),transparent)}33%{text-shadow:0 0 10px color-mix(in srgb,#06d6a0 calc(var(--ga,1) * 100%),transparent),0 0 22px color-mix(in srgb,#06d6a0 calc(var(--ga,1) * 100%),transparent);box-shadow:0 0 14px color-mix(in srgb,#06d6a0 calc(var(--ga,1) * 100%),transparent),0 0 28px color-mix(in srgb,#06d6a0 calc(var(--ga,1) * 100%),transparent)}66%{text-shadow:0 0 10px color-mix(in srgb,#ffd166 calc(var(--ga,1) * 100%),transparent),0 0 22px color-mix(in srgb,#ffd166 calc(var(--ga,1) * 100%),transparent);box-shadow:0 0 14px color-mix(in srgb,#ffd166 calc(var(--ga,1) * 100%),transparent),0 0 28px color-mix(in srgb,#ffd166 calc(var(--ga,1) * 100%),transparent)}}@keyframes wpop{0%{opacity:0;transform:translate(-50%,-50%) rotate(var(--r)) scale(0.2)}12%{opacity:1;transform:translate(-50%,-50%) rotate(var(--r)) scale(1.25)}24%{transform:translate(-50%,-50%) rotate(var(--r)) scale(1)}78%{opacity:1;transform:translate(-50%,-50%) rotate(var(--r)) scale(1)}100%{opacity:0;transform:translate(-50%,-62%) rotate(var(--r)) scale(0.85)}}@keyframes wpopB{0%{opacity:0;transform:translate(-50%,-50%) rotate(var(--r)) scale(0.2)}12%{opacity:1;transform:translate(-50%,-50%) rotate(var(--r)) scale(1.25)}24%{transform:translate(-50%,-50%) rotate(var(--r)) scale(1)}78%{opacity:1;transform:translate(-50%,-50%) rotate(var(--r)) scale(1)}100%{opacity:0;transform:translate(-50%,-62%) rotate(var(--r)) scale(0.85)}}.wv.sp{width:0.3em}.wv.st{margin:0 0.7em}@media (prefers-reduced-motion: reduce){.wv{animation:none}}
@@ -28,7 +32,6 @@ button:focus-visible,a:focus-visible{outline:3px solid #ffd166;outline-offset:3p
   <!-- easter egg: disco ball on a cord -->
   <div style="{{ballWrapStyle}}"><div style="width:2px;height:120px;background:#fff4e6"></div><div style="{{ballStyle}}"><sc-for list="{{ballSpots}}" as="bs" hint-placeholder-count="0"><div style="{{bs.style}}"></div></sc-for></div></div>
   <div style="{{discoStyle}}" aria-hidden="true">
-    <div style="{{raysStyle}}"></div>
     <div style="position:absolute;inset:0;mix-blend-mode:screen">
       <sc-for list="{{spots}}" as="sp" hint-placeholder-count="0"><div style="{{sp.style}}"></div></sc-for>
     </div>
@@ -41,7 +44,7 @@ button:focus-visible,a:focus-visible{outline:3px solid #ffd166;outline-offset:3p
   <div style="{{eggStyle}}" aria-live="polite"><span>{{eggText}}</span><span style="{{eggRewardStyle}}">{{eggReward}}</span></div>
   <div style="{{boomStyle}}">
   <!-- nav -->
-  <div role="navigation" aria-label="Primary" style="display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center;padding:28px 64px">
+  <div role="navigation" aria-label="Primary" style="display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center;padding:28px var(--gx)">
     <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:24px;letter-spacing:-0.5px;{{glowText}}">ann lucchini<span style="color:#06d6a0">.</span></div>
     <div style="display:flex;flex-wrap:wrap;gap:28px;font-weight:500;font-size:16px;align-items:center">
       <a href="#work" class="hit" style="text-decoration:none;color:#fff4e6">Work</a>
@@ -50,10 +53,10 @@ button:focus-visible,a:focus-visible{outline:3px solid #ffd166;outline-offset:3p
     </div>
   </div>
   <!-- hero -->
-  <div style="position:relative;padding:72px 64px 120px;display:flex;flex-wrap:wrap;gap:48px;align-items:center">
+  <div style="position:relative;padding:72px var(--gx) 120px;display:flex;flex-wrap:wrap;gap:48px;align-items:center">
     <div style="flex:1 1 560px;min-width:0;position:relative;z-index:2">
       <div style="display:inline-block;border:2px solid #ffd166;color:#ffd166;border-radius:999px;padding:6px 16px;font-weight:700;font-size:14px;letter-spacing:1px;text-transform:uppercase">Brand &amp; visual identity designer</div>
-      <h1 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:112px;line-height:0.92;letter-spacing:-4px;margin:28px 0 24px">Designs that<br>sell, shine<br><span style="color:#06d6a0">&amp; stick.</span></h1>
+      <h1 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(56px,15vw,112px);line-height:0.92;letter-spacing:-4px;margin:28px 0 24px">Designs that<br>sell, shine<br><span style="color:#06d6a0">&amp; stick.</span></h1>
       <p style="font-size:21px;line-height:1.5;max-width:560px;margin:0 0 36px;color:#e8d9f5">Fourteen years of brand work for Under Armour and Asurion, plus a product brand of my own with 4,560+ sales. I design the thing, then I sell the thing.</p>
       <div style="display:flex;flex-wrap:wrap;gap:16px">
         <a href="#work" style="text-decoration:none;background:#06d6a0;color:#1a0b2e;font-weight:700;padding:16px 32px;border-radius:999px;font-size:18px;{{glow}}">See the work</a>
@@ -90,15 +93,15 @@ button:focus-visible,a:focus-visible{outline:3px solid #ffd166;outline-offset:3p
     <div class="strip-track"><div style="display:flex;white-space:nowrap"><span class="wv" style="--ph:0.00000rad">4</span><span class="wv" style="--ph:0.14612rad">,</span><span class="wv" style="--ph:0.29224rad">5</span><span class="wv" style="--ph:0.43836rad">6</span><span class="wv" style="--ph:0.58448rad">0</span><span class="wv" style="--ph:0.73060rad">+</span><span class="wv sp" style="--ph:0.87672rad"></span><span class="wv" style="--ph:1.02284rad">s</span><span class="wv" style="--ph:1.16896rad">a</span><span class="wv" style="--ph:1.31509rad">l</span><span class="wv" style="--ph:1.46121rad">e</span><span class="wv" style="--ph:1.60733rad">s</span><span class="wv sp" style="--ph:1.75345rad"></span><span class="wv st" style="--ph:1.89957rad">✳︎</span><span class="wv sp" style="--ph:2.19181rad"></span><span class="wv" style="--ph:2.33793rad">4</span><span class="wv" style="--ph:2.48405rad">.</span><span class="wv" style="--ph:2.63017rad">9</span><span class="wv sp" style="--ph:2.77629rad"></span><span class="wv" style="--ph:2.92241rad">f</span><span class="wv" style="--ph:3.06853rad">r</span><span class="wv" style="--ph:3.21465rad">o</span><span class="wv" style="--ph:3.36077rad">m</span><span class="wv sp" style="--ph:3.50689rad"></span><span class="wv" style="--ph:3.65301rad">8</span><span class="wv" style="--ph:3.79914rad">7</span><span class="wv" style="--ph:3.94526rad">6</span><span class="wv sp" style="--ph:4.09138rad"></span><span class="wv" style="--ph:4.23750rad">r</span><span class="wv" style="--ph:4.38362rad">e</span><span class="wv" style="--ph:4.52974rad">v</span><span class="wv" style="--ph:4.67586rad">i</span><span class="wv" style="--ph:4.82198rad">e</span><span class="wv" style="--ph:4.96810rad">w</span><span class="wv" style="--ph:5.11422rad">s</span><span class="wv sp" style="--ph:5.26034rad"></span><span class="wv st" style="--ph:5.40646rad">✳︎</span><span class="wv sp" style="--ph:5.69870rad"></span><span class="wv" style="--ph:5.84482rad">E</span><span class="wv" style="--ph:5.99094rad">t</span><span class="wv" style="--ph:6.13706rad">s</span><span class="wv" style="--ph:6.28319rad">y</span><span class="wv sp" style="--ph:6.42931rad"></span><span class="wv" style="--ph:6.57543rad">S</span><span class="wv" style="--ph:6.72155rad">t</span><span class="wv" style="--ph:6.86767rad">a</span><span class="wv" style="--ph:7.01379rad">r</span><span class="wv sp" style="--ph:7.15991rad"></span><span class="wv" style="--ph:7.30603rad">S</span><span class="wv" style="--ph:7.45215rad">e</span><span class="wv" style="--ph:7.59827rad">l</span><span class="wv" style="--ph:7.74439rad">l</span><span class="wv" style="--ph:7.89051rad">e</span><span class="wv" style="--ph:8.03663rad">r</span><span class="wv sp" style="--ph:8.18275rad"></span><span class="wv st" style="--ph:8.32887rad">✳︎</span><span class="wv sp" style="--ph:8.62111rad"></span><span class="wv" style="--ph:8.76724rad">2</span><span class="wv" style="--ph:8.91336rad">0</span><span class="wv" style="--ph:9.05948rad">0</span><span class="wv" style="--ph:9.20560rad">+</span><span class="wv sp" style="--ph:9.35172rad"></span><span class="wv" style="--ph:9.49784rad">o</span><span class="wv" style="--ph:9.64396rad">r</span><span class="wv" style="--ph:9.79008rad">i</span><span class="wv" style="--ph:9.93620rad">g</span><span class="wv" style="--ph:10.08232rad">i</span><span class="wv" style="--ph:10.22844rad">n</span><span class="wv" style="--ph:10.37456rad">a</span><span class="wv" style="--ph:10.52068rad">l</span><span class="wv sp" style="--ph:10.66680rad"></span><span class="wv" style="--ph:10.81292rad">p</span><span class="wv" style="--ph:10.95904rad">r</span><span class="wv" style="--ph:11.10516rad">o</span><span class="wv" style="--ph:11.25129rad">d</span><span class="wv" style="--ph:11.39741rad">u</span><span class="wv" style="--ph:11.54353rad">c</span><span class="wv" style="--ph:11.68965rad">t</span><span class="wv" style="--ph:11.83577rad">s</span><span class="wv sp" style="--ph:11.98189rad"></span><span class="wv st" style="--ph:12.12801rad">✳︎</span><span class="wv sp" style="--ph:12.42025rad"></span></div><div style="display:flex;white-space:nowrap" aria-hidden="true"><span class="wv" style="--ph:0.00000rad">4</span><span class="wv" style="--ph:0.14612rad">,</span><span class="wv" style="--ph:0.29224rad">5</span><span class="wv" style="--ph:0.43836rad">6</span><span class="wv" style="--ph:0.58448rad">0</span><span class="wv" style="--ph:0.73060rad">+</span><span class="wv sp" style="--ph:0.87672rad"></span><span class="wv" style="--ph:1.02284rad">s</span><span class="wv" style="--ph:1.16896rad">a</span><span class="wv" style="--ph:1.31509rad">l</span><span class="wv" style="--ph:1.46121rad">e</span><span class="wv" style="--ph:1.60733rad">s</span><span class="wv sp" style="--ph:1.75345rad"></span><span class="wv st" style="--ph:1.89957rad">✳︎</span><span class="wv sp" style="--ph:2.19181rad"></span><span class="wv" style="--ph:2.33793rad">4</span><span class="wv" style="--ph:2.48405rad">.</span><span class="wv" style="--ph:2.63017rad">9</span><span class="wv sp" style="--ph:2.77629rad"></span><span class="wv" style="--ph:2.92241rad">f</span><span class="wv" style="--ph:3.06853rad">r</span><span class="wv" style="--ph:3.21465rad">o</span><span class="wv" style="--ph:3.36077rad">m</span><span class="wv sp" style="--ph:3.50689rad"></span><span class="wv" style="--ph:3.65301rad">8</span><span class="wv" style="--ph:3.79914rad">7</span><span class="wv" style="--ph:3.94526rad">6</span><span class="wv sp" style="--ph:4.09138rad"></span><span class="wv" style="--ph:4.23750rad">r</span><span class="wv" style="--ph:4.38362rad">e</span><span class="wv" style="--ph:4.52974rad">v</span><span class="wv" style="--ph:4.67586rad">i</span><span class="wv" style="--ph:4.82198rad">e</span><span class="wv" style="--ph:4.96810rad">w</span><span class="wv" style="--ph:5.11422rad">s</span><span class="wv sp" style="--ph:5.26034rad"></span><span class="wv st" style="--ph:5.40646rad">✳︎</span><span class="wv sp" style="--ph:5.69870rad"></span><span class="wv" style="--ph:5.84482rad">E</span><span class="wv" style="--ph:5.99094rad">t</span><span class="wv" style="--ph:6.13706rad">s</span><span class="wv" style="--ph:6.28319rad">y</span><span class="wv sp" style="--ph:6.42931rad"></span><span class="wv" style="--ph:6.57543rad">S</span><span class="wv" style="--ph:6.72155rad">t</span><span class="wv" style="--ph:6.86767rad">a</span><span class="wv" style="--ph:7.01379rad">r</span><span class="wv sp" style="--ph:7.15991rad"></span><span class="wv" style="--ph:7.30603rad">S</span><span class="wv" style="--ph:7.45215rad">e</span><span class="wv" style="--ph:7.59827rad">l</span><span class="wv" style="--ph:7.74439rad">l</span><span class="wv" style="--ph:7.89051rad">e</span><span class="wv" style="--ph:8.03663rad">r</span><span class="wv sp" style="--ph:8.18275rad"></span><span class="wv st" style="--ph:8.32887rad">✳︎</span><span class="wv sp" style="--ph:8.62111rad"></span><span class="wv" style="--ph:8.76724rad">2</span><span class="wv" style="--ph:8.91336rad">0</span><span class="wv" style="--ph:9.05948rad">0</span><span class="wv" style="--ph:9.20560rad">+</span><span class="wv sp" style="--ph:9.35172rad"></span><span class="wv" style="--ph:9.49784rad">o</span><span class="wv" style="--ph:9.64396rad">r</span><span class="wv" style="--ph:9.79008rad">i</span><span class="wv" style="--ph:9.93620rad">g</span><span class="wv" style="--ph:10.08232rad">i</span><span class="wv" style="--ph:10.22844rad">n</span><span class="wv" style="--ph:10.37456rad">a</span><span class="wv" style="--ph:10.52068rad">l</span><span class="wv sp" style="--ph:10.66680rad"></span><span class="wv" style="--ph:10.81292rad">p</span><span class="wv" style="--ph:10.95904rad">r</span><span class="wv" style="--ph:11.10516rad">o</span><span class="wv" style="--ph:11.25129rad">d</span><span class="wv" style="--ph:11.39741rad">u</span><span class="wv" style="--ph:11.54353rad">c</span><span class="wv" style="--ph:11.68965rad">t</span><span class="wv" style="--ph:11.83577rad">s</span><span class="wv sp" style="--ph:11.98189rad"></span><span class="wv st" style="--ph:12.12801rad">✳︎</span><span class="wv sp" style="--ph:12.42025rad"></span></div></div>
   </div>
   <!-- work: hover list -->
-  <div id="work" style="padding:112px 64px 40px">
+  <div id="work" style="padding:112px var(--gx) 40px">
     <div class="work-grid">
       <div style="min-width:0">
-        <h2 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:64px;letter-spacing:-2px;margin:0 0 12px">Pick a track.</h2>
+        <h2 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(40px,9vw,64px);letter-spacing:-2px;margin:0 0 12px">Pick a track.</h2>
         <p style="font-size:18px;color:#e8d9f5;margin:0 0 48px">Hover or tab through the list. The preview changes with you.</p>
         <div style="display:flex;flex-direction:column">
         <sc-for list="{{projects}}" as="p" hint-placeholder-count="5">
           <button onMouseEnter="{{p.pick}}" onFocus="{{p.pick}}" onClick="{{p.pick}}" style="{{p.rowStyle}}">
-            <span style="display:flex;align-items:baseline;gap:14px;min-width:0"><span style="font-size:13px;font-weight:500;opacity:0.45;flex:0 0 auto">{{p.no}}</span><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:22px;letter-spacing:-0.3px;text-align:left">{{p.name}}</span></span>
+            <span style="display:flex;align-items:baseline;gap:14px;min-width:0"><span style="font-size:13px;font-weight:500;opacity:0.7;flex:0 0 auto">{{p.no}}</span><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:22px;letter-spacing:-0.3px;text-align:left">{{p.name}}</span></span>
             <span style="font-size:15px;font-weight:500;text-align:right">{{p.tag}}</span>
           </button>
         </sc-for>
@@ -113,12 +116,12 @@ button:focus-visible,a:focus-visible{outline:3px solid #ffd166;outline-offset:3p
     </div>
   </div>
   <!-- shop -->
-  <div id="shop" style="perspective:1800px;margin:96px 64px 0">
+  <div id="shop" style="perspective:1800px;margin:96px var(--gx) 0">
   <div style="{{flipStyle}}">
-    <div inert="{{frontInert}}" aria-hidden="{{frontHidden}}" style="background:#06d6a0;color:#1a0b2e;border-radius:40px;padding:64px;display:flex;flex-wrap:wrap;gap:48px;align-items:center;backface-visibility:hidden;-webkit-backface-visibility:hidden">
+    <div inert="{{frontInert}}" aria-hidden="{{frontHidden}}" style="background:#06d6a0;color:#1a0b2e;border-radius:40px;padding:clamp(24px,6vw,64px);display:flex;flex-wrap:wrap;gap:48px;align-items:center;backface-visibility:hidden;-webkit-backface-visibility:hidden">
       <div style="flex:1 1 440px;min-width:0">
         <div style="font-weight:700;letter-spacing:1px;text-transform:uppercase;font-size:14px">The <a href="https://www.etsy.com/shop/ShopCafeDisco" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;cursor:pointer;background:#ffd166;padding:0 3px">shop</a> behind the portfolio</div>
-        <h2 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:60px;line-height:1;letter-spacing:-2px;margin:14px 0 20px">I built a brand, started with a baby on my hip.</h2>
+        <h2 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(36px,8.5vw,60px);line-height:1;letter-spacing:-2px;margin:14px 0 20px">I built a brand, started with a baby on my hip.</h2>
         <p style="font-size:19px;line-height:1.55;margin:0 0 28px">Three times I stepped away from corporate work as a mom. Each time I moved into building my own thing. Shop Cafe Disco sells pop-culture gifts and custom milestone plaques for creators, and I run all of it: design, production, storefront, customer service.</p>
         <div style="display:flex;flex-wrap:wrap;gap:10px;margin:0 0 16px">
           <span style="background:#1a0b2e;color:#fff4e6;border-radius:999px;padding:8px 16px;font-weight:700;font-size:15px">4.9/5 average</span>
@@ -133,31 +136,31 @@ button:focus-visible,a:focus-visible{outline:3px solid #ffd166;outline-offset:3p
         </div>
       </div>
     </div>
-    <div inert="{{backInert}}" aria-hidden="{{backHidden}}" onPointerDown="{{shelfDown}}" style="position:absolute;inset:0;background:#1a0b2e;color:#fff4e6;border-radius:40px;padding:56px 64px;user-select:none;touch-action:pan-y;box-sizing:border-box;overflow:auto;transform:rotateY(180deg);backface-visibility:hidden;-webkit-backface-visibility:hidden">
+    <div inert="{{backInert}}" aria-hidden="{{backHidden}}" onPointerDown="{{shelfDown}}" style="position:absolute;inset:0;background:#1a0b2e;color:#fff4e6;border-radius:40px;padding:56px var(--gx);user-select:none;touch-action:pan-y;box-sizing:border-box;overflow:auto;transform:rotateY(180deg);backface-visibility:hidden;-webkit-backface-visibility:hidden">
       <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap">
         <div style="font-weight:700;letter-spacing:2px;text-transform:uppercase;font-size:13px;color:#ffd166">B-side</div>
       </div>
-      <h2 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:56px;line-height:1;letter-spacing:-2px;margin:14px 0 10px">My mixtape to you</h2>
+      <h2 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(34px,8vw,56px);line-height:1;letter-spacing:-2px;margin:14px 0 10px">My mixtape to you</h2>
       <p style="font-size:17px;line-height:1.5;color:#e8d9f5;margin:0 0 22px">Eight comebacks, for anyone heading back into the workforce.</p>
-      <sc-for list="{{mixRows}}" as="mr" hint-placeholder-count="0"><button onClick="{{mr.pick}}" aria-pressed="{{mr.pressed}}" style="{{mr.style}}"><span style="width:30px;flex:0 0 auto;font-size:13px;opacity:0.5">{{mr.no}}</span><span style="flex:1 1 auto;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:22px">{{mr.t}}</span><span style="font-size:14px;color:#e8d9f5">{{mr.a}}</span></button></sc-for>
+      <sc-for list="{{mixRows}}" as="mr" hint-placeholder-count="0"><button onClick="{{mr.pick}}" aria-pressed="{{mr.pressed}}" style="{{mr.style}}"><span style="width:30px;flex:0 0 auto;font-size:13px;opacity:0.7">{{mr.no}}</span><span style="flex:1 1 auto;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:22px">{{mr.t}}</span><span style="font-size:14px;color:#e8d9f5">{{mr.a}}</span></button></sc-for>
       <a href="#" style="display:inline-block;margin-top:22px;background:#06d6a0;color:#1a0b2e;text-decoration:none;padding:14px 28px;border-radius:999px;font-weight:700">Listen on my Spotify playlist</a>
     </div>
   </div>
   </div>
   <!-- heart -->
-  <div id="heart" style="padding:112px 64px 40px;display:flex;flex-wrap:wrap;gap:48px;align-items:center">
+  <div id="heart" style="padding:112px var(--gx) 40px;display:flex;flex-wrap:wrap;gap:48px;align-items:center">
     <div style="flex:1 1 360px;min-width:0;height:300px;border-radius:50%/40%;background:#06d6a0;color:#1a0b2e;display:flex;align-items:center;justify-content:center;text-align:center;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:24px;padding:24px;box-sizing:border-box">[ GCF FUNDRAISER GRAPHIC ]</div>
     <div style="flex:1 1 440px;min-width:0">
       <div style="display:inline-block;background:#06d6a0;color:#1a0b2e;border-radius:999px;padding:6px 16px;font-weight:700;font-size:14px;letter-spacing:1px;text-transform:uppercase;margin-bottom:16px">Bonus track</div>
-      <h2 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:52px;line-height:1;letter-spacing:-1.5px;margin:0 0 20px">Design that feeds kids.</h2>
+      <h2 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(34px,8vw,52px);line-height:1;letter-spacing:-1.5px;margin:0 0 20px">Design that feeds kids.</h2>
       <p style="font-size:19px;line-height:1.55;margin:0;color:#e8d9f5">I sit on the committee of Generosity Children's Foundation, a small children's home in Uganda. I designed the logo, built the site, set up donations, and make the graphics for our online fundraisers on Facebook and Instagram.</p>
       <a href="https://donorbox.org/creativity-that-nourishes-gcf" target="_blank" rel="noopener" style="display:inline-block;box-sizing:border-box;margin-top:24px;background:#ffd166;color:#1a0b2e;border:none;padding:16px 32px;border-radius:999px;font-weight:700;font-size:18px;text-decoration:none;cursor:pointer;font-family:inherit">Donate to GCF</a>
     </div>
   </div>
   <!-- contact -->
-  <div id="hello" style="padding:96px 64px 80px;text-align:center">
-    <h2 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:96px;letter-spacing:-3px;line-height:0.95;margin:0 0 28px">You pick<br>the next <span style="color:#ffd166">track.</span></h2>
-    <a href="mailto:annlucchinidesign@gmail.com" style="font-size:26px;font-weight:700">annlucchinidesign@gmail.com</a>
+  <div id="hello" style="padding:96px var(--gx) 80px;text-align:center">
+    <h2 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(48px,13vw,96px);letter-spacing:-3px;line-height:0.95;margin:0 0 28px">You pick<br>the next <span style="color:#ffd166">track.</span></h2>
+    <a href="mailto:annlucchinidesign@gmail.com" style="font-size:clamp(18px,5.5vw,26px);font-weight:700;overflow-wrap:anywhere">annlucchinidesign@gmail.com</a>
     <div style="margin-top:12px;color:#e8d9f5;font-size:16px">Zaandam, Netherlands &middot; open to hybrid roles in the Amsterdam area</div>
   </div>
 </div>
@@ -168,7 +171,7 @@ class Component extends DCLogic {
   constructor(props){
     super(props);
     this.state = { active: 0, a0: 0, a1: 0, drag: -1, L: 0, op: 0, t: 0 };
-    this.Q = 0; this.lastPush = 0; this.fullAt = 0; this.armed = false; this.lastAny = 0; this.lastMove = 0; this.lastTop = 0; this.playing = false; this.playStart = 0; this.boomedP = [false, false]; this.boomStart = -1e9; this.boomAmp = 1; this.pass = 0; this.exit = 0; this.beatT0 = 0;
+    this.Q = 0; this.fullAt = 0; this.armed = false; this.lastAny = 0; this.lastMove = 0; this.lastTop = 0; this.playing = false; this.playStart = 0; this.boomedP = [false, false]; this.pass = 0; this.exit = 0; this.beatT0 = 0;
     this.L = 0; this.op = 0; this.disco = false; this.glowA = 0; this.discoStart = 0; this.lastWheel = 0; this.ty = null;
     this.stopsA = [['#1a0b2e',0],['#6029a9',50],['#1a0b2e',100]];
     this.stopsB = [['#1a0b2e',0],['#6029a9',50],['#1a0b2e',100]];
@@ -215,7 +218,6 @@ class Component extends DCLogic {
   pushDance(amount){
     if (this.exit > 0) { this.exit = 0; this.Q = 0; }
     this.Q = Math.min(1, this.Q + amount);
-    this.lastPush = performance.now();
     if (!this.playing && this.Q >= 0.15) { this.playing = true; this.fullAt = 0; this.playStart = performance.now(); this.beatT0 = this.playStart / 1000 + 1.7; this.markEgg('dancer'); }
   }
   markEgg(k){
@@ -249,11 +251,12 @@ class Component extends DCLogic {
     this.setState({ ui: Date.now() });
   };
   onWheel = (e) => {
-    if (e.deltaY > 0 && this.armed && this.atBottom()) this.pushDance(e.deltaY / 400);
+    const dy = e.deltaY * (e.deltaMode === 1 ? 33 : e.deltaMode === 2 ? window.innerHeight : 1);
+    if (dy > 0 && this.armed && this.atBottom()) this.pushDance(dy / 400);
     this.lastAny = performance.now();
     const top = (document.scrollingElement || document.documentElement).scrollTop;
-    if (e.deltaY < 0 && top <= 0 && !this.disco) {
-      this.L = Math.min(240, this.L + Math.abs(e.deltaY) * 0.6);
+    if (dy < 0 && top <= 0 && !this.disco) {
+      this.L = Math.min(240, this.L + Math.abs(dy) * 0.6);
       this.lastWheel = performance.now();
       if (this.L >= 240) { this.disco = true; this.discoStart = performance.now(); this.markEgg('disco'); }
     }
@@ -358,7 +361,7 @@ class Component extends DCLogic {
       this.exit = Math.min(1, this.exit + 0.03 * dt);
       if (this.exit >= 1) { this.Q = 0; this.exit = 0; this.fullAt = 0; }
     }
-    if (this.playing && this.Q >= 0.5 && !this.boomedP[this.pass]) { this.boomedP[this.pass] = true; this.boomStart = now / 1000; this.boomAmp = this.pass === 1 ? 1.4 : 1; }
+    if (this.playing && this.Q >= 0.5 && !this.boomedP[this.pass]) { this.boomedP[this.pass] = true; }
     if (!this.playing && this.Q === 0) this.boomedP = [false, false];
     const q = this.Q;
     this.pops = this.pops.map(pp => (now - pp.born < 3200 ? pp : { text: '', born: 0, css: 'display:none' }));
@@ -475,7 +478,6 @@ class Component extends DCLogic {
       word = WD[wi][0];
       wordStyle = 'position:fixed;inset:0;display:flex;align-items:center;justify-content:center;z-index:35;pointer-events:none;font-family:Bricolage Grotesque,sans-serif;font-weight:800;font-size:min(24vw,280px);letter-spacing:-0.04em;color:' + WD[wi][2] + ';-webkit-text-stroke:3px #1a0b2e;text-shadow:0 8px 0 #1a0b2e,0 0 40px rgba(0,0,0,0.5);transform:scale(' + sc + ');opacity:' + op;
     }
-    const ringStyle = 'position:fixed;right:90px;bottom:130px;width:120px;height:120px;border-radius:50%;border:6px solid rgba(255,209,102,0.85);box-sizing:border-box;pointer-events:none;z-index:29;transform:scale(' + (1 + Math.max(age, 0) * 12) + ');opacity:' + (age >= 0 && age < 0.8 ? 0.7 * Math.exp(-age * 5) : 0);
     const glow = this.glowA > 0 ? 'animation:glow 1.4s ease-in-out infinite;--ga:' + this.glowA.toFixed(3) : '';
     const glowText = this.glowA > 0 ? 'animation:glowText 1.4s ease-in-out infinite;--ga:' + this.glowA.toFixed(3) : '';
     const eggN = Object.keys(this.eggs).length, eggAll = eggN >= this.eggTotal, ec = this.eggColors;
@@ -508,11 +510,10 @@ class Component extends DCLogic {
       ballWrapStyle: 'position:fixed;top:' + (L - 438) + 'px;left:50%;margin-left:-128px;width:256px;display:flex;flex-direction:column;align-items:center;z-index:50;pointer-events:none',
       ballStyle: 'position:relative;overflow:hidden;width:256px;height:256px;border-radius:50%;box-shadow:0 0 ' + (40*op) + 'px ' + (10*op) + 'px #fff;background:repeating-linear-gradient(0deg,rgba(255,255,255,0.45) 0 2px,transparent 2px 8px),repeating-linear-gradient(90deg,rgba(255,255,255,0.45) 0 2px,transparent 2px 8px),radial-gradient(circle at 35% 30%,#fff,#b9b9d0 40%,#5a5a78);background-position:' + (((L === 0 && !this.disco ? 0 : t) * 20) % 8) + 'px 0,0 0,0 0',
       discoStyle: 'position:fixed;inset:0;z-index:40;pointer-events:none;overflow:hidden;opacity:' + op,
-      raysStyle: 'display:none',
       grab0: this.grabber(0), grab1: this.grabber(1),
       disc0Style: disc(this.state.a0, 'conic-gradient(from ' + this.fromA + 'deg in oklch,' + this.stopsCss(this.stopsA) + ')'),
       disc1Style: disc(this.state.a1, 'conic-gradient(from ' + this.fromB + 'deg in oklch,' + this.stopsCss(this.stopsB) + ')'),
-      projects, current: c, previewStyle: 'height:520px;border-radius:32px;display:flex;align-items:center;justify-content:center;color:#1a0b2e;background:' + c.color };
+      projects, current: c, previewStyle: 'height:520px;border-radius:32px;display:flex;align-items:center;justify-content:center;color:#1a0b2e;background:' + c.color + ';transition:background-color 180ms ease-out' };
   }
 }
 </script>
