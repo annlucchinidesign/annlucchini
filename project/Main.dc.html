@@ -81,19 +81,19 @@ button:focus-visible,a:focus-visible{outline:3px solid #ffd166;outline-offset:3p
         </div>
         </div>
         <input class="mx-fader" type="range" min="0" max="100" value="{{faderL.value}}" onInput="{{faderL.set}}" aria-label="Left slider">
-        <div class="mixer" style="display:flex;flex-direction:column;align-items:center;gap:10px;padding:12px 14px;border-radius:16px;box-sizing:border-box">
-          <div style="display:flex;gap:8px;align-items:center">
+        <div class="mixer" style="display:flex;flex-direction:row;align-items:center;gap:14px;padding:12px 14px;border-radius:16px;box-sizing:border-box">
+          <div style="display:flex;flex-direction:column;gap:8px;align-items:center">
             <sc-for list="{{knobs}}" as="kb" hint-placeholder-count="0"><button class="mx-knob" aria-label="Mixer knob" onClick="{{kb.pick}}"><span aria-hidden="true" style="{{kb.tickStyle}}"></span></button></sc-for>
           </div>
-          <div style="display:flex;gap:8px;align-items:center">
+          <div style="display:grid;grid-template-columns:repeat(2,40px);gap:8px">
             <sc-for list="{{padBtns}}" as="pb" hint-placeholder-count="0"><button class="mx-pad" aria-label="Mixer button" onClick="{{pb.pick}}" aria-pressed="{{pb.pressed}}" style="{{pb.style}}"></button></sc-for>
           </div>
         </div>
         <input class="mx-fader" type="range" min="0" max="100" value="{{faderR.value}}" onInput="{{faderR.set}}" aria-label="Right slider">
         <div style="position:relative;width:280px;max-width:100%">
         <svg width="280" height="280" viewBox="0 0 280 280" aria-hidden="true" style="position:absolute;left:0;top:0;overflow:visible;pointer-events:none;z-index:3">
-          <line x1="280" y1="0" x2="{{tipB.x}}" y2="{{tipB.y}}" stroke="#fff4e6" stroke-width="5" stroke-linecap="round"></line>
-          <circle cx="280" cy="0" r="14" fill="#fff4e6" stroke="#1a0b2e" stroke-width="3"></circle>
+          <line x1="0" y1="0" x2="{{tipB.x}}" y2="{{tipB.y}}" stroke="#fff4e6" stroke-width="5" stroke-linecap="round"></line>
+          <circle cx="0" cy="0" r="14" fill="#fff4e6" stroke="#1a0b2e" stroke-width="3"></circle>
           <circle cx="{{tipB.x}}" cy="{{tipB.y}}" r="8" fill="{{tipB.color}}" stroke="#fff" stroke-width="3"></circle>
         </svg>
         <div onMouseDown="{{grab1}}" onTouchStart="{{grab1}}" style="{{disc1Style}}">
@@ -202,7 +202,7 @@ class Component extends DCLogic {
     this.sc = [0, 0]; this.labelX = [0, 0];
     this.shelfIdx = 3; this.shelfDrag = false; this.shelfX0 = 0;
     this.flipped = false; this.mixIdx = 0; this.mixOn = false;
-    this.padOn = [false, false, false, false]; this.faders = [50, 50]; this.knobs = [0, 0, 0];
+    this.padOn = [false, false, false, false]; this.faders = [50, 50]; this.knobs = [0, 0];
     this.eggTotal = 4; this.eggs = {}; this.eggKey = 'al-eggs-found';
     this.eggCopy = { label: 'eggs found', of: 'of', reward: 'Secret unlocked. You found every hidden track on this page.' };
     this.eggColors = { bg: '#1a0b2e', text: '#fff4e6', line: '#4a2c6e', reward: '#ffd166' };
@@ -530,7 +530,7 @@ class Component extends DCLogic {
     const padBtns = [0, 1, 2, 3].map((i) => ({ pressed: this.padOn[i] ? 'true' : 'false', style: '--lamp:' + padLamps[i] + (this.padOn[i] ? ';--led:#fff4e6;--ledglow:' + padLamps[i] + ';color:#1a0b2e;text-shadow:0 1px 0 rgba(255,244,230,0.45);border-color:color-mix(in srgb,' + padLamps[i] + ' 45%,#0b0414);background:radial-gradient(ellipse 90% 130% at 50% 35%,#fff4e6 0,' + padLamps[i] + ' 42%,color-mix(in srgb,' + padLamps[i] + ' 60%,#1a0b2e) 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,0.65),inset 0 -2px 2px rgba(26,11,46,0.3),0 1px 0 #0b0414,0 2px 4px rgba(0,0,0,0.5),0 0 12px color-mix(in srgb,' + padLamps[i] + ' 70%,transparent),0 0 26px color-mix(in srgb,' + padLamps[i] + ' 35%,transparent);transform:translateY(1px)' : ''), pick: () => { this.padOn[i] = !this.padOn[i]; this.setState({ ui: Date.now() }); } }));
     const faderL = { value: String(this.faders[0]), set: (e) => { this.faders[0] = Number(e.target.value); } };
     const faderR = { value: String(this.faders[1]), set: (e) => { this.faders[1] = Number(e.target.value); } };
-    const knobs = [0, 1, 2].map((i) => ({ tickStyle: 'transform:rotate(' + (this.knobs[i] + 90) + 'deg)', pick: () => { this.knobs[i] = (this.knobs[i] + 45) % 360; this.setState({ ui: Date.now() }); } }));
+    const knobs = [0, 1].map((i) => ({ tickStyle: 'transform:rotate(' + (this.knobs[i] + 90) + 'deg)', pick: () => { this.knobs[i] = (this.knobs[i] + 45) % 360; this.setState({ ui: Date.now() }); } }));
     return { flipStyle, mixRows, dots, padBtns, faderL, faderR, knobs, frontInert: this.flipped ? '' : undefined, frontHidden: this.flipped ? 'true' : undefined, backInert: this.flipped ? undefined : '', backHidden: this.flipped ? undefined : 'true', shelfDown: this.shelfDown, prodStyle, playerStyle, prodLabel, songArt: song.art, songInitial: song.ini, songNo, songTitle: song.t, songArtist: song.a, shelfPrev, shelfNext, lab0, pops, glow, glowText, bgCss, tipA, tipB, spots, ballSpots, danceStyle, boomStyle, word, wordStyle, eggStyle, eggText, eggReward, eggRewardStyle,
       ballWrapStyle: 'position:fixed;top:' + (L - 438) + 'px;left:50%;margin-left:-128px;width:256px;display:flex;flex-direction:column;align-items:center;z-index:50;pointer-events:none',
       ballStyle: 'position:relative;overflow:hidden;width:256px;height:256px;border-radius:50%;box-shadow:0 0 ' + (40*op) + 'px ' + (10*op) + 'px #fff;background:repeating-linear-gradient(0deg,rgba(255,255,255,0.45) 0 2px,transparent 2px 8px),repeating-linear-gradient(90deg,rgba(255,255,255,0.45) 0 2px,transparent 2px 8px),radial-gradient(circle at 35% 30%,#fff,#b9b9d0 40%,#5a5a78);background-position:' + (((L === 0 && !this.disco ? 0 : t) * 20) % 8) + 'px 0,0 0,0 0',
