@@ -51,3 +51,4 @@ Current state (after v69): the sprite path in the GitHub copy points to assets/,
 - dev only: the bottom disc tonearm pivot moves to the left edge, matching the top disc. The mixer block has two knobs stacked in one column on the left, and four square lit buttons in a 2 by 2 grid on the right.
 - dev only: the mixer button grid has a third column, so there are six square lit buttons in three columns by two rows. The two new lamps are cyan and lime, from the palette already in the file. The middle block gets wider to fit.
 - dev only: the bottom disc tonearm tip sits at the same angle as the top disc, so the two arms match.
+- dev only: the backlight spotlights are half their previous size (width and height), so they read as less prominent. Positions and drift are unchanged.
