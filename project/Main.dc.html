@@ -183,7 +183,6 @@ class Component extends DCLogic {
     this.eggTotal = 4; this.eggs = {}; this.eggKey = 'al-eggs-found';
     this.eggCopy = { label: 'eggs found', of: 'of', reward: 'Secret unlocked. You found every hidden track on this page.' };
     this.eggColors = { bg: '#1a0b2e', text: '#fff4e6', line: '#4a2c6e', reward: '#ffd166' };
-    try { const sv = JSON.parse(window.localStorage.getItem(this.eggKey) || '{}'); if (sv && typeof sv === 'object') ['disco', 'dancer', 'playlist', 'scratch'].forEach((k) => { if (sv[k] === true) this.eggs[k] = true; }); } catch (e) {}
     this.popWords = ['wikky','wikkie','wah','waaah','whack','fresh','skrrr','woomp','woop','screech'];
     this.popFonts = ["'Bungee'","'Bangers'","'Rubik Mono One'","'Press Start 2P'"];
     this.popColors = ['#ff4fa3','#06d6a0','#ffd166','#3ec1ff','#b8ff3d','#fff4e6'];
@@ -222,7 +221,6 @@ class Component extends DCLogic {
   markEgg(k){
     if (this.eggs[k]) return;
     this.eggs[k] = true;
-    try { window.localStorage.setItem(this.eggKey, JSON.stringify(this.eggs)); } catch (e) {}
     this.setState({ ui: Date.now() });
   }
   shelfDown = (e) => { this.shelfDrag = true; this.shelfPid = e.pointerId; this.shelfX0 = e.clientX; this.flipAng = null; };
