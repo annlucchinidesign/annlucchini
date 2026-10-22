@@ -439,7 +439,7 @@ class Component extends DCLogic {
     }));
     const c = data[a];
     const tipA = this.tip(this.stopsA, this.fromA, this.state.a0, 315);
-    const tipB = this.tip(this.stopsB, this.fromB, this.state.a1, 45);
+    const tipB = this.tip(this.stopsB, this.fromB, this.state.a1, 315);
     const plum = [26, 11, 46], w = 0.55;
     const mixc = (c) => 'rgb(' + c.map((v,k) => Math.round(v*w + plum[k]*(1-w))).join(',') + ')';
     const bgCss = 'background:linear-gradient(to top right,' + mixc(tipA.rgb) + ',' + mixc(tipB.rgb) + ');background-attachment:fixed';
