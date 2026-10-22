@@ -68,8 +68,8 @@ button:focus-visible,a:focus-visible{outline:3px solid #ffd166;outline-offset:3p
         <a href="#work" style="text-decoration:none;background:#06d6a0;color:#1a0b2e;font-weight:700;padding:16px 32px;border-radius:999px;font-size:18px;{{glow}}">See the work</a>
       </div>
     </div>
-    <div style="flex:1 1 100%;min-width:0;display:flex;flex-direction:column;align-items:center;gap:16px;position:relative;z-index:1">
-      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:20px;padding:24px;border-radius:28px;background:#2a1647;border:2px solid #4a2c6e">
+    <div style="flex:1 1 380px;min-width:0;display:flex;flex-direction:column;align-items:center;gap:16px;position:relative;z-index:1">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:14px;padding:24px;border-radius:28px;background:#2a1647;border:2px solid #4a2c6e">
         <div style="position:relative;width:280px;max-width:100%">
         <svg width="280" height="280" viewBox="0 0 280 280" aria-hidden="true" style="position:absolute;left:0;top:0;overflow:visible;pointer-events:none;z-index:3">
           <line x1="0" y1="0" x2="{{tipA.x}}" y2="{{tipA.y}}" stroke="#fff4e6" stroke-width="5" stroke-linecap="round"></line>
@@ -81,7 +81,7 @@ button:focus-visible,a:focus-visible{outline:3px solid #ffd166;outline-offset:3p
         </div>
         </div>
         <input class="mx-fader" type="range" min="0" max="100" value="{{faderL.value}}" onInput="{{faderL.set}}" aria-label="Left slider">
-        <div class="mixer" style="display:flex;align-items:center;gap:14px;padding:12px 14px;border-radius:16px;box-sizing:border-box">
+        <div class="mixer" style="display:flex;flex-direction:column;align-items:center;gap:10px;padding:12px 14px;border-radius:16px;box-sizing:border-box">
           <div style="display:flex;gap:8px;align-items:center">
             <sc-for list="{{knobs}}" as="kb" hint-placeholder-count="0"><button class="mx-knob" aria-label="Mixer knob" onClick="{{kb.pick}}"><span aria-hidden="true" style="{{kb.tickStyle}}"></span></button></sc-for>
           </div>
