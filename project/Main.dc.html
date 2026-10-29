@@ -127,7 +127,7 @@ button:focus-visible,a:focus-visible{outline:3px solid #ffd166;outline-offset:3p
         <div style="position:relative">
         <div class="glowfield" aria-hidden="true"><div style="position:absolute;inset:calc(100% / 3)"><sc-for list="{{glowSpots}}" as="gs" hint-placeholder-count="0"><div class="backlight" style="{{gs.style}}"></div></sc-for></div></div>
         <div style="{{previewStyle}}">
-          <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:30px;line-height:1.1;padding:32px;text-align:center">[ {{current.name}} IMAGE ]</div>
+          <div style="{{previewLabelStyle}}">[ {{current.name}} IMAGE ]</div>
         </div>
         </div>
         <div style="display:grid;margin:20px 0 0"><sc-for list="{{projects}}" as="p" hint-placeholder-count="5"><p style="{{p.blurbStyle}}">{{p.blurb}}</p></sc-for></div>
@@ -427,7 +427,7 @@ class Component extends DCLogic {
       { name:'Under Armour', tag:'Youth & Women\'s branding', color:'#4cc9f0', blurb:'Style guides for international partners, campaign key art, e-commerce assets and seating boxes for key athletes and influencers.' },
       { name:'Asurion', tag:'Motion & campaign', color:'#b388ff', blurb:'Campaign ideas, motion graphics and banners for 24+ corporate partners, including a two-week Verizon campaign with seven stakeholders.' },
       { name:'Bean Tree Cafe', tag:'Full identity', color:'#ffd166', blurb:'Logo, menus, brochure, outdoor ads, website and social for a local cafe, built over several years.' },
-      { name:'Generosity Children\'s Foundation', tag:'Non-profit', color:'#06d6a0', blurb:'Logo, site, donation setup and online fundraiser graphics for a children\'s home in Uganda.' }
+      { name:'Generosity Children\'s Foundation', tag:'Non-profit', color:'#06d6a0', blurb:'Logo, site, donation setup and online fundraiser graphics for a children\'s home in Uganda.', img:'url(../assets/gcf-fundraiser-track-05.png)' }
     ];
     const a = this.state.active;
     const projects = data.map((d,i)=>({
@@ -538,7 +538,7 @@ class Component extends DCLogic {
       grab0: this.grabber(0), grab1: this.grabber(1),
       disc0Style: disc(this.state.a0, 'conic-gradient(from ' + this.fromA + 'deg in oklch,' + this.stopsCss(this.stopsA) + ')'),
       disc1Style: disc(this.state.a1, 'conic-gradient(from ' + this.fromB + 'deg in oklch,' + this.stopsCss(this.stopsB) + ')'),
-      projects, current: c, previewStyle: 'height:520px;border-radius:32px;display:flex;align-items:center;justify-content:center;color:#1a0b2e;background:' + c.color + ';transition:background-color 400ms ease-out', glowSpots: [[28,0,35,27.5,28,-20,1.1,22,0],[100,35,27.5,40,-20,28,0.92,27,-6],[0,62,30,37.5,20,-28,1.1,24,-11],[62,100,42.5,27.5,-28,20,1.15,31,-3],[80,0,25,25,-24,16,0.95,29,-17]].map(([x, y, w, h, dx, dy, ds, dur, delay]) => ({ style: 'position:absolute;left:' + (x - w / 2) + '%;top:' + (y - h / 2) + '%;width:' + w + '%;height:' + h + '%;border-radius:50%;background:' + c.color + ';filter:blur(60px);opacity:0.3;transition:background-color 400ms ease-out;pointer-events:none;--dx:' + dx + '%;--dy:' + dy + '%;--ds:' + ds + ';--dur:' + dur + 's;--delay:' + delay + 's' })) };
+      projects, current: c, previewLabelStyle: "font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:30px;line-height:1.1;padding:32px;text-align:center" + (c.img ? ';display:none' : ''), previewStyle: 'height:520px;border-radius:32px;display:flex;align-items:center;justify-content:center;color:#1a0b2e;background:' + c.color + ';' + (c.img ? 'background-image:' + c.img + ';background-size:contain;background-repeat:no-repeat;background-position:center;' : '') + 'transition:background-color 400ms ease-out', glowSpots: [[28,0,35,27.5,28,-20,1.1,22,0],[100,35,27.5,40,-20,28,0.92,27,-6],[0,62,30,37.5,20,-28,1.1,24,-11],[62,100,42.5,27.5,-28,20,1.15,31,-3],[80,0,25,25,-24,16,0.95,29,-17]].map(([x, y, w, h, dx, dy, ds, dur, delay]) => ({ style: 'position:absolute;left:' + (x - w / 2) + '%;top:' + (y - h / 2) + '%;width:' + w + '%;height:' + h + '%;border-radius:50%;background:' + c.color + ';filter:blur(60px);opacity:0.3;transition:background-color 400ms ease-out;pointer-events:none;--dx:' + dx + '%;--dy:' + dy + '%;--ds:' + ds + ';--dur:' + dur + 's;--delay:' + delay + 's' })) };
   }
 }
 </script>

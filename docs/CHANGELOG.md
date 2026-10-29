@@ -53,3 +53,4 @@ Current state (after v69): the sprite path in the GitHub copy points to assets/,
 - dev only: the bottom disc tonearm tip sits at the same angle as the top disc, so the two arms match.
 - dev only: the backlight spotlights are half their previous size (width and height), so they read as less prominent. Positions and drift are unchanged.
 - dev only: the backlight spotlights drift further, about twice as far as before. Each one travels side to side, then up and down, then back along a diagonal, and the slow loop is unchanged.
+- dev only: track 05 (Generosity Children's Foundation) shows the GCF fundraiser graphic in the track preview instead of the placeholder label. The image is assets/gcf-fundraiser-track-05.png (758 by 520), set with contain so the whole logo shows on phones. The preview label is hidden when a track has an image. The other tracks keep their placeholders.
