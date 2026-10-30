@@ -11,7 +11,7 @@ fs.rmSync(site, { recursive: true, force: true });
 fs.mkdirSync(path.join(site, 'assets'), { recursive: true });
 
 const html = fs.readFileSync(path.join(root, 'project', 'Main.dc.html'), 'utf8');
-const out = html.split('url(../assets/').join('url(assets/');
+const out = html.split('../assets/').join('assets/');
 if (out === html) throw new Error('asset path not found in Main.dc.html');
 fs.writeFileSync(path.join(site, 'index.html'), out);
 
